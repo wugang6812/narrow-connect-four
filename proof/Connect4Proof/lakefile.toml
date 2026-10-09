@@ -1,0 +1,11 @@
+name = "Connect4Proof"
+version = "0.1.0"
+defaultTargets = ["Connect4Proof.Basic"]
+
+[[lean_lib]]
+name = "Connect4Proof"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "cecebc3014fd27da46b2899d7639ea643a444a51"

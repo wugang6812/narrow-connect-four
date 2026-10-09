@@ -1,0 +1,2 @@
+replaying experiments.FourColumnsOddSound
+kernel replay passed: experiments.FourColumnsOddSound; declarations=16

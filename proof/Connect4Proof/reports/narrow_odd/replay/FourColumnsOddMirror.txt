@@ -1,0 +1,2 @@
+replaying experiments.FourColumnsOddMirror
+kernel replay passed: experiments.FourColumnsOddMirror; declarations=25

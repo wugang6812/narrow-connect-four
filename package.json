@@ -1,0 +1,8 @@
+{
+  "name": "narrow-connect-four",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lean-verified narrow Connect Four draws, paper and a local browser game",
+  "scripts": { "test": "node --test tests/engine.test.cjs tests/bot.test.cjs" },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,29 @@
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:99:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:106:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:184:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:234:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:247:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:270:41: warning: This simp argument is unused:
+  InP
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [emptyBoard, whiteParity]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:274:43: warning: This simp argument is unused:
+  InP
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [emptyBoard, whiteParity]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:276:43: warning: This simp argument is unused:
+  InP
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [emptyBoard, whiteParity, hdq, hdp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\InfiniteNarrowBoards.lean:332:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.InfiniteNarrowBoards.four_columns_infinite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.narrow_infinite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]

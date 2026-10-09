@@ -1,0 +1,51 @@
+Connect4.NarrowBoards.narrow_empty_isDraw (w h : ℕ) (hw : w ≤ 3) :
+  Connect4.NarrowBoards.IsDraw h (Connect4.NarrowBoards.emptyBoard w)
+Connect4.FourColumns.white_nonloss_four_columns {h : ℕ} (h2 : 2 ≤ h) (hh : h % 2 = 0) :
+  Connect4.FourColumns.CanAvoidLoss h Connect4.Player.white (Connect4.FourColumns.emptyBoard 4)
+Connect4.FourColumns.opening0_small_safe {h : ℕ} (h2 : 2 ≤ h) (hh : h % 2 = 0) (h4 : h ≤ 4) :
+  Connect4.FourColumns.CanAvoidLoss h Connect4.Player.black Connect4.FourColumns.opening0
+Connect4.InfiniteNarrowBoards.narrow_infinite_draw (w : ℕ) (hw0 : 1 ≤ w) (hw4 : w ≤ 4) :
+  Connect4.InfiniteNarrowBoards.IsDraw (Connect4.FourColumns.emptyBoard w)
+Connect4.FourColumns.black_nonloss_four_columns {h : ℕ} (h2 : 2 ≤ h) (hh : h % 2 = 0) :
+  Connect4.FourColumns.CanAvoidLoss h Connect4.Player.black (Connect4.FourColumns.emptyBoard 4)
+Connect4.FourColumns.four_columns_even_draw (n : ℕ) (hn : 1 ≤ n) :
+  Connect4.FourColumns.IsDraw (2 * n) (Connect4.FourColumns.emptyBoard 4)
+Connect4.FourColumns.four_columns_even_no_forced_win (n : ℕ) (hn : 1 ≤ n) :
+  (¬∃ k, Connect4.FourColumns.WinFor (2 * n) Connect4.Player.black k (Connect4.FourColumns.emptyBoard 4)) ∧
+    ¬∃ k, Connect4.FourColumns.WinFor (2 * n) Connect4.Player.white k (Connect4.FourColumns.emptyBoard 4)
+'Connect4.NarrowBoards.narrow_empty_isDraw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.draw_excludes_forced_wins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.white_nonloss_four_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.pd_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.pd1_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.black_second_w1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.black_second_w2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.pd0b_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.w0a_permanent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.w0a_endgame_blocked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.w0a_clear_exception' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.opening0_small_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.draw_excludes_forced_wins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.full_without_win_not_win' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve_reply_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.black_nonloss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.white_nonloss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.four_columns_infinite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.narrow_infinite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.InfiniteNarrowBoards.previous_win_rejected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.opening0_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.core13_white' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.permanent13_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve13_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve13_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve13_win' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.x_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.y_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.z_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.vertical_threat_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.full_right_empty_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.opening1_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.opening3_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.black_nonloss_four_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_even_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_even_no_forced_win' depends on axioms: [propext, Classical.choice, Quot.sound]

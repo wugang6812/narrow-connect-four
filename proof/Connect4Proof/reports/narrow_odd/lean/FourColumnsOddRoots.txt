@@ -1,0 +1,3 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddRoots.lean:42:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddRoots.lean:54:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+'Connect4.FourColumns.small_control_safe' depends on axioms: [propext, Classical.choice, Quot.sound]

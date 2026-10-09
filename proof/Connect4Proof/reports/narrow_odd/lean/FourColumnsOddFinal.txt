@@ -1,0 +1,7 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddFinal.lean:19:0: warning: Definition `odd_root_bundle` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+'Connect4.FourColumns.four_columns_odd_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_finite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_odd_no_forced_win' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_finite_no_forced_win' depends on axioms: [propext, Classical.choice, Quot.sound]

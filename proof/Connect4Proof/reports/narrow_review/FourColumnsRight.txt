@@ -1,0 +1,8 @@
+'Connect4.FourColumns.core13_white' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRight.lean:273:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRight.lean:286:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRight.lean:330:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRight.lean:341:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.reserve13_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve13_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve13_win' depends on axioms: [propext, Classical.choice, Quot.sound]

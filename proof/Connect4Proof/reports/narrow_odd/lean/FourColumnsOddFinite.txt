@@ -1,0 +1,3 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddFinite.lean:112:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddFinite.lean:123:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.finiteFour_iff' depends on axioms: [propext, Quot.sound]

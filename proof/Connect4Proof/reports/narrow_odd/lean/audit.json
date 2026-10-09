@@ -1,0 +1,1198 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-12T23:46:30+0800",
+  "certificates_only": false,
+  "modules": {
+    "FourColumnsOddCore": {
+      "source": "experiments/FourColumnsOddCore.lean",
+      "source_sha256": "65fe26f1deb00dc376e0a06b3ed0573337e919edff8a6b663fbec5c4b228991b",
+      "input_sha256": "6374c2ebbf811075d0d968c8a215e5c5365f5a2f39d7c18aca9ae704f0ecc79b",
+      "exit_code": 0,
+      "seconds": 12.579,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddCore.txt",
+      "log_sha256": "8a418548e241071c2b884179db884f684e64b9b1852003a25cb77fe6a6a4205d",
+      "axioms": {
+        "Connect4.FourColumns.high_supported_no_four": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddCore.olean": "b7f9bf81d004ebf08e71e426cc432dea14c4bf5b2e2efe6878791e568e5e37eb"
+      }
+    },
+    "FourColumnsOddGeometry": {
+      "source": "experiments/FourColumnsOddGeometry.lean",
+      "source_sha256": "445e8b03e7d180fae3d2ef3759e55d917cba42b6ebd45bfff54437ea19228ffd",
+      "input_sha256": "f52ce550e2b832b4398e30c571eab6a7938eea348d1f25be4d132d94d25e3f57",
+      "exit_code": 0,
+      "seconds": 13.519,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddGeometry.txt",
+      "log_sha256": "d434f035eb84d2672d31bbec3e7756c8833a89ca1e7038c98c62bfb995fcdc3d",
+      "axioms": {
+        "Connect4.FourColumns.fastFour_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddGeometry.olean": "9d9d4b468a49cc9f93e1cd292940a10d02b3cd0727a1aa34b530bbe9138721a5"
+      }
+    },
+    "FourColumnsOddFinite": {
+      "source": "experiments/FourColumnsOddFinite.lean",
+      "source_sha256": "e953c6c8d741db057dc9b077b6b50b5138380dcf9fd8b7de3252e89dfd4d72ca",
+      "input_sha256": "5470f2b7b250b75321303852ffa5115eab24e784b6181a6f86988013510fdd36",
+      "exit_code": 0,
+      "seconds": 12.195,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddFinite.txt",
+      "log_sha256": "4de1ebd114ed2b93d91c025ac682bed4396333fc8412d4d05137c072678bb871",
+      "axioms": {
+        "Connect4.FourColumns.finiteFour_iff": [
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddFinite.olean": "5a1ed3e9b5f444eb55e1d511c90428e8258fbff95e0b1dee9859fbcf190ef720"
+      }
+    },
+    "FourColumnsOddLift": {
+      "source": "experiments/FourColumnsOddLift.lean",
+      "source_sha256": "54e8dfc51fae1b4d6ef42124d943bae663ead5b9201f9c5a8682ca935d04ae42",
+      "input_sha256": "9d56e70bc87cf59e6107056554db0c556a24d2f893e13eeadb3794fb61df987a",
+      "exit_code": 0,
+      "seconds": 12.644,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddLift.txt",
+      "log_sha256": "f0c2798726f08118d01d2d8e423d80a02399046be7c632c45538d06b917d2bb6",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddLift.olean": "3db97ba73dd237f6a7ce299d2b08211285fad78e9e44f75fc21d8b2f0eebea09"
+      }
+    },
+    "FourColumnsOddSound": {
+      "source": "experiments/FourColumnsOddSound.lean",
+      "source_sha256": "fda91080feecfd5e7127190385a07ce59bf71d15d7cdfaf24c7b9c4168c98b43",
+      "input_sha256": "34304e609db6d27ec9ded77201dcfb11a09a8c9f7a4d735ef24b89d751440018",
+      "exit_code": 0,
+      "seconds": 12.635,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddSound.txt",
+      "log_sha256": "8497e682ea5254be18c395ca62140d557bf2461a0d80fe034f719e399f785d58",
+      "axioms": {
+        "Connect4.FourColumns.odd_control_lift": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddSound.olean": "37a28a2c0b42938de8d6dce68b112a6d55d9b667b18d2a754120ddf488f74897"
+      }
+    },
+    "FourColumnsOddMirror": {
+      "source": "experiments/FourColumnsOddMirror.lean",
+      "source_sha256": "1b0f593f713ae30f31cf52e5c105097bc540171a3bd1834649f87931a04bb45d",
+      "input_sha256": "2308091325286cd131fd00f12234537c5899a51867ba64669d7242a5774841ee",
+      "exit_code": 0,
+      "seconds": 16.388,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/FourColumnsOddMirror.txt",
+      "log_sha256": "60f2facedba5d4a119deef837509b57d2ca2a847c6682ae036c7435111f02ae9",
+      "axioms": {
+        "Connect4.FourColumns.ControlTree.mirror": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddMirror.olean": "c0ac509b1c42ed69c3ad6bd04a1097c03fd4f10f1746b53790bdf5710c95d690"
+      }
+    },
+    "OddCertificates/P2_0000": {
+      "source": "experiments/OddCertificates/P2_0000.lean",
+      "source_sha256": "8039093fa6905ae22539a0f21f8fa981792e752f0252c6efc4d9e4cb528f17b7",
+      "input_sha256": "0e7d921a6bf33b5483fc7db1fee7c3f94adad9652095bf6a1e46cb2a6bce879b",
+      "exit_code": 0,
+      "seconds": 349.32,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P2_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P2_0000.olean": "5d98e4b6ec49662af8051dad0cdf20e955802e8efd287361cfc791814f9f1a3b"
+      }
+    },
+    "OddCertificates/P0_0000": {
+      "source": "experiments/OddCertificates/P0_0000.lean",
+      "source_sha256": "9eb7007a9c68debd6a5b9a48a9019e5e47847ac9d2a2ae6c506b744820a735d1",
+      "input_sha256": "26a12049f1f9cd65e9f8e5e2d70050313c4f9b8b0db0d7885450386e4e18ba70",
+      "exit_code": 0,
+      "seconds": 342.709,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P0_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P0_0000.olean": "031e45e165ecb3b5e85540b122185823dc6464a89613287737d89e52a4774865"
+      }
+    },
+    "OddCertificates/P1_0000": {
+      "source": "experiments/OddCertificates/P1_0000.lean",
+      "source_sha256": "94873b32bd3250faef98c3a3b57f616b0459a3b24d3ba46ce9432eea86cf84de",
+      "input_sha256": "b69596bcc3b19db0bca56296eacbc3742bd6aa90fc4413d3f5f6f6747e66cb06",
+      "exit_code": 0,
+      "seconds": 372.647,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P1_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P1_0000.olean": "0221677ae38de5c0f8508f0e3918cc767a98023fbf6dc90999e72223dcc0f068"
+      }
+    },
+    "OddCertificates/P2_0001": {
+      "source": "experiments/OddCertificates/P2_0001.lean",
+      "source_sha256": "471e64ef1d627d38f3ab2a350ad97c3bc2cdf1a423a9dd674f19686916150cdb",
+      "input_sha256": "9838920fa718d71d8bbed3db178b092f182df11887676ea631f1568e8770a9f3",
+      "exit_code": 0,
+      "seconds": 113.29,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P2_0001.txt",
+      "log_sha256": "c1dce0bcd9dafc3c283817196d9f886308f4ec730050686a98b5b02fdb5187ec",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P2.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P2_0001.olean": "22fb91f8c1d8a55ebb7af89aabc358f91c61d9df3c3d93c14d063e3bbe3d2be6"
+      }
+    },
+    "OddCertificates/P1_0001": {
+      "source": "experiments/OddCertificates/P1_0001.lean",
+      "source_sha256": "b261c5a1ccc79e179682c70390836c1a58294c6713d447c823932206c956f12a",
+      "input_sha256": "e33242292649515d4e3274c42596f3384610a8f626e07b105bb381e908987a86",
+      "exit_code": 0,
+      "seconds": 105.845,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P1_0001.txt",
+      "log_sha256": "e05fbae17d6e2f7ff219619825efceda49e0ff9f73ae59a393174d6dff36b2ac",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P1.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P1_0001.olean": "e36d1c5aff9be01a57391a1e94db23c1147ac7ba1fa595a3ae5ccb163f39cf2e"
+      }
+    },
+    "OddCertificates/P0_0001": {
+      "source": "experiments/OddCertificates/P0_0001.lean",
+      "source_sha256": "0bbe845917cd4c07949a47f5bec01e10d1f9892370bb57f9fa0f223910310ee8",
+      "input_sha256": "6c7676d8e4f8b6fc28273b65c960e97d00cf20ab2a8a5f96ab5fa8a11733ba56",
+      "exit_code": 0,
+      "seconds": 371.564,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P0_0001.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P0_0001.olean": "ebd325f6e3535a93ec145ea7a5e55c9039cd7519468d41646bd2e9941422656c"
+      }
+    },
+    "OddCertificates/P3_0000": {
+      "source": "experiments/OddCertificates/P3_0000.lean",
+      "source_sha256": "4cc1dd5b2e80e53fb1523247c44b5d8f4c15d80f3de288058b4aa880885ef923",
+      "input_sha256": "ff1fedbba8d8f07dc993c6925b6865ccdd6d3535d07280911fe2821ef84492d4",
+      "exit_code": 0,
+      "seconds": 353.302,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P3_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P3_0000.olean": "c8b7fd9aaf321da1c3a6892853163b78faade5374b10a7f94f7b5bc60f233028"
+      }
+    },
+    "OddCertificates/P3_0001": {
+      "source": "experiments/OddCertificates/P3_0001.lean",
+      "source_sha256": "b854881a6e0b33c21c4c2a1f038b613bd387aff1ce4d35f017d22e9be3124f73",
+      "input_sha256": "d0275955eb91a986b1cc9f76f32a51dbbae557008bfdbaf0daf22c9e6ce36f93",
+      "exit_code": 0,
+      "seconds": 60.85,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P3_0001.txt",
+      "log_sha256": "7ed29f1afb09c219a8583adba0035d7dce5dfc36e8fdde0b6bf1406393c1d235",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P3.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P3_0001.olean": "18843f10d4fe86bb1c3a4b2f8aec426d304209292e0e25b51370fabb4a33d490"
+      }
+    },
+    "OddCertificates/P0_0002": {
+      "source": "experiments/OddCertificates/P0_0002.lean",
+      "source_sha256": "9010cc5e95b8464f6aa2d9c525495e4ae0fe2dd6715ea3bdb39a2d905020a829",
+      "input_sha256": "fc7e948ed926c9b6978503ea08b00debdfe41c47a6ef4d161acf217207b6c490",
+      "exit_code": 0,
+      "seconds": 63.044,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P0_0002.txt",
+      "log_sha256": "ac4fe10c27697926ca8ace1a6f011145583c5e54024ed146ab19606f09816fc0",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P0.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P0_0002.olean": "5ba6e76f63ae1557f4e5305ffaee034a7850931d209d67820b083c198539504b"
+      }
+    },
+    "OddCertificates/P4_0000": {
+      "source": "experiments/OddCertificates/P4_0000.lean",
+      "source_sha256": "e8f695cec46deb291d5e5102f5710d231c810e8792ef8ba3646acb27c02988c1",
+      "input_sha256": "b9428c99cabefebbbfc972248e22b6e53ca6de2dffa59214e24f2b097d130527",
+      "exit_code": 0,
+      "seconds": 368.44,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P4_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P4_0000.olean": "9015b6a44e66cf220f54f523e89ce78fc5dd87f900a253493974504dfe8bfecc"
+      }
+    },
+    "OddCertificates/P4_0001": {
+      "source": "experiments/OddCertificates/P4_0001.lean",
+      "source_sha256": "ecdff5497df19a24a471f0d9a7171fc12befe963a1e0cbe61749acca456351d9",
+      "input_sha256": "c97affb17439b3173d353551384b36068b40bd34205d56fe9e8cfcb8e49780c7",
+      "exit_code": 0,
+      "seconds": 66.703,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P4_0001.txt",
+      "log_sha256": "85fae661e2247b5b3ec4258971494913a2df61a18def1179f3f03a41c8b2601d",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P4.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P4_0001.olean": "68ab5dfa024b95b7c6b6819914e87a8133410a9c5181691506375d100c509d9c"
+      }
+    },
+    "OddCertificates/P5_0000": {
+      "source": "experiments/OddCertificates/P5_0000.lean",
+      "source_sha256": "534978f51ca0a9f635e8778cb66742c36f69c3243614d3fc39b7fb683dd4da83",
+      "input_sha256": "686fba64da47dc6ec4de8ace4e690ff88f47c42ee4cde207692cb2d97d8a4fb0",
+      "exit_code": 0,
+      "seconds": 354.173,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0000.olean": "8f5b54e8578ecdb32bb6089fc1faee559c7600e5ca4c186136c77221c8824509"
+      }
+    },
+    "OddCertificates/P6_0000": {
+      "source": "experiments/OddCertificates/P6_0000.lean",
+      "source_sha256": "8f5b216d16f9ecb1cdbce5179a657749e6b5520c80a2f0ca12f175c8f6759c35",
+      "input_sha256": "2313325a831a879cf94a370dca3e60dd840621b7193e299ac7cbe4952a676f10",
+      "exit_code": 0,
+      "seconds": 449.265,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0000.olean": "caa7a12e07ffee3f5f938c659eb6bedcffa076b3800ea23f272b860fca71c24b"
+      }
+    },
+    "OddCertificates/P5_0001": {
+      "source": "experiments/OddCertificates/P5_0001.lean",
+      "source_sha256": "cf1063a7d68c96a4d3dfd70367d2391db3b1513e95a8300faed00cc64770ef85",
+      "input_sha256": "c717878ec842185172d32184a27df7520fa0104787245df40b9eeaf4b06ce876",
+      "exit_code": 0,
+      "seconds": 400.714,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0001.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0001.olean": "be49fc92cc3ec5480a83b78427de210b1e440be1c7b120bbf8071363afa20a43"
+      }
+    },
+    "OddCertificates/P6_0001": {
+      "source": "experiments/OddCertificates/P6_0001.lean",
+      "source_sha256": "38b1dc5a2d4b1fd2328df44a7f5f6cd9cfb552e3676d0851c6c5fe01a5440152",
+      "input_sha256": "893e19d5109208477b38b276233629bcee6286f0dc64921ba31145176059ffe8",
+      "exit_code": 0,
+      "seconds": 422.141,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0001.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0001.olean": "32b4a8fb8d0d9b9fe85b8edd75def3cdb37e5e6aad9d73a968b6d19ebbc8440f"
+      }
+    },
+    "OddCertificates/P5_0002": {
+      "source": "experiments/OddCertificates/P5_0002.lean",
+      "source_sha256": "1e2987f0bf68e44d2a0fa0b4d4506814ed52b0f4ab92cb3e60259faefbdfe433",
+      "input_sha256": "d154222dcb5de2405f11733c0ae2404d186df4c02cf8535c3a70c47b180fd346",
+      "exit_code": 0,
+      "seconds": 426.623,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0002.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0002.olean": "77862d60d2b73bed95d54816cb3ce1820f65712dc9f9c6cca8028c61e2229337"
+      }
+    },
+    "OddCertificates/P6_0002": {
+      "source": "experiments/OddCertificates/P6_0002.lean",
+      "source_sha256": "cec4c192b6523729a6e9a4926eaff89f4f9eded01673cae76f716ace85e5ceb5",
+      "input_sha256": "1de794baa0ecd1a8dede04f6f27da83731b0a460ae08b6ca10e7218edfd8d07a",
+      "exit_code": 0,
+      "seconds": 442.255,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0002.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0002.olean": "f87e3eb7ae76cf4c8899f9324df02bacb98f0d31c37ddf2b2234a5ce7c52ec05"
+      }
+    },
+    "OddCertificates/P5_0003": {
+      "source": "experiments/OddCertificates/P5_0003.lean",
+      "source_sha256": "78f0968a9eb862881fd112d4d67cae21666c4dcf40c01c6bc1f5a4e1c6002856",
+      "input_sha256": "849b2b16e7ea5bcbe5fc17d48ae8d236b14f1066008c9713c988f716f90f07e0",
+      "exit_code": 0,
+      "seconds": 405.578,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0003.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0003.olean": "838cf22ff2af8a696b141f712eb3ba35dd04f708fea86da091b3f104a87373a2"
+      }
+    },
+    "OddCertificates/P6_0003": {
+      "source": "experiments/OddCertificates/P6_0003.lean",
+      "source_sha256": "8da3c19ea6c9ca4de31651b01066451d1a665aa6942a68e1d0dc5b0b227e0dc5",
+      "input_sha256": "7f8a556bed4289a64122e8bddb33a6ed39d0b9d303ad2a8d75cef4becebd0387",
+      "exit_code": 0,
+      "seconds": 433.494,
+      "resumed": true,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0003.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0003.olean": "0a6f14406d1a037de4bbb97411f5253f22be1e53215adcec243a2342f6d47fe3"
+      }
+    },
+    "OddCertificates/P8_0000": {
+      "source": "experiments/OddCertificates/P8_0000.lean",
+      "source_sha256": "ab4cec79aa3516c7e41e17a2fda12ba11d8e448eeae870bffe2ea5fd28ed4907",
+      "input_sha256": "f3e1c3a1d9aa6d742fd7faf7b827d9953bf8d970597da4ed6fd4355958f73960",
+      "exit_code": 0,
+      "seconds": 346.682,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0000.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0000.olean": "ca4d6c1269de93e648a080d7c308c67c7b3a4732d689bf442e202d46bbdb21a7"
+      }
+    },
+    "OddCertificates/P5_0004": {
+      "source": "experiments/OddCertificates/P5_0004.lean",
+      "source_sha256": "58471c90a47868e703883792060b54fd2697ae678c4ccaf89cc2a9db7db574dc",
+      "input_sha256": "8ca157cdcc562f4ad8503f89bb1f17002caaca4043084d0aff0c6d7fa505c488",
+      "exit_code": 0,
+      "seconds": 374.414,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0004.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0004.olean": "4a67e1a907f7e4dc941420da6f32d678656c305f41f67a9771563ad8e3f4decb"
+      }
+    },
+    "OddCertificates/P6_0004": {
+      "source": "experiments/OddCertificates/P6_0004.lean",
+      "source_sha256": "f341b5007a0aba08e1d3b82f745f871167bec555cb4c6a9f663a5bce4c7111b7",
+      "input_sha256": "1e5333976318395754ff3e526441c751d99005665a096ce4886bac2f389d4aea",
+      "exit_code": 0,
+      "seconds": 405.027,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0004.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0004.olean": "58f382f0f70f9486fa6d95f511d0416f963d441ba19846a836a6a71bb757accd"
+      }
+    },
+    "OddCertificates/P8_0001": {
+      "source": "experiments/OddCertificates/P8_0001.lean",
+      "source_sha256": "c9358b18db1b8911d9ba9f51c68d6b526e65e21d53b55a976b9369db335562d1",
+      "input_sha256": "fbd1810142e13896c266030cf744471eccc96351fddc3bb07ff61de48e27d3b4",
+      "exit_code": 0,
+      "seconds": 410.001,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0001.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0001.olean": "ec892674f3fd47c8c768ddda748a629d5e06438d7331722278b86e6102a4f740"
+      }
+    },
+    "OddCertificates/P5_0005": {
+      "source": "experiments/OddCertificates/P5_0005.lean",
+      "source_sha256": "ef710c909f49165b6b4af06945f12bdf18d8d8d190f925c6d157031b935bb434",
+      "input_sha256": "63af3c5e82fb2a600979d71d3ceecb7977cc1ff9fd067e189e556642cf05ed24",
+      "exit_code": 0,
+      "seconds": 449.975,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0005.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0005.olean": "d05044e821b1185c9b0bcfcec4baf8dded79de1b87ae11bc329c3dda6feb1461"
+      }
+    },
+    "OddCertificates/P6_0005": {
+      "source": "experiments/OddCertificates/P6_0005.lean",
+      "source_sha256": "2fa1fc3fd192aa48c1fc15ad1ed214b7e03840629cba4fc3bf979ab1430842ef",
+      "input_sha256": "795d44839bb45daac1a453ec05649687a126119ee9e3e254d85635b90635c5d2",
+      "exit_code": 0,
+      "seconds": 482.332,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0005.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0005.olean": "1cf26d591257f53dec9905f5e58e807e3b4e034d0e25f83a0d5c9cac8db44d0f"
+      }
+    },
+    "OddCertificates/P8_0002": {
+      "source": "experiments/OddCertificates/P8_0002.lean",
+      "source_sha256": "bc05abbbefa2a3b2fc5ded14646df64cb924dfebd6b6adaa1fd935d919e85dbc",
+      "input_sha256": "267a21cee1cb636ca908f1046a84994c8b38dd1d5b101877abdfd80288ccc856",
+      "exit_code": 0,
+      "seconds": 434.773,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0002.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0002.olean": "a40df36b2c49672387c4e899c3f7d320d4ee2e55655adb56f3aa3b4de93ff65d"
+      }
+    },
+    "OddCertificates/P5_0006": {
+      "source": "experiments/OddCertificates/P5_0006.lean",
+      "source_sha256": "5415ac9b551f107782de62e0dc56e90f218d04c6418de6d46a28d27260a9db99",
+      "input_sha256": "07ce9cd851d9ee46e0424ef3b595a4d1c6a212d9c9b24f6640733b2b7a9e31c6",
+      "exit_code": 0,
+      "seconds": 448.117,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0006.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0006.olean": "2f131449b35121beeb0eca2b289d99c62c47f930010a648a5c60d8d3df4e8cfa"
+      }
+    },
+    "OddCertificates/P6_0006": {
+      "source": "experiments/OddCertificates/P6_0006.lean",
+      "source_sha256": "00e194b16cca7d5fe533d47a7c6b2b33dbe3a3fa0ddda91c8bf5415f2f1eb3c6",
+      "input_sha256": "bb6baaa829ddf78b0d2e7281119c83ad7d83e6df2c389c41214e12f5b1edb1f6",
+      "exit_code": 0,
+      "seconds": 477.355,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0006.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0006.olean": "8f5721a04fc62a1652ea4eeee6f4e059952177bd3aca9f3bf4597a102175e981"
+      }
+    },
+    "OddCertificates/P8_0003": {
+      "source": "experiments/OddCertificates/P8_0003.lean",
+      "source_sha256": "facf0429559b248cda5ba85de7539bec6be32b4cdbe54621b2f9eb30ba2eb3b1",
+      "input_sha256": "6688c227b39b3c7cea2b6395638d7851bf864a31b7c5662a401c052cf4c9bd6e",
+      "exit_code": 0,
+      "seconds": 411.006,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0003.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0003.olean": "199a39d6baeef5b0b1db50d2002698191088470c16b512e3d3c25e1af14a86af"
+      }
+    },
+    "OddCertificates/P5_0007": {
+      "source": "experiments/OddCertificates/P5_0007.lean",
+      "source_sha256": "5af2935598060a86181f0c2a429fddc2e5d851e3ea91331fd7e5c432cdc5014c",
+      "input_sha256": "133cba0418b63a3434fb7c2a21e8de87769b6e59969134a362e4abcaeb4c6174",
+      "exit_code": 0,
+      "seconds": 419.214,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0007.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0007.olean": "a344fb16b3d8290235f774f3b76e7f16c1e333c44ce30863074cf8f40ba775ad"
+      }
+    },
+    "OddCertificates/P6_0007": {
+      "source": "experiments/OddCertificates/P6_0007.lean",
+      "source_sha256": "2c2197edf2c5e85c69a99ea54402fef57cf6307afe9de27990a9721da409d91b",
+      "input_sha256": "0c6cffd338c9e098e3b7eb80d496a3a7cef77f2fe7b04aa4b014e41870b1dd46",
+      "exit_code": 0,
+      "seconds": 449.589,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0007.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0007.olean": "c756b65b37e6be34891e55cf2352f98f94b0050daea46ce2e31cb7451e2c5fbd"
+      }
+    },
+    "OddCertificates/P8_0004": {
+      "source": "experiments/OddCertificates/P8_0004.lean",
+      "source_sha256": "39c00e77e7afe9a18a86fde469db2fcdd0ceaa24840e14283cef50ccc83d4457",
+      "input_sha256": "2111ada10bb096bb8ab0deda73d42dc2310a831fd5822d2088c9e3bebccf8359",
+      "exit_code": 0,
+      "seconds": 423.514,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0004.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0004.olean": "3907fcff0a7695e9aa0b7f061cee03f50d5f4de441d4dd8cf2ceef8988a2946b"
+      }
+    },
+    "OddCertificates/P5_0008": {
+      "source": "experiments/OddCertificates/P5_0008.lean",
+      "source_sha256": "dd906a0daf9f85404ea7201397dc4ce2d89bf2525cb5d33f5ca1a177afdb3fd0",
+      "input_sha256": "40b52c28ed47a8847e8d79c6c7bed949a93cdcba3b22e9bac7b0e0cab8faf235",
+      "exit_code": 0,
+      "seconds": 425.589,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0008.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0008.olean": "5338fed1b03b8d6393e02f796221b361959804e14ab80b577535e1a0bdc00b77"
+      }
+    },
+    "OddCertificates/P6_0008": {
+      "source": "experiments/OddCertificates/P6_0008.lean",
+      "source_sha256": "82d00b51c5ffdb44f094828eff4007e9e1ddac4d368b4ed393771de11e608317",
+      "input_sha256": "8eb7068f295403ca1617a4dd6461c29b50cae0069da71a9ab5b08d41a0e488fc",
+      "exit_code": 0,
+      "seconds": 479.937,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0008.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0008.olean": "19a41acbcf478a00d776aac6d5594d3c441b1a038fdd961e584237d4923074f3"
+      }
+    },
+    "OddCertificates/P8_0005": {
+      "source": "experiments/OddCertificates/P8_0005.lean",
+      "source_sha256": "893a7c003f2b2d242f9c159c00ed8f1e4556f2748422d7e7d82bc79d247255e2",
+      "input_sha256": "ae5ff35e34f1f9264df29c8bec28526a3715e5d79a32a7efcfa4f876ce38ee39",
+      "exit_code": 0,
+      "seconds": 488.696,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0005.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0005.olean": "343f5a78c44153681aa95f43a7ee87a66be2e4d879aed0939902d479dfa2ce6b"
+      }
+    },
+    "OddCertificates/P5_0009": {
+      "source": "experiments/OddCertificates/P5_0009.lean",
+      "source_sha256": "5db1f9f9a0ce1bd772e9dee015c569a20eaf2ef7788dcd3798b9ca28fc51da5b",
+      "input_sha256": "5bde51dba26be4882df950f3b3b553782c0b76374a2e0e0a5ab1abffcb702344",
+      "exit_code": 0,
+      "seconds": 474.036,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0009.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0009.olean": "7fac460d672fa78f104ad48ade52bdfb225ee45ef215ed2fe7f75b2365b763c5"
+      }
+    },
+    "OddCertificates/P6_0009": {
+      "source": "experiments/OddCertificates/P6_0009.lean",
+      "source_sha256": "6bee86cc9e9992ce43d195c945e344dd89ae12802f1b241edd7867654fbf7701",
+      "input_sha256": "7324a6dc5a4bd38165737cd46c98d1d263391cf86580a00f976ea3eaa6b66874",
+      "exit_code": 0,
+      "seconds": 319.799,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P6_0009.txt",
+      "log_sha256": "01012597a88291dfc540d84d0c57e8a96db26a41104288e5360820b4dfab0fa5",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P6.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P6_0009.olean": "ac24b742fc62d8ad82228a8ea1979ba8f1cbb60cedb49fdcf6bd724f87100534"
+      }
+    },
+    "OddCertificates/P10_0000": {
+      "source": "experiments/OddCertificates/P10_0000.lean",
+      "source_sha256": "33b9a16041e929de5927905cc3f9998c1d02a0ed615071a9a2f72313d5b167d5",
+      "input_sha256": "7b7e5a72ce4c3352f6077c85e438549ccb511d47cd5703e40965b53b0b2a11a8",
+      "exit_code": 0,
+      "seconds": 16.389,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P10_0000.txt",
+      "log_sha256": "55e9e11ec53996208d049d61a084c0e427155f485098bc5fec65294b7c88f541",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P10.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P10_0000.olean": "7ff9a76ee730696b176d882856740b443c95d2b88c2a05e51ec880eae7d0a433"
+      }
+    },
+    "OddCertificates/P11_0000": {
+      "source": "experiments/OddCertificates/P11_0000.lean",
+      "source_sha256": "58fb55f8281798b25950d1f37296ba234fbbce73613d1106eedc375e72e5df43",
+      "input_sha256": "f22edec35ba2fd6ae7c132a64e482648acad5a1982fb39bcc7b2f50025b1156b",
+      "exit_code": 0,
+      "seconds": 20.337,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P11_0000.txt",
+      "log_sha256": "5b21d0ae4e51b1fd353b0afc0acb57e973fa22a62904e88462e193764e68e5ae",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P11.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P11_0000.olean": "7a1e2475ae64c8df7054d3d007a014b9a23900cfe0987f584779578cc0195470"
+      }
+    },
+    "OddCertificates/P12_0000": {
+      "source": "experiments/OddCertificates/P12_0000.lean",
+      "source_sha256": "4b0fca5110e7b3e5fe8e4a9d829f39fb93b0c34ae71e67e0c269b28071f0fac3",
+      "input_sha256": "a94b1f7cf44d070bf0700111a3053d76819f8e74ea9d8b5e01880a7c47c61fb4",
+      "exit_code": 0,
+      "seconds": 45.544,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P12_0000.txt",
+      "log_sha256": "365900fa73e5edb2a6bab9fd44a7e2c9dcd35b174b4f8e647a591c253d08f19e",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P12.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P12_0000.olean": "2466cd6b7fcab3d7fc9500e5a1b4d5f892b7fd2e7f7da2076974b974eb5a5ded"
+      }
+    },
+    "OddCertificates/P13_0000": {
+      "source": "experiments/OddCertificates/P13_0000.lean",
+      "source_sha256": "0b1f571df4021436b2544f08ed60ee99d0c702b35eb9148b1db3a496abaa3b91",
+      "input_sha256": "ac3719cedd3a1872e0f5105045c06f30cdb1feab296747660b0e264a44af3836",
+      "exit_code": 0,
+      "seconds": 42.623,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P13_0000.txt",
+      "log_sha256": "b139c02d3b7e8f352a27d72d3ba9814fb4ce9b4c075849724bca27b180d09186",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P13.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P13_0000.olean": "b037928fdeb96e1ff04505f65bc3473b13385353beef24768bc7d482b036125d"
+      }
+    },
+    "OddCertificates/P7_0000": {
+      "source": "experiments/OddCertificates/P7_0000.lean",
+      "source_sha256": "d52ece6236e37e9508679335f70be133ac8c16e8b4825606c61d363ff8b31dc7",
+      "input_sha256": "0088b02f34becf410453873d46910d1f55bf89e08fa1e5ef76220eeed1cd7e48",
+      "exit_code": 0,
+      "seconds": 13.462,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P7_0000.txt",
+      "log_sha256": "9cacbc0a496ab0253d449a170efe614d5358a1478d1f3c32ed4dc17bff1be7f2",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P7.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P7_0000.olean": "ee9cc343b07f99c9d0c0d2a8e737572dfce60cc25099f53fe84bd4439dc3dcde"
+      }
+    },
+    "OddCertificates/P8_0006": {
+      "source": "experiments/OddCertificates/P8_0006.lean",
+      "source_sha256": "0b73b87d87df5758edfb3a332d6a555c20e53fb5b0720a9f2b1642df4acefb22",
+      "input_sha256": "ca7811a70500d78da6a26462caf8b04a42ef8137ef83d8576a6eb43c43b7c44d",
+      "exit_code": 0,
+      "seconds": 374.425,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0006.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0006.olean": "02c165ad14dcabb2101a64140fc213981658bf185eb462a585fffbc12471b5de"
+      }
+    },
+    "OddCertificates/P5_0010": {
+      "source": "experiments/OddCertificates/P5_0010.lean",
+      "source_sha256": "8c461e51ccaac5e708f7200e9d15dbf8817518eb7339d2f5285e006179f63646",
+      "input_sha256": "17997f0bc70b1602e6a1c922601b603d258ba241c2e3e161aad89ef4a8c5b8ee",
+      "exit_code": 0,
+      "seconds": 367.531,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0010.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0010.olean": "4b33892f0c46306c586a123e222767abc0c39d3f64207052ec946469d87c8e74"
+      }
+    },
+    "OddCertificates/P8_0007": {
+      "source": "experiments/OddCertificates/P8_0007.lean",
+      "source_sha256": "0649174bb287fc160b548310fa85a014240f26ae659d8e2032ac51bfc22efdd3",
+      "input_sha256": "f0d57d12e93bbe3d21e9392bc29656689f6686dbbea81d3582ebde7fec47f3f2",
+      "exit_code": 0,
+      "seconds": 235.281,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P8_0007.txt",
+      "log_sha256": "9ec3c0cdac706821be7532037bf8dbdd4384bcfecd3146cf192f5db7e68b3b24",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P8.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P8_0007.olean": "976e3097144e2c33462c2e5f986011e822c18773bb019695a1dfaf78ec067574"
+      }
+    },
+    "OddCertificates/P9_0000": {
+      "source": "experiments/OddCertificates/P9_0000.lean",
+      "source_sha256": "3cedf8682ff57fe501fb6f11946b65b0145d3a23a2325973e2dc75da8c8f62fe",
+      "input_sha256": "9c4c7362469df8790dda72ca253d257e8c01b5e4b0f677d9c971eb008ed01fe2",
+      "exit_code": 0,
+      "seconds": 13.543,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P9_0000.txt",
+      "log_sha256": "8f87e6f4968d21c9b5883ebaa6c76167ca52b92fcdf564f81f5b1545e1c7665f",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P9.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P9_0000.olean": "54ed311e55ef087e9c741678890dcbbb82b5e20e1181840fbdaaf9eea11cceaa"
+      }
+    },
+    "OddCertificates/P5_0011": {
+      "source": "experiments/OddCertificates/P5_0011.lean",
+      "source_sha256": "9fb6540009e8d79e743bb62489e97fd6b97b8c2e8f870f05b842ed4c2f1ffa1a",
+      "input_sha256": "fc0c52a45e041ceae878a4609c5bab8e14ddca9a80966018316cb155d1214da9",
+      "exit_code": 0,
+      "seconds": 362.526,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0011.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0011.olean": "f62e59ee1c8c36ae4c123df6aca29462aa39edc962742f9478c40f6e9823cfa9"
+      }
+    },
+    "OddCertificates/P5_0012": {
+      "source": "experiments/OddCertificates/P5_0012.lean",
+      "source_sha256": "9006d0223d5dccf50a11e1999324cd248531a9dfbdb55f3ae68d21e3f5ca1f73",
+      "input_sha256": "c23260272f6d48f2b7bc2b6392c9593506db91f6a7d2863c2787bc69d4a194f5",
+      "exit_code": 0,
+      "seconds": 402.427,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0012.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0012.olean": "023aa56b75a437f49bdd0383e058be1abc4b41a3ef4dc498389e552dbd237f4c"
+      }
+    },
+    "OddCertificates/P5_0013": {
+      "source": "experiments/OddCertificates/P5_0013.lean",
+      "source_sha256": "0f77caa51580e6eea3082234f45a9dff6ce91c1f855d2c1d4bfa48e82ed162a7",
+      "input_sha256": "10e81eb4de41982658957d7189ec669ba1b8c8e36203a6d88605e12858b1466f",
+      "exit_code": 0,
+      "seconds": 382.65,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0013.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {},
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0013.olean": "cf2e3431b2e52f0921dbdfc166c9886f75fcabc640030cf4fe6c8179ab595ede"
+      }
+    },
+    "OddCertificates/P5_0014": {
+      "source": "experiments/OddCertificates/P5_0014.lean",
+      "source_sha256": "b60242b3fdcc9f975c216cb07d7dd83d8c633b05640867abdbfccf1483429eb0",
+      "input_sha256": "a056d37eeb675e24558375aebab97848c281ffdc65e7c837cda8b8e31f1b13d8",
+      "exit_code": 0,
+      "seconds": 151.459,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/OddCertificates_P5_0014.txt",
+      "log_sha256": "2451228f174bf1b9a1b23cb9341f10159836432680d7297668421322fe4d3405",
+      "axioms": {
+        "Connect4.FourColumns.OddCertificate.P5.root": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/OddCertificates/P5_0014.olean": "94e534f9486eb86afd74802e14f1fd72a87b223c3a611778fb6eab7b728c426e"
+      }
+    },
+    "FourColumnsOddRoots": {
+      "source": "experiments/FourColumnsOddRoots.lean",
+      "source_sha256": "692dad8dc168c9171b1de0c901fc74605744694ac47a6952b6c60a9247817f5a",
+      "input_sha256": "ead3eaf146517448b850e190f479a1bd7ca90b6949306cc38a8c72e8fc58da67",
+      "exit_code": 0,
+      "seconds": 12.2,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/FourColumnsOddRoots.txt",
+      "log_sha256": "e208abaca3b403be7a8a27e85ff28c28857c0c5a211dfe708455438c90b991e9",
+      "axioms": {
+        "Connect4.FourColumns.small_control_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddRoots.olean": "179e486b686953cb9f5b95c86e10616777842286a2843609d00d182a9545ddb1"
+      }
+    },
+    "FourColumnsOddAssembly": {
+      "source": "experiments/FourColumnsOddAssembly.lean",
+      "source_sha256": "caa0695effd858e95512720d7e7d980c572e1c2ae304324c361d395d4dd0e2a8",
+      "input_sha256": "e7adf97197dc3cbbd84b433fc85b9b40f2fc26cfc5c146cd1850ab0b00272a60",
+      "exit_code": 0,
+      "seconds": 12.16,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/FourColumnsOddAssembly.txt",
+      "log_sha256": "949edb53847f2c491ab4f9cf14953021c8c21594ed72f492f0acca3ca255a4c2",
+      "axioms": {
+        "Connect4.FourColumns.OddAssembly.four_columns_finite_draw": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddAssembly.olean": "edbb8d48da562c1946892c863d596edabd1859a96420107b5eb683a7ea39e3a5"
+      }
+    },
+    "FourColumnsOddFinal": {
+      "source": "experiments/FourColumnsOddFinal.lean",
+      "source_sha256": "ca8f653d309b7444011a96fc66d8d6f3c5e97d2f380de940e8c758e3389b8d0f",
+      "input_sha256": "17c5eb28f3d22be2ee013252d33f04a2ff0b88ea055b69048ad5599be67620ff",
+      "exit_code": 0,
+      "seconds": 12.996,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/FourColumnsOddFinal.txt",
+      "log_sha256": "c9339666f26e33b607815063b414f8f368fef83b545a70a8139f9a6d1649b40d",
+      "axioms": {
+        "Connect4.FourColumns.four_columns_odd_draw": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_finite_draw": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_odd_no_forced_win": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_finite_no_forced_win": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddFinal.olean": "007b2c855378a44ef0ce63993de8bcdaf31ce572b31d1f75624c20cec11c5585"
+      }
+    },
+    "FourColumnsOddReview": {
+      "source": "experiments/FourColumnsOddReview.lean",
+      "source_sha256": "47b1ff1e569f2aa440953381ade5038fac686feb75258e3fde47cb01644d48e9",
+      "input_sha256": "f7b3eca0e28f709033a86297a0f2603fccbb4b0495acb88c1bc9a88d45da95cb",
+      "exit_code": 0,
+      "seconds": 12.768,
+      "resumed": false,
+      "log": "reports/narrow_odd/lean/FourColumnsOddReview.txt",
+      "log_sha256": "cbe87e3dfc2f11a458d3c67c32e124b008ef584714b15f3c5a1a2a4834a9bd83",
+      "axioms": {
+        "Connect4.FourColumns.fastFour_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.high_supported_no_four": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.tail_round": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.pair_region_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.odd_control_lift": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.ControlTree.real_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.ControlTree.mirror": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_odd_draw": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_finite_draw": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_odd_no_forced_win": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Connect4.FourColumns.four_columns_finite_no_forced_win": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "artifacts": {
+        ".lake/build/lib/lean/experiments/FourColumnsOddReview.olean": "66d64fab951ec7aa8b8cdd35298f079122aad45892939967f7601b94a7bc9bf5"
+      }
+    }
+  },
+  "axioms": {
+    "Connect4.FourColumns.high_supported_no_four": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.fastFour_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.finiteFour_iff": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.odd_control_lift": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.ControlTree.mirror": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P2.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P1.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P3.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P0.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P4.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P6.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P10.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P11.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P12.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P13.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P7.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P8.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P9.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddCertificate.P5.root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.small_control_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.OddAssembly.four_columns_finite_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_odd_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_finite_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_odd_no_forced_win": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_finite_no_forced_win": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.tail_round": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.pair_region_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.ControlTree.real_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "toolchain": "leanprover--lean4---v4.34.0-rc2",
+  "builder_sha256": "f358e8bc60d51178194799cedb0cc021c6d4bbe97a876a1262e708317593a5ea",
+  "generation_sha256": "b9b1f4e5821d5b9ac1e2fd664c0a4e11838993519fd26f593d9d6ed2dd9b0923",
+  "strategy_sha256": "b1ec2114759d439db7c767df635ff350deb58fb5e3ce3be6b5464924d943fa95",
+  "policy_nodes": 39616,
+  "policy_modules": 50,
+  "completed_at": "2026-09-13T00:58:20+0800",
+  "all_odd_heights_lean_verified": true
+}

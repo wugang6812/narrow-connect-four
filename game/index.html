@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f3eb">
+  <title>重力四子棋 · Narrow Connect Four</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="engine.js"></script><script defer src="bot-module.js"></script><script defer src="bot-bridge.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<main>
+  <header class="masthead"><a class="brand" href="../README.md" aria-label="项目说明"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>NARROW<br>CONNECT FOUR</span></a><div class="header-right"><span class="offline"><span></span><b data-i18n="offline">本地运行</b></span><button id="language" class="text-button" type="button">English</button></div></header>
+  <section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">一颗棋子，一列选择。</p><h1 data-i18n="title">让四颗棋子连成一线。</h1><p class="lead" data-i18n="lead">棋子落到底部，黑白轮流落子。横、竖或斜向，谁先连成四颗就赢。</p></div><div class="intro-art" aria-hidden="true"><svg viewBox="0 0 144 116"><g fill="#dbe6db"><circle cx="30" cy="28" r="16"/><circle cx="68" cy="28" r="16"/><circle cx="106" cy="28" r="16"/><circle cx="30" cy="66" r="16"/><circle cx="68" cy="66" r="16"/><circle cx="106" cy="66" r="16"/></g><g fill="#263f37"><circle cx="30" cy="66" r="14"/><circle cx="68" cy="66" r="14"/><circle cx="106" cy="66" r="14"/></g><circle cx="106" cy="28" r="14" fill="#fffaf0" stroke="#9fae9e" stroke-width="2"/><path d="M30 99h76" stroke="#ca9555" stroke-width="4" stroke-linecap="round"/><path d="M106 6V-4" stroke="#ca9555" stroke-width="3" stroke-linecap="round"/></svg></div></section>
+  <div class="layout">
+    <section class="play-panel" aria-label="Game board">
+      <div class="game-bar"><div id="turn-token" class="turn-token black" aria-hidden="true"></div><div><p id="status" role="status" aria-live="polite"></p><p id="board-description" class="board-description"></p></div><span id="move-count" class="move-count"></span></div>
+      <div id="board-scroll" class="board-scroll"><div id="board-shell" class="board-shell"><div id="column-buttons" class="column-buttons" role="group" aria-label="Choose a column"></div><div id="board" class="board" role="grid" aria-label="Gravity Connect Four board"></div></div></div>
+      <p id="scroll-hint" class="scroll-hint" data-i18n="scrollHint" hidden>大棋盘可以左右滑动；点击列号或格子落子。</p>
+      <div class="game-actions"><button id="undo" class="secondary" type="button" data-i18n="undo">↶ 悔棋</button><button id="restart" class="secondary" type="button" data-i18n="restart">重新开始</button><span class="keyboard-hint" data-i18n="keyboard">← → 选列 · 空格落子</span></div>
+      <p id="notice" class="notice" role="status" aria-live="polite"></p>
+    </section>
+    <aside class="sidebar">
+      <section class="settings"><div class="section-heading"><h2 data-i18n="setup">设置一局</h2><span class="small-label">M × N</span></div>
+        <div class="dimensions"><label><span data-i18n="rows">行数 / 高度 M</span><input id="rows" type="number" min="1" max="20" step="1" value="6" inputmode="numeric"></label><span class="times">×</span><label><span data-i18n="columns">列数 / 宽度 N</span><input id="columns" type="number" min="1" max="20" step="1" value="7" inputmode="numeric"></label></div>
+        <div class="presets" aria-label="Board presets"><button type="button" data-preset="6,7">6 × 7</button><button type="button" data-preset="6,4">6 × 4</button><button type="button" data-preset="7,4">7 × 4</button><button type="button" data-preset="20,20">20 × 20</button></div>
+        <label class="select-label"><span data-i18n="mode">对局模式</span><select id="mode"><option value="two" data-i18n="twoPlayers">双人轮流</option><option value="computer" data-i18n="computer">与电脑对弈</option></select></label>
+        <label id="difficulty-label" class="select-label" hidden><span data-i18n="difficulty">电脑难度</span><select id="difficulty"><option value="1" data-i18n="easy">简单</option><option value="2" data-i18n="normal">普通</option><option value="3" data-i18n="super">超级难</option></select></label>
+        <label id="side-label" class="select-label" hidden><span data-i18n="yourSide">你执哪一方</span><select id="human"><option value="1" data-i18n="blackFirst">黑方，先手</option><option value="2" data-i18n="whiteSecond">白方，后手</option></select></label>
+        <button id="new-game" type="button" class="primary" data-i18n="newGame">开始新对局 →</button><p class="settings-help" data-i18n="settingsHelp">每边 1～20 格。棋盘尺寸需开始新对局；模式和难度立即生效。</p>
+      </section>
+      <section class="research"><p class="eyebrow" data-i18n="researchLabel">从游戏到证明</p><h2 id="research-title"></h2><p id="research-description"></p><div class="research-links"><a href="../papers/paper-zh.pdf" data-i18n="paperZh">中文论文 ↗</a><a href="../papers/paper-en.pdf" data-i18n="paperEn">English paper ↗</a><a href="../proof/Connect4Proof/experiments/FourColumnsOddFinal.lean" data-i18n="leanProof">Lean 定理 ↗</a></div></section>
+      <section class="records"><h2 data-i18n="records">棋谱</h2><div class="record-actions"><button id="export" type="button" class="text-button" data-i18n="export">导出 JSON</button><button id="import" type="button" class="text-button" data-i18n="import">导入棋谱</button><input id="record-file" type="file" accept=".json,application/json" hidden></div><p id="history" class="history"></p></section>
+    </aside>
+  </div>
+  <footer><p data-i18n="footer">C 语言电脑支持三档难度，超级难会优先采用已有的标准棋盘先手策略。</p><span>GPT · LEAN-VERIFIED DRAW STRATEGIES</span></footer>
+  <noscript><p>请启用 JavaScript 以运行小游戏。Enable JavaScript to play.</p></noscript>
+</main>
+</body></html>

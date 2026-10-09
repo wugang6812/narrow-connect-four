@@ -1,0 +1,16 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:155:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:162:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.pd0b_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.w0a_permanent' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:247:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:275:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:276:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:280:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:281:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.w0a_endgame_blocked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.w0a_clear_exception' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.draw_excludes_forced_wins' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:353:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsContinuation.lean:358:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.opening0_small_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.reserve_reply_exists' depends on axioms: [propext, Classical.choice, Quot.sound]

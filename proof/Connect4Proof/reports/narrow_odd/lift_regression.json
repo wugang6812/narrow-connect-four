@@ -1,0 +1,158 @@
+{
+  "status": "complete",
+  "certificate_sha256": "b1ec2114759d439db7c767df635ff350deb58fb5e3ce3be6b5464924d943fa95",
+  "negative_controls": [
+    {
+      "test": "missing_enemy_branch",
+      "rejected": true,
+      "reason": "Enemy choices missing"
+    },
+    {
+      "test": "illegal_reply",
+      "rejected": true,
+      "reason": "Invalid reply"
+    },
+    {
+      "test": "missing_opening",
+      "rejected": true,
+      "reason": "Incomplete openings"
+    },
+    {
+      "test": "uncapped_high_move",
+      "rejected": true,
+      "reason": "High move must be capped"
+    }
+  ],
+  "finite_checks": [
+    {
+      "height": 7,
+      "defender": "B",
+      "root": "B|||",
+      "states": 13952,
+      "enemy_branches": 32046,
+      "buffer_rounds": 0,
+      "tail_replies": 690,
+      "own_win_edges": 5083,
+      "draw_edges": 698,
+      "seconds": 0.2771141999983229,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 7,
+      "defender": "W",
+      "root": "BW|||",
+      "states": 9604,
+      "enemy_branches": 23386,
+      "buffer_rounds": 0,
+      "tail_replies": 1373,
+      "own_win_edges": 3250,
+      "draw_edges": 916,
+      "seconds": 0.19235080003272742,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 7,
+      "defender": "W",
+      "root": "|||BW",
+      "states": 9604,
+      "enemy_branches": 23386,
+      "buffer_rounds": 0,
+      "tail_replies": 1373,
+      "own_win_edges": 3250,
+      "draw_edges": 916,
+      "seconds": 0.2114457999705337,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 7,
+      "defender": "W",
+      "root": "W|B||",
+      "states": 7536,
+      "enemy_branches": 16070,
+      "buffer_rounds": 0,
+      "tail_replies": 1134,
+      "own_win_edges": 2715,
+      "draw_edges": 867,
+      "seconds": 0.1507399000111036,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 7,
+      "defender": "W",
+      "root": "||B|W",
+      "states": 7536,
+      "enemy_branches": 16070,
+      "buffer_rounds": 0,
+      "tail_replies": 1134,
+      "own_win_edges": 2715,
+      "draw_edges": 867,
+      "seconds": 0.13822740002069622,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 9,
+      "defender": "B",
+      "root": "B|||",
+      "states": 50293,
+      "enemy_branches": 129334,
+      "buffer_rounds": 33743,
+      "tail_replies": 15336,
+      "own_win_edges": 17453,
+      "draw_edges": 1473,
+      "seconds": 1.086927000025753,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 9,
+      "defender": "W",
+      "root": "BW|||",
+      "states": 33168,
+      "enemy_branches": 87809,
+      "buffer_rounds": 21899,
+      "tail_replies": 13729,
+      "own_win_edges": 9428,
+      "draw_edges": 2028,
+      "seconds": 0.8803539000218734,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 9,
+      "defender": "W",
+      "root": "|||BW",
+      "states": 33082,
+      "enemy_branches": 87601,
+      "buffer_rounds": 21899,
+      "tail_replies": 13521,
+      "own_win_edges": 9286,
+      "draw_edges": 2006,
+      "seconds": 0.9559526999946684,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 9,
+      "defender": "W",
+      "root": "W|B||",
+      "states": 28814,
+      "enemy_branches": 70152,
+      "buffer_rounds": 18349,
+      "tail_replies": 11818,
+      "own_win_edges": 9132,
+      "draw_edges": 2239,
+      "seconds": 0.7672250000177883,
+      "all_enemy_choices_checked": true
+    },
+    {
+      "height": 9,
+      "defender": "W",
+      "root": "||B|W",
+      "states": 28609,
+      "enemy_branches": 69758,
+      "buffer_rounds": 18349,
+      "tail_replies": 11424,
+      "own_win_edges": 9021,
+      "draw_edges": 2106,
+      "seconds": 0.800210400018841,
+      "all_enemy_choices_checked": true
+    }
+  ]
+}

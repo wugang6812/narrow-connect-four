@@ -1,0 +1,1 @@
+solver/ReplayOddModule.lean incorporates LeanChecker replay code credited to Kim Morrison and Sebastian Ullrich, under Apache License 2.0. Lean-LICENSE.txt reproduces the pinned Lean distribution's license. This notice does not assign a new license to the original mathematical proofs.

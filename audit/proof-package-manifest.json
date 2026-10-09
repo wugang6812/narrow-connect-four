@@ -1,0 +1,1167 @@
+{
+  "accepted_baseline": "5a1c02e",
+  "source_package_sha256": "b332edd4a978f28d9e866f7508820cd262edde203952533c4eda51746a5bb8d8",
+  "proof_files": [
+    {
+      "path": "proof/Connect4Proof/Connect4Proof/Basic.lean",
+      "bytes": 57916,
+      "sha256": "d484005b771ae895e0e0cbf2eb9f49a7f4a38fec1675c60dccf2d62af3aaf93a"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumns.lean",
+      "bytes": 170429,
+      "sha256": "2349724277603110efc00a49ad5d0692d4d362af160d1782452028966da2bddd"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsContinuation.lean",
+      "bytes": 16434,
+      "sha256": "51bb149525ed3ca14c4b17998e5cfec23fc3545c5a827628f925c55876b57d7e"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsFinal.lean",
+      "bytes": 8858,
+      "sha256": "b3ddca079c74a66b473fa3e687d6bed1a18ea7d5d10c6d6314e73ecc3e9a1bb3"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddAssembly.lean",
+      "bytes": 4410,
+      "sha256": "caa0695effd858e95512720d7e7d980c572e1c2ae304324c361d395d4dd0e2a8"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddCore.lean",
+      "bytes": 7053,
+      "sha256": "65fe26f1deb00dc376e0a06b3ed0573337e919edff8a6b663fbec5c4b228991b"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddFinal.lean",
+      "bytes": 3081,
+      "sha256": "ca8f653d309b7444011a96fc66d8d6f3c5e97d2f380de940e8c758e3389b8d0f"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddFinite.lean",
+      "bytes": 5325,
+      "sha256": "e953c6c8d741db057dc9b077b6b50b5138380dcf9fd8b7de3252e89dfd4d72ca"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddGeometry.lean",
+      "bytes": 4824,
+      "sha256": "445e8b03e7d180fae3d2ef3759e55d917cba42b6ebd45bfff54437ea19228ffd"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddLift.lean",
+      "bytes": 8529,
+      "sha256": "54e8dfc51fae1b4d6ef42124d943bae663ead5b9201f9c5a8682ca935d04ae42"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddMirror.lean",
+      "bytes": 4371,
+      "sha256": "1b0f593f713ae30f31cf52e5c105097bc540171a3bd1834649f87931a04bb45d"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddReview.lean",
+      "bytes": 2543,
+      "sha256": "47b1ff1e569f2aa440953381ade5038fac686feb75258e3fde47cb01644d48e9"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddRoots.lean",
+      "bytes": 4549,
+      "sha256": "692dad8dc168c9171b1de0c901fc74605744694ac47a6952b6c60a9247817f5a"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsOddSound.lean",
+      "bytes": 5313,
+      "sha256": "fda91080feecfd5e7127190385a07ce59bf71d15d7cdfaf24c7b9c4168c98b43"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsReserve.lean",
+      "bytes": 15875,
+      "sha256": "17e66205e1da95534afbf356ac8a2682776bfde23f6364e1c5dc08df3a71692f"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsRight.lean",
+      "bytes": 18752,
+      "sha256": "3a4503d972220568fdbab0c3f015f70d5f958d5d74b289afa7d0e53400c927e3"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/FourColumnsRightFamilies.lean",
+      "bytes": 19650,
+      "sha256": "be6b07554904896247c93b2572199acd620f9450c4a93a83df8ffdf7b7ba43f0"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/InfiniteNarrowBoards.lean",
+      "bytes": 14746,
+      "sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/narrow4_odd_lift.py",
+      "bytes": 4737,
+      "sha256": "ec2e5824bbbec365742686c84262b03f2392f9bab954de4b14e9ccbcdffc43a0"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/NarrowBoards.lean",
+      "bytes": 20350,
+      "sha256": "eff3438ba14d7aa596bd52c73836059ec3785159c250947901f941e4ea3d1db7"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/NarrowReviewChecks.lean",
+      "bytes": 4503,
+      "sha256": "297261a305d9bec823111fc047bc9ccfa3252f5e291a8c19efbc22c92c92f4ab"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P0_0000.lean",
+      "bytes": 707880,
+      "sha256": "9eb7007a9c68debd6a5b9a48a9019e5e47847ac9d2a2ae6c506b744820a735d1"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P0_0001.lean",
+      "bytes": 675857,
+      "sha256": "0bbe845917cd4c07949a47f5bec01e10d1f9892370bb57f9fa0f223910310ee8"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P0_0002.lean",
+      "bytes": 126508,
+      "sha256": "9010cc5e95b8464f6aa2d9c525495e4ae0fe2dd6715ea3bdb39a2d905020a829"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P10_0000.lean",
+      "bytes": 2625,
+      "sha256": "33b9a16041e929de5927905cc3f9998c1d02a0ed615071a9a2f72313d5b167d5"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P11_0000.lean",
+      "bytes": 3218,
+      "sha256": "58fb55f8281798b25950d1f37296ba234fbbce73613d1106eedc375e72e5df43"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P12_0000.lean",
+      "bytes": 120918,
+      "sha256": "4b0fca5110e7b3e5fe8e4a9d829f39fb93b0c34ae71e67e0c269b28071f0fac3"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P13_0000.lean",
+      "bytes": 136729,
+      "sha256": "0b1f571df4021436b2544f08ed60ee99d0c702b35eb9148b1db3a496abaa3b91"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P1_0000.lean",
+      "bytes": 697397,
+      "sha256": "94873b32bd3250faef98c3a3b57f616b0459a3b24d3ba46ce9432eea86cf84de"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P1_0001.lean",
+      "bytes": 227715,
+      "sha256": "b261c5a1ccc79e179682c70390836c1a58294c6713d447c823932206c956f12a"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P2_0000.lean",
+      "bytes": 697303,
+      "sha256": "8039093fa6905ae22539a0f21f8fa981792e752f0252c6efc4d9e4cb528f17b7"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P2_0001.lean",
+      "bytes": 227798,
+      "sha256": "471e64ef1d627d38f3ab2a350ad97c3bc2cdf1a423a9dd674f19686916150cdb"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P3_0000.lean",
+      "bytes": 696614,
+      "sha256": "4cc1dd5b2e80e53fb1523247c44b5d8f4c15d80f3de288058b4aa880885ef923"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P3_0001.lean",
+      "bytes": 123763,
+      "sha256": "b854881a6e0b33c21c4c2a1f038b613bd387aff1ce4d35f017d22e9be3124f73"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P4_0000.lean",
+      "bytes": 696443,
+      "sha256": "e8f695cec46deb291d5e5102f5710d231c810e8792ef8ba3646acb27c02988c1"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P4_0001.lean",
+      "bytes": 123948,
+      "sha256": "ecdff5497df19a24a471f0d9a7171fc12befe963a1e0cbe61749acca456351d9"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0000.lean",
+      "bytes": 777235,
+      "sha256": "534978f51ca0a9f635e8778cb66742c36f69c3243614d3fc39b7fb683dd4da83"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0001.lean",
+      "bytes": 781212,
+      "sha256": "cf1063a7d68c96a4d3dfd70367d2391db3b1513e95a8300faed00cc64770ef85"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0002.lean",
+      "bytes": 765631,
+      "sha256": "1e2987f0bf68e44d2a0fa0b4d4506814ed52b0f4ab92cb3e60259faefbdfe433"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0003.lean",
+      "bytes": 767717,
+      "sha256": "78f0968a9eb862881fd112d4d67cae21666c4dcf40c01c6bc1f5a4e1c6002856"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0004.lean",
+      "bytes": 765425,
+      "sha256": "58471c90a47868e703883792060b54fd2697ae678c4ccaf89cc2a9db7db574dc"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0005.lean",
+      "bytes": 744604,
+      "sha256": "ef710c909f49165b6b4af06945f12bdf18d8d8d190f925c6d157031b935bb434"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0006.lean",
+      "bytes": 741960,
+      "sha256": "5415ac9b551f107782de62e0dc56e90f218d04c6418de6d46a28d27260a9db99"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0007.lean",
+      "bytes": 742480,
+      "sha256": "5af2935598060a86181f0c2a429fddc2e5d851e3ea91331fd7e5c432cdc5014c"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0008.lean",
+      "bytes": 723186,
+      "sha256": "dd906a0daf9f85404ea7201397dc4ce2d89bf2525cb5d33f5ca1a177afdb3fd0"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0009.lean",
+      "bytes": 721181,
+      "sha256": "5db1f9f9a0ce1bd772e9dee015c569a20eaf2ef7788dcd3798b9ca28fc51da5b"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0010.lean",
+      "bytes": 714195,
+      "sha256": "8c461e51ccaac5e708f7200e9d15dbf8817518eb7339d2f5285e006179f63646"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0011.lean",
+      "bytes": 704258,
+      "sha256": "9fb6540009e8d79e743bb62489e97fd6b97b8c2e8f870f05b842ed4c2f1ffa1a"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0012.lean",
+      "bytes": 693694,
+      "sha256": "9006d0223d5dccf50a11e1999324cd248531a9dfbdb55f3ae68d21e3f5ca1f73"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0013.lean",
+      "bytes": 676590,
+      "sha256": "0f77caa51580e6eea3082234f45a9dff6ce91c1f855d2c1d4bfa48e82ed162a7"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P5_0014.lean",
+      "bytes": 312778,
+      "sha256": "b60242b3fdcc9f975c216cb07d7dd83d8c633b05640867abdbfccf1483429eb0"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0000.lean",
+      "bytes": 789695,
+      "sha256": "8f5b216d16f9ecb1cdbce5179a657749e6b5520c80a2f0ca12f175c8f6759c35"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0001.lean",
+      "bytes": 769189,
+      "sha256": "38b1dc5a2d4b1fd2328df44a7f5f6cd9cfb552e3676d0851c6c5fe01a5440152"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0002.lean",
+      "bytes": 763504,
+      "sha256": "cec4c192b6523729a6e9a4926eaff89f4f9eded01673cae76f716ace85e5ceb5"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0003.lean",
+      "bytes": 749690,
+      "sha256": "8da3c19ea6c9ca4de31651b01066451d1a665aa6942a68e1d0dc5b0b227e0dc5"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0004.lean",
+      "bytes": 744070,
+      "sha256": "f341b5007a0aba08e1d3b82f745f871167bec555cb4c6a9f663a5bce4c7111b7"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0005.lean",
+      "bytes": 726665,
+      "sha256": "2fa1fc3fd192aa48c1fc15ad1ed214b7e03840629cba4fc3bf979ab1430842ef"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0006.lean",
+      "bytes": 718549,
+      "sha256": "00e194b16cca7d5fe533d47a7c6b2b33dbe3a3fa0ddda91c8bf5415f2f1eb3c6"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0007.lean",
+      "bytes": 706010,
+      "sha256": "2c2197edf2c5e85c69a99ea54402fef57cf6307afe9de27990a9721da409d91b"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0008.lean",
+      "bytes": 683421,
+      "sha256": "82d00b51c5ffdb44f094828eff4007e9e1ddac4d368b4ed393771de11e608317"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P6_0009.lean",
+      "bytes": 456828,
+      "sha256": "6bee86cc9e9992ce43d195c945e344dd89ae12802f1b241edd7867654fbf7701"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P7_0000.lean",
+      "bytes": 409,
+      "sha256": "d52ece6236e37e9508679335f70be133ac8c16e8b4825606c61d363ff8b31dc7"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0000.lean",
+      "bytes": 790343,
+      "sha256": "ab4cec79aa3516c7e41e17a2fda12ba11d8e448eeae870bffe2ea5fd28ed4907"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0001.lean",
+      "bytes": 772064,
+      "sha256": "c9358b18db1b8911d9ba9f51c68d6b526e65e21d53b55a976b9369db335562d1"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0002.lean",
+      "bytes": 760094,
+      "sha256": "bc05abbbefa2a3b2fc5ded14646df64cb924dfebd6b6adaa1fd935d919e85dbc"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0003.lean",
+      "bytes": 752243,
+      "sha256": "facf0429559b248cda5ba85de7539bec6be32b4cdbe54621b2f9eb30ba2eb3b1"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0004.lean",
+      "bytes": 730833,
+      "sha256": "39c00e77e7afe9a18a86fde469db2fcdd0ceaa24840e14283cef50ccc83d4457"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0005.lean",
+      "bytes": 717255,
+      "sha256": "893a7c003f2b2d242f9c159c00ed8f1e4556f2748422d7e7d82bc79d247255e2"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0006.lean",
+      "bytes": 698611,
+      "sha256": "0b73b87d87df5758edfb3a332d6a555c20e53fb5b0720a9f2b1642df4acefb22"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P8_0007.lean",
+      "bytes": 473782,
+      "sha256": "0649174bb287fc160b548310fa85a014240f26ae659d8e2032ac51bfc22efdd3"
+    },
+    {
+      "path": "proof/Connect4Proof/experiments/OddCertificates/P9_0000.lean",
+      "bytes": 407,
+      "sha256": "3cedf8682ff57fe501fb6f11946b65b0145d3a23a2325973e2dc75da8c8f62fe"
+    },
+    {
+      "path": "proof/Connect4Proof/lake-manifest.json",
+      "bytes": 3150,
+      "sha256": "d4088c66d6b2ec458a89596e55e58cbee66835098e579c56d78a987b158ff747"
+    },
+    {
+      "path": "proof/Connect4Proof/lakefile.toml",
+      "bytes": 240,
+      "sha256": "3702472bc3f5f4c7c47173d97b23646c493d275e720e00a3d1c3e04cd75fc275"
+    },
+    {
+      "path": "proof/Connect4Proof/lean-toolchain",
+      "bytes": 29,
+      "sha256": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    {
+      "path": "proof/Connect4Proof/README.md",
+      "bytes": 2167,
+      "sha256": "99b4aacd02ad35f0c8128a1209753ce2cd783b9fe1b2e6b9bd64a412896f2571"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/check.json",
+      "bytes": 2266,
+      "sha256": "912011fce681987915e258d581f2d54d10785e6ca3309ffb9cd5b789b7d01a41"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/audit.json",
+      "bytes": 50948,
+      "sha256": "1e5f44eac4dcf334facf60ef77e325a6dc9b4f6ae50e421295bcb7bf60a3dff8"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddAssembly.txt",
+      "bytes": 119,
+      "sha256": "949edb53847f2c491ab4f9cf14953021c8c21594ed72f492f0acca3ca255a4c2"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddCore.txt",
+      "bytes": 761,
+      "sha256": "8a418548e241071c2b884179db884f684e64b9b1852003a25cb77fe6a6a4205d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddFinal.txt",
+      "bytes": 674,
+      "sha256": "c9339666f26e33b607815063b414f8f368fef83b545a70a8139f9a6d1649b40d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddFinite.txt",
+      "bytes": 362,
+      "sha256": "4de1ebd114ed2b93d91c025ac682bed4396333fc8412d4d05137c072678bb871"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddGeometry.txt",
+      "bytes": 95,
+      "sha256": "d434f035eb84d2672d31bbec3e7756c8833a89ca1e7038c98c62bfb995fcdc3d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddLift.txt",
+      "bytes": 279,
+      "sha256": "f0c2798726f08118d01d2d8e423d80a02399046be7c632c45538d06b917d2bb6"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddMirror.txt",
+      "bytes": 101,
+      "sha256": "60f2facedba5d4a119deef837509b57d2ca2a847c6682ae036c7435111f02ae9"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddReview.txt",
+      "bytes": 1570,
+      "sha256": "cbe87e3dfc2f11a458d3c67c32e124b008ef584714b15f3c5a1a2a4834a9bd83"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddRoots.txt",
+      "bytes": 378,
+      "sha256": "e208abaca3b403be7a8a27e85ff28c28857c0c5a211dfe708455438c90b991e9"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/FourColumnsOddSound.txt",
+      "bytes": 99,
+      "sha256": "8497e682ea5254be18c395ca62140d557bf2461a0d80fe034f719e399f785d58"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P0_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P0_0001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P0_0002.txt",
+      "bytes": 105,
+      "sha256": "ac4fe10c27697926ca8ace1a6f011145583c5e54024ed146ab19606f09816fc0"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P10_0000.txt",
+      "bytes": 106,
+      "sha256": "55e9e11ec53996208d049d61a084c0e427155f485098bc5fec65294b7c88f541"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P11_0000.txt",
+      "bytes": 106,
+      "sha256": "5b21d0ae4e51b1fd353b0afc0acb57e973fa22a62904e88462e193764e68e5ae"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P12_0000.txt",
+      "bytes": 106,
+      "sha256": "365900fa73e5edb2a6bab9fd44a7e2c9dcd35b174b4f8e647a591c253d08f19e"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P13_0000.txt",
+      "bytes": 106,
+      "sha256": "b139c02d3b7e8f352a27d72d3ba9814fb4ce9b4c075849724bca27b180d09186"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P1_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P1_0001.txt",
+      "bytes": 105,
+      "sha256": "e05fbae17d6e2f7ff219619825efceda49e0ff9f73ae59a393174d6dff36b2ac"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P2_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P2_0001.txt",
+      "bytes": 105,
+      "sha256": "c1dce0bcd9dafc3c283817196d9f886308f4ec730050686a98b5b02fdb5187ec"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P3_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P3_0001.txt",
+      "bytes": 105,
+      "sha256": "7ed29f1afb09c219a8583adba0035d7dce5dfc36e8fdde0b6bf1406393c1d235"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P4_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P4_0001.txt",
+      "bytes": 105,
+      "sha256": "85fae661e2247b5b3ec4258971494913a2df61a18def1179f3f03a41c8b2601d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0002.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0003.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0004.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0005.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0006.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0007.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0008.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0009.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0010.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0011.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0012.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0013.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P5_0014.txt",
+      "bytes": 105,
+      "sha256": "2451228f174bf1b9a1b23cb9341f10159836432680d7297668421322fe4d3405"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0002.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0003.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0004.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0005.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0006.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0007.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0008.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P6_0009.txt",
+      "bytes": 105,
+      "sha256": "01012597a88291dfc540d84d0c57e8a96db26a41104288e5360820b4dfab0fa5"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P7_0000.txt",
+      "bytes": 105,
+      "sha256": "9cacbc0a496ab0253d449a170efe614d5358a1478d1f3c32ed4dc17bff1be7f2"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0000.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0002.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0003.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0004.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0005.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0006.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P8_0007.txt",
+      "bytes": 105,
+      "sha256": "9ec3c0cdac706821be7532037bf8dbdd4384bcfecd3146cf192f5db7e68b3b24"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean/OddCertificates_P9_0000.txt",
+      "bytes": 105,
+      "sha256": "8f87e6f4968d21c9b5883ebaa6c76167ca52b92fcdf564f81f5b1545e1c7665f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean_generation.json",
+      "bytes": 3303,
+      "sha256": "b9b1f4e5821d5b9ac1e2fd664c0a4e11838993519fd26f593d9d6ed2dd9b0923"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean_small_strategies.json",
+      "bytes": 12044,
+      "sha256": "cd3f164c923e8101193113dd365e0916e224f9a34dc045c2a1cbee41f231ef93"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lean_source_review.json",
+      "bytes": 8357,
+      "sha256": "c29a383c1f6e2a29506823426c7d52745528156083b5509d43eb9401bc23889e"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/lift_regression.json",
+      "bytes": 3807,
+      "sha256": "e6abec56a5e3a4e4dc79d775f66e708c9b4a391ff544b9d36aaea46d14de0678"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/audit.json",
+      "bytes": 23024,
+      "sha256": "36ddf498e271f3fcc4935d180b20e48ce4f599d1c19790a88b8d633a9d64fa26"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddAssembly.txt",
+      "bytes": 119,
+      "sha256": "40ce8e2f47c49f25e7d77341f27edcfcfc56e05a6dc309897342158b97f9bf22"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddCore.txt",
+      "bytes": 111,
+      "sha256": "25fda03bc9eea31d2dcc13dc31db81b2fe6c40cfa3ebe3b87d30019b65b471d0"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddFinal.txt",
+      "bytes": 113,
+      "sha256": "ab7ee8c3f955095a11de2ed63fd1cc4394f5cb3c35e7d93099b22a6342faba14"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddFinite.txt",
+      "bytes": 115,
+      "sha256": "012743910972a7c9a6ddf20a954aed387ad21f050618bf24c99dd8d6fa044631"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddGeometry.txt",
+      "bytes": 119,
+      "sha256": "8ddff4ebcabeabc26a9fa9c1b6af972f2239f3468e2ba22c693c28b81b1bddd8"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddLift.txt",
+      "bytes": 111,
+      "sha256": "08fcdbc7829bc12db1ea90688503b11e7de448b37681b9994535f7b3ab1e2a4b"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddMirror.txt",
+      "bytes": 115,
+      "sha256": "a5333af30f2023ca6604946804adf2e843fc839ec9db7a4b76ff71fbd30378ab"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddReview.txt",
+      "bytes": 114,
+      "sha256": "726c9be6050505caac1bc7a30eb00a68e6096b16049091363b130be2d1d1bbea"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddRoots.txt",
+      "bytes": 113,
+      "sha256": "e2fc0d721790fd26aa5059e570714ad2312f7b308dde76d9b5d85047a50530f7"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/FourColumnsOddSound.txt",
+      "bytes": 113,
+      "sha256": "f420606b4dc0b457a6f36562a6b1fe11ee8f3ff7225641c8abfe430e85eef19d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/high_control_win.lean",
+      "bytes": 394,
+      "sha256": "749fd15b6d3b8e58681b683fcf5aa90383a0dc107313c4a0764736bac208d59a"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/high_control_win.txt",
+      "bytes": 562,
+      "sha256": "f5eeaa18a293bcf5fbb59098fe437bcd08d3525d1c07890d80b58e8102852d04"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/illegal_full_column_reply.lean",
+      "bytes": 238,
+      "sha256": "8c1d2824ac4723c5285b516bdb03f683b8b90515e14478c1a76917adbfed4152"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/illegal_full_column_reply.txt",
+      "bytes": 223,
+      "sha256": "178c47f2a71b16416a10a3496dab665a2d8de4225736fb6b7cdb7bb26ae30d3c"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P0_0000.txt",
+      "bytes": 124,
+      "sha256": "82f819a04e0fda2307e4e9f16dd8018364cb8e8d480763a81d3af3deb052ab1f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P0_0001.txt",
+      "bytes": 124,
+      "sha256": "013df7789548577b1149ffea1bea0b314c76652b25632fc5eea48fcd8df000f8"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P0_0002.txt",
+      "bytes": 123,
+      "sha256": "89e8bb641065decef14bdfa96e73b5b31df203004865b1cb115264e27497a703"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P10_0000.txt",
+      "bytes": 123,
+      "sha256": "084fefa945557df5ddf629dac1569c5cdf2d28bca36fcea6fe137fbe4e1580dc"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P11_0000.txt",
+      "bytes": 123,
+      "sha256": "947935446e97ab4de692d3aadd348a81835e9fa1e42f56e80ad8f5f011e46873"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P12_0000.txt",
+      "bytes": 125,
+      "sha256": "3179165705ef691af6a1ffcfb887f5660dceeb32eabbb601bb5e1603d8953c1f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P13_0000.txt",
+      "bytes": 125,
+      "sha256": "69a1e768cc6a8054b8c5d41622957ad3df48c40bd914cdcc03d012cbf22c60cb"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P1_0000.txt",
+      "bytes": 124,
+      "sha256": "b5523ecf0602ee22aa8b3ceb6d61e2fba9487aa241251a12f648f2578da201b5"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P1_0001.txt",
+      "bytes": 123,
+      "sha256": "6b97eee6b8e2d041a87f907650c9941f9d9ad0bf6aec0117413af6f0b1674bd9"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P2_0000.txt",
+      "bytes": 124,
+      "sha256": "c0fef05490fcc3393ca703371be5f57a8a8eaa84fafc766fa1096fe7b12345f4"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P2_0001.txt",
+      "bytes": 123,
+      "sha256": "cb0c488abea85b8039861e6cf1d0af7f2c943638e005bae9fe504f58430f9d63"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P3_0000.txt",
+      "bytes": 124,
+      "sha256": "b4f0faa0896a0b95d83372e39e5071262597e25f169723138e95de4080f99573"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P3_0001.txt",
+      "bytes": 123,
+      "sha256": "adf8b3e8244edb50adc4044d748f1969c04952a3ea9783220d3e385eff65c161"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P4_0000.txt",
+      "bytes": 124,
+      "sha256": "61302e23adb3a0a728a18a801459ba1f272723a28275016181f0444477505b66"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P4_0001.txt",
+      "bytes": 123,
+      "sha256": "e015bf6a20cbe6dd33ca696f55fb2dece6debfa516b9f22c5715b8153d4ec144"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0000.txt",
+      "bytes": 124,
+      "sha256": "495a607cc0365257ef165f5f26a80a5026f9cbd651ca88fb942bf4e33edade4d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0001.txt",
+      "bytes": 124,
+      "sha256": "1976560ad4ecf37710fbef0e73ff096980d35d6b7d986c6aa40892dbf29b80ac"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0002.txt",
+      "bytes": 124,
+      "sha256": "5ee923719c7d9b2af0dcfbd2e6c4b23cba4c216b2ba9e5640e39444eeaba2638"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0003.txt",
+      "bytes": 124,
+      "sha256": "62408c51536f669e52b8d7afb0698df49dd287a1efd50100fbc660d71cfcb06d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0004.txt",
+      "bytes": 124,
+      "sha256": "979def476d7954003b2fa8e7533645232d447d3779ad36d396568bdf5fde28f3"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0005.txt",
+      "bytes": 124,
+      "sha256": "32d84a46659004151c87e83f4f9dbed9530d5305013b87d4f2210323c71ce532"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0006.txt",
+      "bytes": 124,
+      "sha256": "ffb1325f9463cf58451b65c28457952545878c67ab9d3a22dc72c5231dc6ec7b"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0007.txt",
+      "bytes": 124,
+      "sha256": "2a74461a330d4a6aa0e901413fad5d1d232e12b8bd2abe08dd49ee41d85294a9"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0008.txt",
+      "bytes": 123,
+      "sha256": "01ffe111129d25567007fee6647928cd09f346d23a631045a42af8c822bcb87e"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0009.txt",
+      "bytes": 124,
+      "sha256": "ca6148edd68b91981c312ab6f94699cd650aecbcb129f065e32aaa92dc56bfce"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0010.txt",
+      "bytes": 123,
+      "sha256": "37257c884940cc6b14dc251b1a91e177c1b2be4aa24ba0a367fe4c9e6642193e"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0011.txt",
+      "bytes": 123,
+      "sha256": "3710d64a1060bde0875bf50c002552f3608297aa7991352de2d69093fe58fee9"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0012.txt",
+      "bytes": 123,
+      "sha256": "6e81f1d255d483ca21cf1868c8e29613103d12569258db6fa116396f74fef280"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0013.txt",
+      "bytes": 123,
+      "sha256": "750014d5b6677c2d6883c6c76b13f3fb153cece96c7359873762b2b8e3de44f1"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P5_0014.txt",
+      "bytes": 123,
+      "sha256": "e719a28be5201b5feca2c8b0fc70aa23d812fa74319666465b27a9f4950943b8"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0000.txt",
+      "bytes": 124,
+      "sha256": "64f929ac4b0cdfd9d251b6fba5b5b5bf539d08b9e43a2e478c769c44f4af51e6"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0001.txt",
+      "bytes": 124,
+      "sha256": "5e6f4a637049147962e0c3c40aed5aefada5aaf7385daa0f8ae44ab11baa43bd"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0002.txt",
+      "bytes": 124,
+      "sha256": "0de1a635ab7b8a02d85dad529040a8143664f1a0e19de2028a5d4529f537b294"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0003.txt",
+      "bytes": 124,
+      "sha256": "9455024ed8433f6a0d0dc792943aad0fa2da8248965d6ea17b8db02fdbb2486a"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0004.txt",
+      "bytes": 124,
+      "sha256": "612f5b0133cee4ff0344553bd3e1ece5491047b5b660e471c319b6744369dad3"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0005.txt",
+      "bytes": 123,
+      "sha256": "71e85b9b380556ba9309707a3d542927f73bdfaa47f2013b2055aeb8ed59023f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0006.txt",
+      "bytes": 123,
+      "sha256": "6f0a43330f6807905b1eb64cdf308f4ea75f912ca2bee8b21b466327d3ab457d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0007.txt",
+      "bytes": 123,
+      "sha256": "3c8c19f91ba46c470844afce9fc39cf0ab2880079e659af96a0caa56a7418e34"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0008.txt",
+      "bytes": 123,
+      "sha256": "28a6b0af584492f976b45d7ef93b4fabc76e7188d02e23561b3e2dbeed7a85e1"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P6_0009.txt",
+      "bytes": 123,
+      "sha256": "6737535b73316c885384372888ccab326c65176f21939f6782301afa83294734"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P7_0000.txt",
+      "bytes": 120,
+      "sha256": "924e13e5b6fe9574220383ec39b63ebf45d2f1d87b3f436ff5dafd863f6fc9df"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0000.txt",
+      "bytes": 124,
+      "sha256": "07778d77dfd02c1d59df510908dcd4e704ecaa13770bc0d82a4f04b70c8bdd59"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0001.txt",
+      "bytes": 124,
+      "sha256": "9574c64476ec0fa120730e9a3ccb67ee754aed72441f610698e367ffadb3bcec"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0002.txt",
+      "bytes": 124,
+      "sha256": "e4d2e3ba678c07742ab67a44bb915556614c2d9754db0e54bd3bb00f1733c417"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0003.txt",
+      "bytes": 124,
+      "sha256": "214e10fcf9dd860f950bb0547dc5ba7781835c4a99e14e49ceb5c2c76976e435"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0004.txt",
+      "bytes": 124,
+      "sha256": "e36fec7fa0ec52c48a99c323968600d06bb682b30fa0b7bb4b6682f31b328edb"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0005.txt",
+      "bytes": 124,
+      "sha256": "809078d786b5ba2e960222d7f65e54a00380e014cec797235da2ded4efdb388d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0006.txt",
+      "bytes": 123,
+      "sha256": "0aad397469533d5aec8945166f73866bd3d3a18369960931aff3add7e7f72ca3"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P8_0007.txt",
+      "bytes": 123,
+      "sha256": "2a58777ce87dd3b74468f61d9e5eeaadb04cf921ed26aa36b0e5422d423b246d"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/OddCertificates_P9_0000.txt",
+      "bytes": 120,
+      "sha256": "c51947b281812ef2692924da512fd9f006c40ecef37cd4a5d6b4a94d6e3d781f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/virtual_full_is_not_real_full.lean",
+      "bytes": 310,
+      "sha256": "c434156a602bb39143bdfa628adec276af12047d87ff2569759f19de89bb9ee4"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/replay/virtual_full_is_not_real_full.txt",
+      "bytes": 322,
+      "sha256": "1fb0c33de2f09bf6ca45b97b9a50655763eecd53b0c18886378a9c4083e4babe"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_odd/strategies.json",
+      "bytes": 2337863,
+      "sha256": "b1ec2114759d439db7c767df635ff350deb58fb5e3ce3be6b5464924d943fa95"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/audit.json",
+      "bytes": 9036,
+      "sha256": "e24fec3bb385741ada2d8851af454dcfa2280a210cf731cd7de766d640614b43"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumns.txt",
+      "bytes": 23759,
+      "sha256": "be2515b9480e6b206fa340cec0e59df0a56826b2dc8a8c96ffa5933828946ea6"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumnsContinuation.txt",
+      "bytes": 2004,
+      "sha256": "ae19830363c40516b32d568f86014eab1144d4fa76ccb0bac79eb75075013b0c"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumnsFinal.txt",
+      "bytes": 1065,
+      "sha256": "b647d3775ad4d1d8f73aad0e345bc0f66bc07a82004abb420c7be67ca3eb6484"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumnsReserve.txt",
+      "bytes": 1558,
+      "sha256": "df26c72c6d995d03eff7244841f28078fb5742d306147bed1e517b408980b87b"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumnsRight.txt",
+      "bytes": 929,
+      "sha256": "4829a7c8d7eedb6c3f68aa57056e68465fafbfa61746b082d85c9d1c454c1d9f"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/FourColumnsRightFamilies.txt",
+      "bytes": 1782,
+      "sha256": "4c11e83b59198f9377ad37f127fd9be88f883fc621b8a3061b77b57e4faaf961"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/InfiniteNarrowBoards.txt",
+      "bytes": 1945,
+      "sha256": "36cf696afb1c86ea53cc69daff2ea0006525ba25ed8ac9e5d42ad5cbbf32217e"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/NarrowBoards.txt",
+      "bytes": 1841,
+      "sha256": "05c2844e55f8f3f7ccaea819cdd1e29898455ee4676803f0593f75fd4a35bfa3"
+    },
+    {
+      "path": "proof/Connect4Proof/reports/narrow_review/NarrowReviewChecks.txt",
+      "bytes": 4985,
+      "sha256": "e03f3cad442285167c3edceb8187a11b66124741a4365f50719c980b1df5d08a"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/build_narrow_odd_lean.py",
+      "bytes": 9202,
+      "sha256": "f358e8bc60d51178194799cedb0cc021c6d4bbe97a876a1262e708317593a5ea"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/check_narrow_odd.py",
+      "bytes": 5134,
+      "sha256": "e2f8fc3463d94e2af97cfb84479bc1041a8188fc7249aef56cf9aed937a61d87"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/check_narrow_proofs.py",
+      "bytes": 4717,
+      "sha256": "29f494d7c429a61f4715a7e731a8a631b59ee4456781b716e8186375d8e57564"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/generate_narrow_odd_lean.py",
+      "bytes": 7095,
+      "sha256": "7e8fba9ebcb125cb71beac25525c0118dcf3bbe2cf2d0bc32976502a3f6dcc43"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/replay_narrow_odd_lean.py",
+      "bytes": 8759,
+      "sha256": "8ad657f66a63ac07181ba824ac3020eeb423a68b04036e16632f5addb35dab65"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/ReplayOddModule.lean",
+      "bytes": 1980,
+      "sha256": "dc4482b532b98b756fc0ff03cf812e8c338cbc688a84d4deaf70a34462d8549a"
+    },
+    {
+      "path": "proof/Connect4Proof/solver/test_narrow_odd_lift.py",
+      "bytes": 6376,
+      "sha256": "14af385f3e919ff0aabcf6e96eb56b6340789927df8dc511a99b90f7c796eb27"
+    },
+    {
+      "path": "proof/verify_narrow_bundle.py",
+      "bytes": 10148,
+      "sha256": "3443f40f65ff57b784c6e73a1ea3f87ab19b511aaa4d5f6114e3e5dc218f87d0"
+    },
+    {
+      "path": "proof/ArchiveReview.lean",
+      "bytes": 1052,
+      "sha256": "3926ff71f548c68dbafbf8157431ce953562e0ba25c93361274097db389ffe94"
+    },
+    {
+      "path": "proof/Connect4Proof/third_party/Lean-LICENSE.txt",
+      "bytes": 9231,
+      "sha256": "e872b4a399a9cd078babf679143a42d6277bc1ee152b6e286ea95b4cee8e227f"
+    },
+    {
+      "path": "proof/Connect4Proof/third_party/NOTICE.txt",
+      "bytes": 287,
+      "sha256": "51ffb1eb1c6454c027fc3de2e979ea8e2f83b24b282a78483719bd440a2fd032"
+    },
+    {
+      "path": "proof/REVIEWER_GUIDE.md",
+      "bytes": 3675,
+      "sha256": "140e8bf5ee98661c71d25ff5b978da765441a6a77aa31e8f3c670c35ca8b3e19"
+    }
+  ],
+  "proof_files_byte_preserved": false,
+  "new_lean_build_performed": false,
+  "mathematical_proof_sources_byte_preserved": true,
+  "editorial_files_anonymized": [
+    "proof/REVIEWER_GUIDE.md"
+  ]
+}

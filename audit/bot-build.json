@@ -1,0 +1,16 @@
+{
+  "status": "built",
+  "source_sha256": "9913e83cf4ad761f7315e10bdde38e2c91147af40dff502652c2270f60793700",
+  "wasm_sha256": "b81d45573e1bee43d49ca36d0516dc3c342e9cb2f0bd4b5f0912f57861959c93",
+  "wasm_bytes": 9168,
+  "exports": [
+    "bot_history_pointer",
+    "bot_policy_pointer",
+    "bot_choose",
+    "bot_depth",
+    "bot_source",
+    "bot_score",
+    "bot_nodes"
+  ],
+  "compiler": "clang version 22.1.4"
+}

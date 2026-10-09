@@ -1,0 +1,16 @@
+Connect4.FourColumns.ControlTree (cap score : ℕ) (p : Player) : Board 4 → Prop
+Connect4.FourColumns.ControlTree.real_safe {h : ℕ} {p : Player} {b : Board 4} (ht : ControlTree h h p b) :
+  CanAvoidLoss h p b
+Connect4.FourColumns.odd_control_lift {h : ℕ} {p : Player} {a v : Board 4} (h7 : 7 ≤ h) (hh : h % 2 = 1)
+  (ha : OddState h p a) (hv : Valid 7 v) (ht : ControlTree 7 6 p v) (hr : LiftRel h p a v) : CanAvoidLoss h p a
+'Connect4.FourColumns.fastFour_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.high_supported_no_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.tail_round' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.pair_region_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.odd_control_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.ControlTree.real_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.ControlTree.mirror' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_odd_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_finite_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_odd_no_forced_win' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.four_columns_finite_no_forced_win' depends on axioms: [propext, Classical.choice, Quot.sound]

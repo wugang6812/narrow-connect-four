@@ -1,0 +1,18 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:136:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:149:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.reserve0_blocker' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:204:35: warning: This simp argument is unused:
+  hh0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [cellAtInt, hh1, hh2, hh3, h0, h1, h2, h3]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:204:71: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:303:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:319:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:334:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsReserve.lean:339:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.opening0_safe' depends on axioms: [propext, Classical.choice, Quot.sound]

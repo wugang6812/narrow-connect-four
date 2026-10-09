@@ -1,0 +1,266 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:185:25: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:190:26: warning: `if_false` has been deprecated: Use `ite_false` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:307:22: warning: This simp argument is unused:
+  hr
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [stone_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:333:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:345:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:357:21: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:372:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:446:50: warning: Variable name `hb2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:450:47: warning: Variable name `hb1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:589:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:591:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:585:36: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:597:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:602:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:862:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:987:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1018:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1018:78: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1022:42: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1026:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1026:78: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1030:52: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1034:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1034:78: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1038:42: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1045:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1074:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1080:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1086:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1092:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1096:68: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1096:80: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1098:23: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1102:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1113:23: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1120:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1124:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1130:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1138:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1150:64: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1155:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1159:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1161:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1164:24: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1167:32: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1167:90: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1170:32: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1190:20: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1200:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1241:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1255:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1255:78: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1259:42: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1271:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1275:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1316:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1337:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1337:78: warning: `if_true` has been deprecated: Use `ite_true` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1340:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1344:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1018:66: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1026:66: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1034:66: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1096:68: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1096:80: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_pos rfl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1255:66: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1337:66: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1337:78: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_append, List.length_singleton, if_pos rfl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1359:62: warning: This simp argument is unused:
+  show q ≠ partner q from fun e => partner_ne q e.symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, emptyBoard, Function.update, stone, show partner q ≠ q from partner_ne q] at hs
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1360:64: warning: This simp argument is unused:
+  show q ≠ partner q from fun e => partner_ne q e.symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, emptyBoard, Function.update, stone, show partner q ≠ q from partner_ne q] at hs
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1375:99: warning: This simp argument is unused:
+  show partner q ≠ q from partner_ne q
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, emptyBoard, Function.update, show q ≠ partner q from fun e => partner_ne q e.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1376:45: warning: This simp argument is unused:
+  show q ≠ partner q from fun e => partner_ne q e.symm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, emptyBoard, Function.update, show partner q ≠ q from partner_ne q]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1361:4: warning: Try this: intro c hc i hs
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1413:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1422:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1403:8: warning: Try this: intro q hq hw
+'Connect4.FourColumns.white_nonloss_four_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1448:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1448:45: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1455:22: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1455:41: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1458:22: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1460:20: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1471:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1480:24: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1483:22: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1490:31: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1532:31: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1532:50: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1655:17: warning: This simp argument is unused:
+  Int.mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.add_zero, Int.toNat_zero] at hk0
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1841:10: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1843:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1845:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1847:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1985:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:1995:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2178:22: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2178:41: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2181:22: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2185:24: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2201:24: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2204:22: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2208:24: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2242:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2244:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2275:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2279:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2285:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2446:17: warning: This simp argument is unused:
+  Int.mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.add_zero, Int.toNat_zero] at hk0
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2660:41: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2660:60: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2706:40: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2706:59: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2743:41: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2743:60: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2868:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2868:45: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2871:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2875:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:2900:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3020:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3030:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3198:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3200:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3231:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3235:30: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3241:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3405:17: warning: This simp argument is unused:
+  Int.mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.add_zero, Int.toNat_zero] at hk0
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3648:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3650:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3650:45: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3659:28: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3661:28: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3661:47: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3749:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3751:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3751:45: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3774:26: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3774:45: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3777:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3781:26: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3824:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3826:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3828:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3830:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3886:12: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3888:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3890:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumns.lean:3892:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the paper and acknowledge this proof artifact when using the work."
+title: "Lean-Verified Draw Strategies for Narrow Connect Four"
+type: software
+authors:
+  - name: "GPT"
+repository-code: "https://github.com/wugang6812/narrow-connect-four"
+url: "https://github.com/wugang6812/narrow-connect-four"
+version: "0.1.0"
+license: MIT
+abstract: "Draw strategies for gravity Connect Four on widths one to four at every finite height, accompanied by Lean proof sources, verification records and a browser rules demonstration. The paper is licensed separately under CC BY 4.0."
+preferred-citation:
+  type: unpublished
+  title: "Lean-Verified Draw Strategies for Narrow Connect Four"
+  authors:
+    - name: "GPT"
+  year: 2026
+  url: "https://github.com/wugang6812/narrow-connect-four/blob/main/papers/paper-en.pdf"

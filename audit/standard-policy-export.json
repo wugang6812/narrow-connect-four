@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "source_format": "Connect4-packed-dag-canonical-v1",
+  "source_nodes_sha256": "71d08a453e9e386fa0f252e1a42fe1f17ead6c5cf7373e3d7c8a16b7d28288b9",
+  "accepted_audit_sha256": "9ce23ffa21b35d9f528370d09db07ec0b4df1925c324dc2f706b81c1c7e03a3e",
+  "node_count": 2503146,
+  "edges_checked": 5619953,
+  "reflections_checked": 329912,
+  "exported_bytes": 50881876,
+  "exported_sha256": "70fa968cd6222e46b88b5c57068dce308aa99afd60511ed691af2a11885518ef",
+  "gzip_bytes": 16294120,
+  "script_sha256": "d37801da517c9eff0a35002e463376bff45aaae8c1b67d6309ddb41faf993cdc",
+  "meaning": "Playing policy exported from accepted standard-board data; all board/reply correspondences checked. Not a new kernel replay or a universal all-position solver."
+}

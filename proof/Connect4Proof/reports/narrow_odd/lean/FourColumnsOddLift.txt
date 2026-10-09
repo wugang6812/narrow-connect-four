@@ -1,0 +1,2 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddLift.lean:158:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsOddLift.lean:169:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead

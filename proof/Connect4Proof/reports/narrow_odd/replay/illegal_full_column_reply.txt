@@ -1,0 +1,3 @@
+D:\AI Work\lean\Connect4Proof\reports\narrow_odd\replay\illegal_full_column_reply.lean:4:72: error: Tactic `decide` proved that the proposition
+  Legal 1 (play (fourTuple [Player.black] [] [] []) 1 Player.white) 0
+is false

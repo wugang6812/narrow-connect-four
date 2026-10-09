@@ -1,0 +1,5 @@
+D:\AI Work\lean\Connect4Proof\reports\narrow_odd\replay\virtual_full_is_not_real_full.lean:4:144: error: Tactic `decide` proved that the proposition
+  BoardFull 9
+    (fourTuple (List.replicate 7 Player.black) (List.replicate 7 Player.black) (List.replicate 7 Player.black)
+      (List.replicate 7 Player.black))
+is false

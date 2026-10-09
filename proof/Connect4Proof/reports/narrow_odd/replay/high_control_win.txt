@@ -1,0 +1,8 @@
+D:\AI Work\lean\Connect4Proof\reports\narrow_odd\replay\high_control_win.lean:4:228: error: Tactic `decide` proved that the proposition
+  HasFour 6
+    (fourTuple [Player.black, Player.black, Player.black, Player.white, Player.black, Player.white, Player.black]
+      [Player.black, Player.white, Player.black, Player.black, Player.white, Player.black, Player.white]
+      [Player.white, Player.white, Player.white, Player.black, Player.black, Player.black, Player.white]
+      [Player.white, Player.white, Player.white, Player.black])
+    Player.black
+is false

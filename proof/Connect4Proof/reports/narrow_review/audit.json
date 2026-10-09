@@ -1,0 +1,305 @@
+{
+  "status": "complete",
+  "toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "started_at": "2026-09-12T20:53:09+0800",
+  "modules": [
+    {
+      "source": "experiments/NarrowBoards.lean",
+      "sha256": "eff3438ba14d7aa596bd52c73836059ec3785159c250947901f941e4ea3d1db7",
+      "exit_code": 0,
+      "seconds": 14.355,
+      "log": "reports/narrow_review/NarrowBoards.txt",
+      "log_sha256": "05c2844e55f8f3f7ccaea819cdd1e29898455ee4676803f0593f75fd4a35bfa3"
+    },
+    {
+      "source": "experiments/FourColumns.lean",
+      "sha256": "2349724277603110efc00a49ad5d0692d4d362af160d1782452028966da2bddd",
+      "exit_code": 0,
+      "seconds": 26.879,
+      "log": "reports/narrow_review/FourColumns.txt",
+      "log_sha256": "be2515b9480e6b206fa340cec0e59df0a56826b2dc8a8c96ffa5933828946ea6"
+    },
+    {
+      "source": "experiments/FourColumnsContinuation.lean",
+      "sha256": "51bb149525ed3ca14c4b17998e5cfec23fc3545c5a827628f925c55876b57d7e",
+      "exit_code": 0,
+      "seconds": 15.171,
+      "log": "reports/narrow_review/FourColumnsContinuation.txt",
+      "log_sha256": "ae19830363c40516b32d568f86014eab1144d4fa76ccb0bac79eb75075013b0c"
+    },
+    {
+      "source": "experiments/FourColumnsReserve.lean",
+      "sha256": "17e66205e1da95534afbf356ac8a2682776bfde23f6364e1c5dc08df3a71692f",
+      "exit_code": 0,
+      "seconds": 14.712,
+      "log": "reports/narrow_review/FourColumnsReserve.txt",
+      "log_sha256": "df26c72c6d995d03eff7244841f28078fb5742d306147bed1e517b408980b87b"
+    },
+    {
+      "source": "experiments/FourColumnsRight.lean",
+      "sha256": "3a4503d972220568fdbab0c3f015f70d5f958d5d74b289afa7d0e53400c927e3",
+      "exit_code": 0,
+      "seconds": 15.461,
+      "log": "reports/narrow_review/FourColumnsRight.txt",
+      "log_sha256": "4829a7c8d7eedb6c3f68aa57056e68465fafbfa61746b082d85c9d1c454c1d9f"
+    },
+    {
+      "source": "experiments/FourColumnsRightFamilies.lean",
+      "sha256": "be6b07554904896247c93b2572199acd620f9450c4a93a83df8ffdf7b7ba43f0",
+      "exit_code": 0,
+      "seconds": 15.796,
+      "log": "reports/narrow_review/FourColumnsRightFamilies.txt",
+      "log_sha256": "4c11e83b59198f9377ad37f127fd9be88f883fc621b8a3061b77b57e4faaf961"
+    },
+    {
+      "source": "experiments/FourColumnsFinal.lean",
+      "sha256": "b3ddca079c74a66b473fa3e687d6bed1a18ea7d5d10c6d6314e73ecc3e9a1bb3",
+      "exit_code": 0,
+      "seconds": 15.058,
+      "log": "reports/narrow_review/FourColumnsFinal.txt",
+      "log_sha256": "b647d3775ad4d1d8f73aad0e345bc0f66bc07a82004abb420c7be67ca3eb6484"
+    },
+    {
+      "source": "experiments/InfiniteNarrowBoards.lean",
+      "sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0",
+      "exit_code": 0,
+      "seconds": 14.714,
+      "log": "reports/narrow_review/InfiniteNarrowBoards.txt",
+      "log_sha256": "36cf696afb1c86ea53cc69daff2ea0006525ba25ed8ac9e5d42ad5cbbf32217e"
+    },
+    {
+      "source": "experiments/NarrowReviewChecks.lean",
+      "sha256": "297261a305d9bec823111fc047bc9ccfa3252f5e291a8c19efbc22c92c92f4ab",
+      "exit_code": 0,
+      "seconds": 14.022,
+      "log": "reports/narrow_review/NarrowReviewChecks.txt",
+      "log_sha256": "e03f3cad442285167c3edceb8187a11b66124741a4365f50719c980b1df5d08a"
+    }
+  ],
+  "axioms": {
+    "Connect4.NarrowBoards.narrow_empty_isDraw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.one_column_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.two_columns_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.three_columns_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.narrow_full_horizon": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.narrow_neither_player_wins": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.remaining_play_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.white_nonloss_four_columns": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.pd0b_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.w0a_permanent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.w0a_endgame_blocked": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.w0a_clear_exception": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.draw_excludes_forced_wins": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.opening0_small_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.reserve_reply_exists": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.reserve0_blocker": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.opening0_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.core13_white": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.reserve13_D": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.reserve13_U": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.reserve13_win": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.x_state_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.z_state_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.y_state_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.full_right_empty_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.start3_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.opening3_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.black_nonloss_four_columns": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_even_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.four_columns_even_no_forced_win": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.InfiniteNarrowBoards.four_columns_infinite_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.InfiniteNarrowBoards.narrow_infinite_draw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.NarrowBoards.draw_excludes_forced_wins": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.pd_state_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.pd1_state_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.black_second_w1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.black_second_w2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.full_without_win_not_win": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.InfiniteNarrowBoards.black_nonloss": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.InfiniteNarrowBoards.white_nonloss": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.InfiniteNarrowBoards.previous_win_rejected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.permanent13_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.vertical_threat_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Connect4.FourColumns.opening1_safe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "scope": "Named source modules and their public theorem dependency closures; excludes drafts.",
+  "finite_four_columns_all_even_heights_complete": true,
+  "infinite_widths_1_to_4_complete": true,
+  "completed_at": "2026-09-12T20:55:35+0800"
+}

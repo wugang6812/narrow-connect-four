@@ -1,0 +1,15 @@
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:12:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:106:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:122:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.x_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:146:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:160:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:200:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:216:20: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.z_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:361:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\FourColumnsRightFamilies.lean:373:20: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+'Connect4.FourColumns.y_state_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.FourColumns.full_right_empty_safe' depends on axioms: [propext, Classical.choice, Quot.sound]

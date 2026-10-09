@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-09T08:30:33.220921-07:00",
+  "browser": "Chromium via Playwright",
+  "checks": [
+    "offline loading, gravity and alternating colors",
+    "win highlights, terminal guard and undoing a win",
+    "one-cell draw and full-column rejection",
+    "size validation and a 20 by 20 board",
+    "bilingual UI, language persistence and theorem scope",
+    "saved game reload, export/import round trip and illegal record rejection",
+    "C computer, two-ply undo and cancelling a pending computer move",
+    "computer moves first when human selects White",
+    "computer mode takes effect immediately, without restarting the board",
+    "super-hard policy loads offline and the C worker follows the first-player certificate",
+    "keyboard selection and dropping",
+    "mobile large-board scrolling with no page overflow"
+  ],
+  "javascript_errors": [],
+  "scope": "Browser game only, not a Lean proof audit."
+}

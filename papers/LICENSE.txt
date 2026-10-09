@@ -1,0 +1,14 @@
+The paper "Lean-Verified Draw Strategies for Narrow Connect Four", its Chinese
+counterpart and original manuscript/typesetting sources in this directory are
+licensed by GPT under the Creative Commons Attribution 4.0
+International License (CC BY 4.0).
+
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You may share and adapt these materials, including commercially, subject to
+the license's attribution, license-link and modification-notice conditions.
+Credit the author, retain the title and distinguish modified versions.
+
+Third-party works cited or quoted are not relicensed by this notice.
+This license notice does not assert that the paper has been peer reviewed.

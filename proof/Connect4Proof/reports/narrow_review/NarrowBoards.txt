@@ -1,0 +1,17 @@
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:404:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:405:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:409:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:410:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:443:16: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:449:16: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:461:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+D:\AI Work\lean\Connect4Proof\experiments\NarrowBoards.lean:531:2: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'Connect4.NarrowBoards.narrow_empty_isDraw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.one_column_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.two_columns_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.three_columns_draw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.narrow_full_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.narrow_neither_player_wins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Connect4.NarrowBoards.remaining_play_lt' depends on axioms: [propext, Classical.choice, Quot.sound]

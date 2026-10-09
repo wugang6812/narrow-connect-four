@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "certificate_sha256": "b1ec2114759d439db7c767df635ff350deb58fb5e3ce3be6b5464924d943fa95",
+  "checker_sha256": "e2f8fc3463d94e2af97cfb84479bc1041a8188fc7249aef56cf9aed937a61d87",
+  "finite_certificates_verified": true,
+  "lean_verified": false,
+  "unbounded_step": "Mathematical lifting lemma in notes/fourcolumns_odd_proof.md",
+  "policies": [
+    {
+      "height": 5,
+      "win_rows": 5,
+      "defender": "B",
+      "root": "B|||",
+      "verified_states": 2201,
+      "enemy_branches": 4636,
+      "terminal_edges": 992
+    },
+    {
+      "height": 5,
+      "win_rows": 5,
+      "defender": "W",
+      "root": "BW|||",
+      "verified_states": 1353,
+      "enemy_branches": 3093,
+      "terminal_edges": 700
+    },
+    {
+      "height": 5,
+      "win_rows": 5,
+      "defender": "W",
+      "root": "|||BW",
+      "verified_states": 1353,
+      "enemy_branches": 3093,
+      "terminal_edges": 700
+    },
+    {
+      "height": 5,
+      "win_rows": 5,
+      "defender": "W",
+      "root": "W|B||",
+      "verified_states": 1193,
+      "enemy_branches": 2404,
+      "terminal_edges": 645
+    },
+    {
+      "height": 5,
+      "win_rows": 5,
+      "defender": "W",
+      "root": "||B|W",
+      "verified_states": 1193,
+      "enemy_branches": 2404,
+      "terminal_edges": 645
+    },
+    {
+      "height": 7,
+      "win_rows": 6,
+      "defender": "B",
+      "root": "B|||",
+      "verified_states": 14488,
+      "enemy_branches": 32884,
+      "terminal_edges": 5444
+    },
+    {
+      "height": 7,
+      "win_rows": 6,
+      "defender": "W",
+      "root": "BW|||",
+      "verified_states": 9700,
+      "enemy_branches": 23524,
+      "terminal_edges": 4104
+    },
+    {
+      "height": 7,
+      "win_rows": 6,
+      "defender": "W",
+      "root": "|||BW",
+      "verified_states": 9700,
+      "enemy_branches": 23524,
+      "terminal_edges": 4104
+    },
+    {
+      "height": 7,
+      "win_rows": 6,
+      "defender": "W",
+      "root": "W|B||",
+      "verified_states": 7720,
+      "enemy_branches": 16387,
+      "terminal_edges": 3518
+    },
+    {
+      "height": 7,
+      "win_rows": 6,
+      "defender": "W",
+      "root": "||B|W",
+      "verified_states": 7720,
+      "enemy_branches": 16387,
+      "terminal_edges": 3518
+    }
+  ]
+}

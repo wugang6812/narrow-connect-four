@@ -1,0 +1,15 @@
+* text=auto eol=lf
+# Preserve accepted proof sources and historical receipts byte for byte.
+proof/** -text
+*.pdf binary
+*.png binary
+*.zip binary
+
+
+*.wasm binary
+# These files have published build/export byte hashes.
+game/bot.c -text
+game/standard-policy.js -text
+game/standard-policy.js -diff linguist-generated=true
+game/bot-module.js linguist-generated=true
+proof/Connect4Proof/experiments/OddCertificates/** linguist-generated=true

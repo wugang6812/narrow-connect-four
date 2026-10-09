@@ -1,0 +1,2 @@
+replaying experiments.FourColumnsOddAssembly
+kernel replay passed: experiments.FourColumnsOddAssembly; declarations=37
