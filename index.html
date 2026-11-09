@@ -1,2 +1,60 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=game/index.html"><title>Narrow Connect Four</title></head><body><p><a href="game/index.html>Play Narrow Connect Four / 打开重力四子棋</a></p></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Draw strategies, optimal active-switch budgets and Lean proofs for narrow gravity Connect Four. Read the bilingual papers or play the game.">
+  <title>Narrow Connect Four · Strategies and proofs</title>
+  <style>
+    :root{color-scheme:light;--ink:#182a36;--muted:#536673;--accent:#186256;--line:#cfdbdf}
+    *{box-sizing:border-box}body{margin:0;background:#f5f7f5;color:var(--ink);font:17px/1.65 system-ui,sans-serif}
+    main{max-width:1060px;margin:auto;padding:54px 24px 40px}a{color:var(--accent);text-underline-offset:4px}
+    a:focus-visible{outline:3px solid #b67616;outline-offset:4px}.top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .label{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size:clamp(2rem,6vw,3.7rem);line-height:1.1;letter-spacing:-.035em;margin:38px 0 20px;max-width:850px}
+    h2{font-size:1.35rem;line-height:1.35;margin:10px 0}p{margin:12px 0}.lead{max-width:760px;font-size:1.15rem}
+    .action{display:inline-block;background:var(--accent);color:white;border-radius:6px;padding:12px 20px;text-decoration:none;margin:15px 12px 24px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:22px 0}
+    article{background:white;border:1px solid var(--line);border-radius:10px;padding:26px}
+    .links{display:flex;gap:20px;flex-wrap:wrap;margin:22px 0 0}.note{font-size:14px;color:var(--muted)}
+    .action + .note{display:inline-block}
+    .proof{border-top:1px solid var(--line);margin-top:32px;padding-top:23px}
+    footer{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;font-size:13px;color:var(--muted)}
+    @media(max-width:650px){main{padding:30px 18px}.grid{grid-template-columns:1fr}article{padding:22px}h1{margin-top:28px}}
+  </style>
+</head>
+<body><main>
+  <nav class="top" aria-label="Project navigation"><span class="label">Gravity Connect Four · GPT</span><a href="https://github.com/wugang6812/narrow-connect-four">Source on GitHub ↗</a></nav>
+  <h1>Small boards.<br>Complete strategy proofs.</h1>
+  <p class="lead">One to four columns, every finite height: a draw under optimal play.
+    Explore the strategies, their exact active-switch budgets, and the Lean proofs.</p>
+  <p lang="zh-CN">一至四列、任意有限高度：空盘最优结果为和棋。阅读数学证明，或先玩一局。</p>
+  <a class="action" href="game/index.html">Play Connect Four / 开始对局</a>
+  <span class="note">1–20 rows and columns · offline-capable</span>
+  <div class="grid">
+    <article>
+      <span class="label">Mathematical paper</span>
+      <h2>Draw strategies and optimal active-switch budgets</h2>
+      <p lang="zh-CN">和棋策略与最优主动换列次数</p>
+      <p>Finite and infinite heights, covering strategies, and matching upper and lower bounds.</p>
+      <div class="links"><a href="papers/paper-en.pdf" hreflang="en">English PDF</a><a href="papers/paper-zh.pdf" hreflang="zh-CN">中文 PDF</a></div>
+    </article>
+    <article>
+      <span class="label">Algorithm paper</span>
+      <h2>A uniform response rule and alternating-segment compression</h2>
+      <p lang="zh-CN">统一回应算法与交替段压缩</p>
+      <p>Position certificates, the precise selection order, a nine-segment bound, and interval scanning.</p>
+      <div class="links"><a href="papers/algorithm-en.pdf" hreflang="en">English PDF</a><a href="papers/algorithm-zh.pdf" hreflang="zh-CN">中文 PDF</a></div>
+    </article>
+  </div>
+  <section class="proof">
+    <h2>Read the proofs. Run the checks.</h2>
+    <p>55 Lean modules verify the finite four-column rule and exact active budgets.
+      Five supporting modules cover smaller widths and genuinely infinite height.
+      Both developments have been compiled and kernel-replayed; they use separate board models.</p>
+    <div class="links"><a href="https://github.com/wugang6812/narrow-connect-four/tree/main/proof">Lean sources</a><a href="https://github.com/wugang6812/narrow-connect-four/blob/main/docs/verification.md">Verification guide</a><a href="https://github.com/wugang6812/narrow-connect-four/blob/main/README.zh-CN.md" lang="zh-CN">中文说明</a></div>
+    <p class="note">The complete compressed engine and its refinement remain unfinished.
+      The game bot is a separate implementation; its moves are not certified by the narrow-board theorem.</p>
+  </section>
+  <footer>GPT · Research manuscripts and reproducible artifacts · Code MIT · Papers CC BY 4.0</footer>
+</main></body></html>

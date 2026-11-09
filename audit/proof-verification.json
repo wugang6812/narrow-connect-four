@@ -1,0 +1,510 @@
+{
+  "checked_at": "2026-11-09T00:56:55.666011+00:00",
+  "source_manifest_sha256": "bf6f3101143cfe7ace5bb47fdeea092e4d14e31466cd08ed7a602607d8b2faa8",
+  "covering": {
+    "status": "accepted",
+    "source_modules": 55,
+    "source_and_artifact_hashes_match": true,
+    "source_escape_scan": "passed",
+    "root_axioms": {
+      "UniformFour.U1.first_exact_controller_budget": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.second_exact_controller_budget": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.budgetSafe_iff_historyBudget": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.first_exact_history_budget": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.second_exact_history_budget": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.no_zero_first_history_policy": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U1.no_zero_second_history_policy": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U2.first_allSafe": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U2.second_allSafe": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.U2.respond": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "U1Improvement.release_even_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "U1Improvement.two_odd_transfer": [
+        "propext",
+        "Quot.sound"
+      ],
+      "U1Improvement.parity_interval_nonempty": [
+        "propext",
+        "Quot.sound"
+      ],
+      "U1Improvement.candidate_segment_bound": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    "whitelist": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "runtime_response_probes": 70,
+    "kernel_replay": {
+      "exit_code": 0,
+      "imported_module": "Audit",
+      "transitive_local_modules": 55,
+      "log_sha256": "2aa578b73580eec0812d0ec5f37c0309fbd487a66c4dffc3284694f0bef423df",
+      "trust_level": 0
+    },
+    "compiler_version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+    "compiler_sha256": "37dfe799f69b990251f3b6bcff8a1c10c1afe2adcdecc5c580cc6726ffb63433",
+    "elapsed_seconds": 2.38,
+    "scope": "Finite four-column U1 active-budget optimum and U2 safety in the standalone model; exact history-prefix bridge. No old-repository IsDraw bridge, infinite-height theorem, full U3 compressed engine or Lean complexity theorem.",
+    "modules": [
+      {
+        "module": "Audit",
+        "source_sha256": "35a64ed1cdf127cf383657cfc6ddd66cc22fc31753e2e29ff97ac8d732f8901f",
+        "artifact_sha256": "df054a4b1cc81158d1abe02dfeedf2d0124f447ee65302e9667f8051287cb108",
+        "exit_code": 0
+      },
+      {
+        "module": "BottomBudget",
+        "source_sha256": "65a831f2f8c3f3478b2b11be2a51148b637e7443880deb7b6dda7f95d19efc39",
+        "artifact_sha256": "057beed648cba3854834f806eaffc99eda7d4a609b92a606e3766938eb3a1930",
+        "exit_code": 0
+      },
+      {
+        "module": "BudgetSemantics",
+        "source_sha256": "275886ec37ca97551c588e622b2fb8db94ef41a2991b0aea60e00cd0f38d7493",
+        "artifact_sha256": "3b65400135772122fbf321e990c1ff9319303c7d825ef6942945b8f34e8b2f0c",
+        "exit_code": 0
+      },
+      {
+        "module": "BudgetTools",
+        "source_sha256": "8f1909ac98b921e16128a8be5bdb91a3c1e54b68f35ee6db9f09c3085716c782",
+        "artifact_sha256": "1028dccc5e79b6846497829fe857d208c5b9fdb118f81dd79cc29cdad31e9cb9",
+        "exit_code": 0
+      },
+      {
+        "module": "ExecutableProbes",
+        "source_sha256": "91d3fbdb1e9609812c96ed5d2b40b5f425f041575c08aa4ed661c5d82f874789",
+        "artifact_sha256": "587262b8fdb9dbc4b8da22aab8b87a3184cb97d782c56e16707848c717d46bc5",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstEvenLower",
+        "source_sha256": "87f1fd3315e25d432707eb72480d06e876842fd32f21d5b0ff99acd58b96625f",
+        "artifact_sha256": "f228df5a5d6023f9f724c46d4dc643a3659bcc2782dd01eff73b265a8bcfb82c",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstExact",
+        "source_sha256": "49eb280e492e151e90e341f03eb935252cee53e225c4a8a98fdfa7d980d67f96",
+        "artifact_sha256": "8758393d52aee60f477f9f5d90d9a49557f656579d189909170412bd4b52bdaf",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstInnerLower",
+        "source_sha256": "f9ba3a1bd9586d6d81bc125e145799c1052b7e5cbd2b05a2a2f8447c23d34526",
+        "artifact_sha256": "ce913c48ebec7bd8b4fb0c8309aa32290d5f8a0e7360ccb7cc5b3a934d782e6e",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstOuterLower",
+        "source_sha256": "d8dd9d760e2e2dd05f115101914c353d61a055643497750004eea8a561fc0b09",
+        "artifact_sha256": "9e0433f32eb3d269278181f18a25722a5db8048c3205b4d9b8b3552b845e7658",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstTrapKernel",
+        "source_sha256": "2a136619e82013889b90db27e77ae0413b78fd397533bcdad366672984bb42b2",
+        "artifact_sha256": "697ae74ab542b1ae07db2c4e3f6e15a7d35f471ae6fd5cf196106c07dad6ad9c",
+        "exit_code": 0
+      },
+      {
+        "module": "FirstUpper",
+        "source_sha256": "de04ee374cdd079a748b03039ec58e4339d42987a9fabcaaf56d1321a284cb8b",
+        "artifact_sha256": "02f6e0fa04fb00408221a38bb3735370b2e5b9857a6725bb6e40a3c23e06f20f",
+        "exit_code": 0
+      },
+      {
+        "module": "HistoryBudget",
+        "source_sha256": "68113e0ae82ed490df176a247bbdd5adb25bbfa4e2d7d8f80b94c9aea2e50442",
+        "artifact_sha256": "df540cc853fd043666b3d08e31606aaee4ba9099555b9036685f071d3428270e",
+        "exit_code": 0
+      },
+      {
+        "module": "HistoryRoots",
+        "source_sha256": "9b4a0b39147ba0e3d389bd9273741a07c5805b4b482855062f6b39701c23b25f",
+        "artifact_sha256": "d2d415bb9211e7bd3343986beab9e61bf49c006d4eb533267f9b55c4ba778e4c",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Arithmetic",
+        "source_sha256": "386544899fe32edc2074ff399fb28036da8999c23261822fd7ad77d4cd376d76",
+        "artifact_sha256": "d2aca1b323ae944a1bd85beb39e433f6e7e02602a5d165d98b1e30bd2903959b",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Assembly",
+        "source_sha256": "fde7bf63bd54209dfb5d3c9f10e0c02af20d8ccb7b8a83b3da0059a7479a2bfb",
+        "artifact_sha256": "3423d26a416fd6f86e4385afa5c1c675d76b7b2ca369ece51e5cc7f4df58a122",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.CandidateCapacity",
+        "source_sha256": "4b1330dbac2bec085abb862d43228793dd47c23973dcffa4a6f699e8938d015b",
+        "artifact_sha256": "10e091fb0b0986a1e3b3c7fcbd42115d6e0ef3d3ae3ec307953ac78583b410bb",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.CandidateLogic",
+        "source_sha256": "3d7d66b92a39fd22ef1f2b9932e07c5bde6e29235d35bf9499b738cbe5abdcff",
+        "artifact_sha256": "213308987e4bd3b73468fcc624606da7978d43641db60ba5633872271934a5b3",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Capacity",
+        "source_sha256": "ee8f6cd2beca9c82239876594b859f90fdc3913cbe526291d91b5cb176b8979b",
+        "artifact_sha256": "261bb1d21215e52474e6b1585bd66f5f97ce8e2ee82621dc6829cb877ba987ce",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Core",
+        "source_sha256": "05d21cc65c2fd710ee1a3942f4a9e7fa42fc2765c0eb2047b59de7d58b212512",
+        "artifact_sha256": "6614c96486efd65b5d483bcc426e0c6d7002676f2d568e6bed769156229f7e0f",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Families",
+        "source_sha256": "b1dd610f978ce53fbed99a3e833b9fd796fca29590c7b7d7605b5d7e5a06f255",
+        "artifact_sha256": "838dd83feeba431427f13e73b738925b6f530ba2984b98b8c059fd218087d116",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.MoveFacts",
+        "source_sha256": "3c2201952aa4ce6805b4b01fb55a19b370201fdbd18de72e9ee2ee560d53d690",
+        "artifact_sha256": "e256d13a2a83ec8eab680599230d4d86c3983ff9b47d28635f57b75421b333f6",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.OpeningProofs",
+        "source_sha256": "0a51c2dac64221dcca1e0f2ebad285feadbf9bfad5f91e474ce3431c7f0a765b",
+        "artifact_sha256": "c37f05b9a661e22720927722c91456c410d43cee672626b87cb7b0d099302c5e",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Permanent",
+        "source_sha256": "a6e9b662c3f2c32549b0fdbf2ff82a60ffcbc730ec769d8972de6c01feed24f9",
+        "artifact_sha256": "9b3398c0cf639f3872681a291879100cc72cc811431f27da42b5b5062756406b",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.SecondTransitions",
+        "source_sha256": "b32748e3ca94a9068746b5767f6d38d40666417a4cc4742461c58d5094dd13f7",
+        "artifact_sha256": "e66900f03cc055a4c9938d37f7d352f370644844479186b366cdcd49b1cc57d0",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Strategy",
+        "source_sha256": "1076dbe655e26f83659bc423856367af77a3d35b1cd1e8cb3445cf73f93926fa",
+        "artifact_sha256": "2fe1185ad4d7aaa66639264546e7e0323c69543406807f8471f0392ac4668860",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.StructuralProofs",
+        "source_sha256": "ab308d111fd30345e0f7d2e5e9fd66109b6c055a482a58365c6cb2243733fad2",
+        "artifact_sha256": "ca7e03714c747e5ec4a3bd4b70ecdd84c72a9a935989e3835f9b74c0b4c4ec01",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Support",
+        "source_sha256": "40a20bb84e1677f90cd0269809be0160f283cd2fed1c31b0d2cddb32c75955c8",
+        "artifact_sha256": "0eea5c5bd3cbfc3acd1eaf0297a2fd78be702c0f5c30f42027c2aad7fcf31cf8",
+        "exit_code": 0
+      },
+      {
+        "module": "OddHeight.Words",
+        "source_sha256": "1992c4063429c7c7625afa71d4d141fe033129989efa3cf552df597ca9a784e5",
+        "artifact_sha256": "8655b33bb7487f1f08fca294ec7778abbbdfcd57e3ad04f2b751818e8c0c361e",
+        "exit_code": 0
+      },
+      {
+        "module": "ReflectionKernel",
+        "source_sha256": "08ac7cc9a13d21cd18cbf58ae4b553df033d3e06e476d98d6b71bce093688b14",
+        "artifact_sha256": "f5acd1540ae621e4f0c9e42a821c3b62ce768b050d8990adf0f503ba42ca8b1a",
+        "exit_code": 0
+      },
+      {
+        "module": "ReserveArithmetic",
+        "source_sha256": "788e603a9c9c574097b13ad00ce416a7027250e17c2403786077fec97e477ec6",
+        "artifact_sha256": "37a204578073c321d121868c492615472938575affd9d540d5f1f312cde0c323",
+        "exit_code": 0
+      },
+      {
+        "module": "SafetyKernel",
+        "source_sha256": "7510f22afea5ddf8aafe6e66429544850da484e19c3fc1f83664f3e3264163f3",
+        "artifact_sha256": "c279430d00742f4f381bdb93bded6486127d6e352134e57d55b0b5c94510dc72",
+        "exit_code": 0
+      },
+      {
+        "module": "SecondExact",
+        "source_sha256": "38af4e92a09f28a3439840c316e5c6808962e0155d8a163d924379d55851e426",
+        "artifact_sha256": "841c54bccd20aabb7c66745e9659cde1e5f7aa8b0a72759a4b884d9f49dc5bd3",
+        "exit_code": 0
+      },
+      {
+        "module": "SecondLowerBound",
+        "source_sha256": "b791bced5034bf389f01c5558c03bc6c08895faaa30e17307d6f727040332958",
+        "artifact_sha256": "938356a4bfb6724f7b8a922a703031efc2377a98d2c946bc46f0d4adec7fd394",
+        "exit_code": 0
+      },
+      {
+        "module": "SecondUpper",
+        "source_sha256": "3420e97fde2e3b06c9f2c7055e39a593b17e1bb0f2c23985f2c0fe3956e7742f",
+        "artifact_sha256": "c874e8eb20656902d6361a0f971b6484f8f0ec0ad822db5b52b731b1131ce0ea",
+        "exit_code": 0
+      },
+      {
+        "module": "SegmentBoundArithmetic",
+        "source_sha256": "dc22b26f0703dc6ad49272af4dfd70ad90e89ec5411cfe7122126e75d5fd0bef",
+        "artifact_sha256": "5aebe342a79b9c484db03d6ae2119672647a7604afc57c6f94496a137a49809f",
+        "exit_code": 0
+      },
+      {
+        "module": "U1",
+        "source_sha256": "04023fae49c705084fc9ff5232c1708f93205876e8ed49b17057e9edb066ff65",
+        "artifact_sha256": "c1634467a1dec10b5bad4c4d9d8a506e4b51820720d3e5507e348ae8fb87369f",
+        "exit_code": 0
+      },
+      {
+        "module": "U1LowerBounds",
+        "source_sha256": "511371dd95fab5f9eabe8e9d8866aec01f8a163cd662f9ab1a91096c90467f96",
+        "artifact_sha256": "27f48c74d12d03fa2620aac2dde70aaeb966117455ca773238630a94708e85ba",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.AClosure",
+        "source_sha256": "6faf84d5a130a1fbd4e0ba135e07d666c3babc2204b7568497df3374487aff0a",
+        "artifact_sha256": "e1555a15114a262a2740cff0562e9911eb17cebd6751490371b3ac348bb0b921",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.BCClosure",
+        "source_sha256": "e8cab3c7a9ad7dab873f9212dfb7cb8ea341fb1b27d2879c12674822811de2ab",
+        "artifact_sha256": "455974585ec1c52b0614740b184bcd41cd58518c310a1027800228b39fda7b36",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.CClosure",
+        "source_sha256": "78779d97d4372def3abf37bd803a5919781a07da1614eb01543fc3517ec1b36e",
+        "artifact_sha256": "79a7936d8b2317846c5694fc2a4fc6f46536dfc501a50f282cc9f42101904a62",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.CertificateController",
+        "source_sha256": "f5f6cdcac293fccbae751312b26018cfe08122c7d303ef41696eaa265e6f2077",
+        "artifact_sha256": "0d8ef91dfb98ff5d4387e87ef48a634195107ce53ea8b1bbd4335a551fdc0859",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.Certificates",
+        "source_sha256": "6e37bbcd422b0eb020f99e80116f2c428e96cd574f67a39e198c813edd6e76f1",
+        "artifact_sha256": "66edb26c635310c83da4d5fa2f090f1043cad0d93b5f4b0524f430f808fbd7d0",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.Controller",
+        "source_sha256": "9f91c7a635664ad142b410440719646af325212c58e1424d9b2630afdd53195b",
+        "artifact_sha256": "9890941a7fd6541502373466c388d8e6a3d3e96513228ddf7bda2d54d979fb26",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.FiniteChecker",
+        "source_sha256": "27bf120b45de77117d17e07dac8f326cd1f23e34e2077ef5cbc15bd68a5a4c4a",
+        "artifact_sha256": "cfa24ef4e0911455d1827b04a7fac4a59472911e3ab4967abd25467270819d48",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.FirstRoot",
+        "source_sha256": "af096a8e9615ab68b609b9ecb52fd7274489c71c541f115ea2964658ae2429bf",
+        "artifact_sha256": "83c6a8f59ceda216cda1d8bfefc2120b3ea4aaf3536df225ee03adf1811b41ac",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.InitialCertificates",
+        "source_sha256": "6414378385e92b15949e5f9e501a45cbd53c6e1a7cd62719dd170f7bba0b8614",
+        "artifact_sha256": "2634a549af0212d461e1c6fd8ebc52724cd5c0336ff7484957993448baf4c119",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.Observations",
+        "source_sha256": "21a8f9176ffc957ced316de20c9da711324af9f37842dc876157ffb8a2f1dafc",
+        "artifact_sha256": "9138acb2103113ad2b4518f4706832d897d8a4837bdfd5a6d670101782626eef",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.OpeningClosure",
+        "source_sha256": "d3f0f50bf9634f32d2be56f5ead3ea740d5af546e8c48c79377508202df95484",
+        "artifact_sha256": "90b69a6a80016283fe672cfcdfc7988f96275bdaa9a3c406b3ecffc8450f222a",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.OpeningExits",
+        "source_sha256": "49749a1685345facd99ab96abeca7afd9f7bd54f564db1324d02558d53f43ee7",
+        "artifact_sha256": "01ab5f43631d6c29ba023b86edf6e5569bea7b20b3e88fc5fbedf37ef71c5c1a",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.OpeningFallback",
+        "source_sha256": "1a75759a58517d43c4b22274fc02bb4c44e72db8b4d9d5fc61bf3c5f5530e9e4",
+        "artifact_sha256": "bdc46f1a40402c13ea69da5fd2096e558dcb426946c984c14a45f2e40f408d47",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.OpeningWExits",
+        "source_sha256": "55854364aa32c514ba827d30946314e5c2ee8e16dd355252238290171f666912",
+        "artifact_sha256": "697b2712fb86662b44910bca279fb6271f3c3bdbaa2a4fd334c6fff025cca0dc",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.Priority",
+        "source_sha256": "66719a1d2c8e5424adfed76ffb17cee58ee5a6f22115c52fd4303da44225be71",
+        "artifact_sha256": "b90d2e720941344b4785758a3e632ce2445aff1cf17a197d7973d4e60ca4a254",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.RoundFacts",
+        "source_sha256": "556940e58ebf19a22699d11c69994d537a53d34eb4a5ec78713d4a5dfb650b3a",
+        "artifact_sha256": "6c0e543ae618fd1cd3cd14a3a2fc1ec34dca8c93fc7c90000a83d3ec2cf85c8e",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.SecondEntry",
+        "source_sha256": "4e26277d3eb1621473c9d4c0c596c4836b79b854b3d6446469a1c75817099fd9",
+        "artifact_sha256": "2f763f479370c62c23866cdaeffa3cd2b29ffc24e64738d60a07a3805bf269ba",
+        "exit_code": 0
+      },
+      {
+        "module": "UniformFour.SecondRoot",
+        "source_sha256": "7d125e4237170b8143cb0d0004183646bc923bd6e0ca2cb3dcc0deae039e947d",
+        "artifact_sha256": "268d4e29cbef801884cd081854838253365db3904e34c325e71262c4dff49ed9",
+        "exit_code": 0
+      }
+    ]
+  },
+  "supporting": {
+    "status": "accepted",
+    "compiler_version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+    "threads_per_lean": 16,
+    "dependency_manifest_sha256": "d4088c66d6b2ec458a89596e55e58cbee66835098e579c56d78a987b158ff747",
+    "modules": [
+      {
+        "module": "Connect4Proof.Basic",
+        "source": "Connect4Proof/Basic.lean",
+        "source_sha256": "d484005b771ae895e0e0cbf2eb9f49a7f4a38fec1675c60dccf2d62af3aaf93a",
+        "artifact_sha256": "a1032e33e0933d94c9b2258fd8fa0e579557ca171ad6d48f27be285cdef7862d"
+      },
+      {
+        "module": "experiments.NarrowBoards",
+        "source": "experiments/NarrowBoards.lean",
+        "source_sha256": "eff3438ba14d7aa596bd52c73836059ec3785159c250947901f941e4ea3d1db7",
+        "artifact_sha256": "e28075e5bb537a1021e97c3c6b736c12eb87647594888f9a9514902b1d7c19a6"
+      },
+      {
+        "module": "experiments.FourColumns",
+        "source": "experiments/FourColumns.lean",
+        "source_sha256": "2349724277603110efc00a49ad5d0692d4d362af160d1782452028966da2bddd",
+        "artifact_sha256": "04997863695dc980b6787ed8900de1e3d32d5a29a88dc515f74f1741b859722c"
+      },
+      {
+        "module": "experiments.InfiniteNarrowBoards",
+        "source": "experiments/InfiniteNarrowBoards.lean",
+        "source_sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0",
+        "artifact_sha256": "d81973a0ef1752cc804e8726d9efad9452d6a27a6622fd77910c3bf6474acfed"
+      },
+      {
+        "module": "NarrowAudit",
+        "source": "NarrowAudit.lean",
+        "source_sha256": "20994bf41bdd980294a05e105793062ae729496888b0f2945baf77add4d497a1",
+        "artifact_sha256": "947e6bc69db0f7d97c6bdcec87398f24b2694d3e41918057c3de0393f58c40e4"
+      }
+    ],
+    "root_axioms": {
+      "Connect4.NarrowBoards.narrow_empty_isDraw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.NarrowBoards.one_column_draw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.NarrowBoards.two_columns_draw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.NarrowBoards.three_columns_draw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.InfiniteNarrowBoards.four_columns_infinite_draw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.InfiniteNarrowBoards.narrow_infinite_draw": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "kernel_replay": {
+      "exit_code": 0,
+      "trust_level": 0,
+      "import": "NarrowAudit",
+      "local_modules": 5,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fresh_build": true,
+    "seconds": 75.655,
+    "scope": "Finite widths one to three and genuinely infinite heights at widths one to four; supporting model, not an equivalence to the finite four-column model.",
+    "source_modules": 5
+  },
+  "scope": "Fresh local compilation and trust-zero import replay; two separate board models, with no formal equivalence claimed. Runtime paths and machine-specific commands omitted."
+}

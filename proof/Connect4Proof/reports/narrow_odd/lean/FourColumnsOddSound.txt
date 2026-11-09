@@ -1,1 +1,0 @@
-'Connect4.FourColumns.odd_control_lift' depends on axioms: [propext, Classical.choice, Quot.sound]

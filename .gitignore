@@ -21,3 +21,12 @@ audit/standard-policy.bin
 audit/game-colors.png
 policy.bin
 audit/publication-local/
+proof/**/build/
+proof/**/logs/
+proof/Covering/audit.json
+proof/Covering/kernel_audit.json
+proof/Covering/replay/
+proof/Narrow/local-audit.json
+experiments/*_results.json
+experiments/segment_nine_witness.json
+papers/render-qa/

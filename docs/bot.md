@@ -54,4 +54,4 @@ To reproduce export from the original complete archive:
 python tools/export_standard_policy.py /path/to/standard-board-archive
 ```
 
-The exporter uses accepted data already on disk; it performs no game-tree search or Lean rebuild. It creates a compact policy, gzip asset and receipt. Original C bot code and the author's derived policy data are MIT licensed. Lean/Mathlib and replay-utility licenses remain in force.
+The exporter uses accepted data already on disk; it performs no game-tree search or Lean rebuild. It creates a compact policy, gzip asset and receipt. Original C bot code and derived policy data are MIT licensed. External dependencies retain their own licenses.

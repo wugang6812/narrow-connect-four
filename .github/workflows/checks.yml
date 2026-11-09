@@ -1,4 +1,4 @@
-name: Game and preserved proof checks
+name: Game, publication and Lean checks
 on:
   push:
   pull_request:
@@ -6,14 +6,32 @@ on:
 permissions:
   contents: read
 jobs:
-  checks:
+  publication:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '22'
-      - name: Test browser game rules
+      - name: Test game rules and C bot
         run: node --test tests/engine.test.cjs tests/bot.test.cjs
-      - name: Check preserved source bytes and historical receipts
+      - name: Check proof source hashes and published receipts
         run: python3 tools/verify_proof.py
+      - name: Check paper hashes and local navigation
+        run: python3 tools/check_publication.py
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install the pinned Lean toolchain
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v4.34.0-rc2 --repo leanprover/lean4 --pattern lean-4.34.0-rc2-linux.tar.zst --dir "$RUNNER_TEMP"
+          cd "$RUNNER_TEMP"
+          echo '3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8  lean-4.34.0-rc2-linux.tar.zst' | sha256sum --check
+          tar --zstd -xf lean-4.34.0-rc2-linux.tar.zst
+          echo "$RUNNER_TEMP/lean-4.34.0-rc2-linux/bin" >> "$GITHUB_PATH"
+      - name: Build and kernel-replay all 55 covering modules
+        run: python3 tools/verify_proof.py --build --replay

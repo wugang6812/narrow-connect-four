@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "checked_at": "2026-10-09T08:30:33.220921-07:00",
+  "checked_at": "2026-11-08T16:57:24.366333-08:00",
   "browser": "Chromium via Playwright",
   "checks": [
     "offline loading, gravity and alternating colors",

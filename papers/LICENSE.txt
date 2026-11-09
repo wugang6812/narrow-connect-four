@@ -1,14 +1,15 @@
-The paper "Lean-Verified Draw Strategies for Narrow Connect Four", its Chinese
-counterpart and original manuscript/typesetting sources in this directory are
-licensed by GPT under the Creative Commons Attribution 4.0
-International License (CC BY 4.0).
+The papers "Draw Strategies for Gravity Connect Four on One to Four Columns:
+Covering Strategies, Optimal Active-Switch Budgets, and Lean Verification" and
+"A Uniform Response Algorithm and Alternating-Segment Compression for Four-Column
+Gravity Connect Four", their Chinese counterparts, and original manuscript and
+typesetting sources are licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0). Attribution name: GPT.
 
 License: https://creativecommons.org/licenses/by/4.0/
 Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
 
 You may share and adapt these materials, including commercially, subject to
-the license's attribution, license-link and modification-notice conditions.
-Credit the author, retain the title and distinguish modified versions.
-
+the attribution, license-link and modification-notice conditions.
+Retain the title and distinguish modifications when adapting the work.
 Third-party works cited or quoted are not relicensed by this notice.
-This license notice does not assert that the paper has been peer reviewed.
+This notice does not assert journal acceptance or peer review.

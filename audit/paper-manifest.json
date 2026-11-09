@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "papers": [
+    {
+      "id": "paper-en",
+      "title": "Draw Strategies for Gravity Connect Four on One to Four Columns",
+      "author": "GPT",
+      "pages": 10,
+      "files": [
+        {
+          "path": "papers/paper-en.md",
+          "sha256": "3be6bce46790ead3136ff1462c8e46d740d3d00ee2f6c21a5c708dffbb074871"
+        },
+        {
+          "path": "papers/paper-en.pdf",
+          "sha256": "c64237a2dac19f3d9b3bc5a21055b84479f34e61977a956d7a2d18cd9aeba24a"
+        },
+        {
+          "path": "papers/paper-en.typ",
+          "sha256": "cb0afe9176c7f3d914a87e64ba7f43aaf849bbe916e25e4364c7d355cff52af7"
+        },
+        {
+          "path": "papers/paper-en.tex",
+          "sha256": "789a86304dec1d6e683062ba7a42c5b99be854ca3077db6a9d411f01090c9c8b"
+        }
+      ]
+    },
+    {
+      "id": "paper-zh",
+      "title": "一至四列重力四子棋的和棋策略",
+      "author": "GPT",
+      "pages": 10,
+      "files": [
+        {
+          "path": "papers/paper-zh.md",
+          "sha256": "ea0f9f13e194620ff4e637736465f00cfe7b51a9ec2aae7bed967829b9c37f6f"
+        },
+        {
+          "path": "papers/paper-zh.pdf",
+          "sha256": "c6d37fbe63b7580c2570e2f7acd6894be79c12c1d25030fbaf2086a6791fb73e"
+        },
+        {
+          "path": "papers/paper-zh.typ",
+          "sha256": "6d929ca991952082e6d25887711d2e4fd1a6a8cf0046b09e0f85899b5e276ee4"
+        },
+        {
+          "path": "papers/paper-zh.tex",
+          "sha256": "920ccd7a07d79c9149a3b171cd07a9b7ba06509062bb9636c0b95948cd710b7e"
+        }
+      ]
+    },
+    {
+      "id": "algorithm-en",
+      "title": "A Uniform Response Algorithm and Alternating-Segment Compression for Four-Column Gravity Connect Four",
+      "author": "GPT",
+      "pages": 10,
+      "files": [
+        {
+          "path": "papers/algorithm-en.md",
+          "sha256": "2a73207e8dea5bec9a0372fd991b1713f4f205c829f142ce9b04153f80835dac"
+        },
+        {
+          "path": "papers/algorithm-en.pdf",
+          "sha256": "1ed64d5b39ab1d6718ef53f623fbecbbc2a0d9850e3ea9fa0c5ad7eab6f27f27"
+        },
+        {
+          "path": "papers/algorithm-en.typ",
+          "sha256": "49bb4a0e5e8addbcd71039c72e438bbd16508dfdfa5591afe254476c4f6225f6"
+        },
+        {
+          "path": "papers/algorithm-en.tex",
+          "sha256": "123a864294fe67b885a19109d230ebf7b6220cd5b10f026a3e6ac0f5f16e6cbe"
+        }
+      ]
+    },
+    {
+      "id": "algorithm-zh",
+      "title": "四列重力四子棋的统一回应算法与交替段压缩",
+      "author": "GPT",
+      "pages": 9,
+      "files": [
+        {
+          "path": "papers/algorithm-zh.md",
+          "sha256": "33efc888532d0210dc823ff85cca15b7e6a8043b69e004f8ac70b893551da2ba"
+        },
+        {
+          "path": "papers/algorithm-zh.pdf",
+          "sha256": "7a0bea099420583f6673fca5af939d3dd2c3723807cb1760156bf75c3b969163"
+        },
+        {
+          "path": "papers/algorithm-zh.typ",
+          "sha256": "7738ab77c6906910e4b5288c158d2b25f696c27c2eccbc808ec1e364f6d9dbc6"
+        },
+        {
+          "path": "papers/algorithm-zh.tex",
+          "sha256": "7170ff843b21791dd8141e2db486130dde966313b769e4a5ac184183bb9b7b8e"
+        }
+      ]
+    }
+  ],
+  "renderer": "Pandoc 3.9 and Typst 0.15.0; .tex files are editable exports, not the source of these PDFs."
+}

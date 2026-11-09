@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-11-09T00:58:15.197025+00:00",
+  "status": "passed",
+  "source_hashes": {
+    "experiments/a2_interval_scan.py": "5c79e563809e52c2cdce6db46f5b199e47f70fc11938446d796de8658950d05c",
+    "experiments/independent_lower_bounds.py": "fa4400f03b4ed066e920e13ed28535ca327d29a77b0deeaab946a4b05ee3955c",
+    "experiments/reference/check_uniform.py": "d3d93058b5844edf69b8ba5cea5244484757ec20e525b6fc066dd8e8be2e8945",
+    "experiments/replay_upper_and_segments.py": "8d6aaec006cedd7afd6b2103d98fd1d067d76d05dd63fdf19b919268dd85b326",
+    "experiments/segment_nine_witness.py": "0ab09e78057de223899bb06aea6d698deb3e8530461144b3195064396fe0af2c"
+  },
+  "coordinate_lower_bounds": {
+    "first_cases": 396,
+    "second_cases": 199
+  },
+  "interval_scan": {
+    "status": "passed",
+    "comparisons": 80020,
+    "exhaustive_column_tuples": 2401,
+    "randomized_boards": 8000,
+    "seed": 20261108,
+    "max_pointer_iterations": 94,
+    "huge_height": {
+      "height": 1000000000000,
+      "total_segments": 3,
+      "target": 2,
+      "pointer_iterations": 2,
+      "filtered_intervals": 7
+    },
+    "seconds": 3.789,
+    "scope": "Exact fixed-three A2 subroutine against independent cell enumeration; not full U3 or a Lean complexity proof"
+  },
+  "reference_rule": {
+    "heights": "0 through 12, both roles",
+    "states": 83429,
+    "opponent_edges": 238014,
+    "checker_reused": true,
+    "max_candidate_segments": 9
+  },
+  "nine_segment_witness": {
+    "height": 6,
+    "columns": [
+      "PPQPPQ",
+      "QQPQPQ",
+      "QPQPPQ",
+      "QPP"
+    ],
+    "segments": 9,
+    "moves_one_based": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      1,
+      3,
+      3,
+      4
+    ],
+    "status": "passed",
+    "active": 1,
+    "passive": 3,
+    "independent_coordinate_replay": true,
+    "earlier_terminal": false,
+    "scope": "One concrete lower witness for sharpness of the uniform nine-segment bound; not an arbitrary-height proof"
+  },
+  "scope": "Finite checks; not a replacement for parameterized proofs or a complete compressed-engine refinement."
+}

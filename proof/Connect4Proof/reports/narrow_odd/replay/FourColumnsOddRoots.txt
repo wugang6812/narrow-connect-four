@@ -1,2 +1,0 @@
-replaying experiments.FourColumnsOddRoots
-kernel replay passed: experiments.FourColumnsOddRoots; declarations=25

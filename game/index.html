@@ -9,7 +9,7 @@
 </head>
 <body>
 <main>
-  <header class="masthead"><a class="brand" href="../README.md" aria-label="项目说明"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>NARROW<br>CONNECT FOUR</span></a><div class="header-right"><span class="offline"><span></span><b data-i18n="offline">本地运行</b></span><button id="language" class="text-button" type="button">English</button></div></header>
+  <header class="masthead"><a class="brand" href="../index.html" aria-label="项目说明"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>NARROW<br>CONNECT FOUR</span></a><div class="header-right"><span class="offline"><span></span><b data-i18n="offline">本地运行</b></span><button id="language" class="text-button" type="button">English</button></div></header>
   <section class="intro"><div><p class="eyebrow" data-i18n="eyebrow">一颗棋子，一列选择。</p><h1 data-i18n="title">让四颗棋子连成一线。</h1><p class="lead" data-i18n="lead">棋子落到底部，黑白轮流落子。横、竖或斜向，谁先连成四颗就赢。</p></div><div class="intro-art" aria-hidden="true"><svg viewBox="0 0 144 116"><g fill="#dbe6db"><circle cx="30" cy="28" r="16"/><circle cx="68" cy="28" r="16"/><circle cx="106" cy="28" r="16"/><circle cx="30" cy="66" r="16"/><circle cx="68" cy="66" r="16"/><circle cx="106" cy="66" r="16"/></g><g fill="#263f37"><circle cx="30" cy="66" r="14"/><circle cx="68" cy="66" r="14"/><circle cx="106" cy="66" r="14"/></g><circle cx="106" cy="28" r="14" fill="#fffaf0" stroke="#9fae9e" stroke-width="2"/><path d="M30 99h76" stroke="#ca9555" stroke-width="4" stroke-linecap="round"/><path d="M106 6V-4" stroke="#ca9555" stroke-width="3" stroke-linecap="round"/></svg></div></section>
   <div class="layout">
     <section class="play-panel" aria-label="Game board">
@@ -28,7 +28,7 @@
         <label id="side-label" class="select-label" hidden><span data-i18n="yourSide">你执哪一方</span><select id="human"><option value="1" data-i18n="blackFirst">黑方，先手</option><option value="2" data-i18n="whiteSecond">白方，后手</option></select></label>
         <button id="new-game" type="button" class="primary" data-i18n="newGame">开始新对局 →</button><p class="settings-help" data-i18n="settingsHelp">每边 1～20 格。棋盘尺寸需开始新对局；模式和难度立即生效。</p>
       </section>
-      <section class="research"><p class="eyebrow" data-i18n="researchLabel">从游戏到证明</p><h2 id="research-title"></h2><p id="research-description"></p><div class="research-links"><a href="../papers/paper-zh.pdf" data-i18n="paperZh">中文论文 ↗</a><a href="../papers/paper-en.pdf" data-i18n="paperEn">English paper ↗</a><a href="../proof/Connect4Proof/experiments/FourColumnsOddFinal.lean" data-i18n="leanProof">Lean 定理 ↗</a></div></section>
+      <section class="research"><p class="eyebrow" data-i18n="researchLabel">从游戏到证明</p><h2 id="research-title"></h2><p id="research-description"></p><div class="research-links"><a href="../papers/paper-zh.pdf" data-i18n="paperZh">中文论文 ↗</a><a href="../papers/paper-en.pdf" data-i18n="paperEn">English paper ↗</a><a href="../proof/Covering/src/HistoryRoots.lean" data-i18n="leanProof">Lean 定理 ↗</a></div></section>
       <section class="records"><h2 data-i18n="records">棋谱</h2><div class="record-actions"><button id="export" type="button" class="text-button" data-i18n="export">导出 JSON</button><button id="import" type="button" class="text-button" data-i18n="import">导入棋谱</button><input id="record-file" type="file" accept=".json,application/json" hidden></div><p id="history" class="history"></p></section>
     </aside>
   </div>

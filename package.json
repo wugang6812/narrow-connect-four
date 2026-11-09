@@ -1,8 +1,12 @@
 {
   "name": "narrow-connect-four",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Lean-verified narrow Connect Four draws, paper and a local browser game",
-  "scripts": { "test": "node --test tests/engine.test.cjs tests/bot.test.cjs" },
-  "engines": { "node": ">=20" }
+  "description": "Narrow Connect Four draw strategies, optimal active budgets, Lean proofs and a browser game",
+  "scripts": {
+    "test": "node --test tests/engine.test.cjs tests/bot.test.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -1,0 +1,245 @@
+{
+  "format": 1,
+  "sources": [
+    {
+      "path": "proof/Covering/src/Audit.lean",
+      "sha256": "35a64ed1cdf127cf383657cfc6ddd66cc22fc31753e2e29ff97ac8d732f8901f"
+    },
+    {
+      "path": "proof/Covering/src/BottomBudget.lean",
+      "sha256": "65a831f2f8c3f3478b2b11be2a51148b637e7443880deb7b6dda7f95d19efc39"
+    },
+    {
+      "path": "proof/Covering/src/BudgetSemantics.lean",
+      "sha256": "275886ec37ca97551c588e622b2fb8db94ef41a2991b0aea60e00cd0f38d7493"
+    },
+    {
+      "path": "proof/Covering/src/BudgetTools.lean",
+      "sha256": "8f1909ac98b921e16128a8be5bdb91a3c1e54b68f35ee6db9f09c3085716c782"
+    },
+    {
+      "path": "proof/Covering/src/ExecutableProbes.lean",
+      "sha256": "91d3fbdb1e9609812c96ed5d2b40b5f425f041575c08aa4ed661c5d82f874789"
+    },
+    {
+      "path": "proof/Covering/src/FirstEvenLower.lean",
+      "sha256": "87f1fd3315e25d432707eb72480d06e876842fd32f21d5b0ff99acd58b96625f"
+    },
+    {
+      "path": "proof/Covering/src/FirstExact.lean",
+      "sha256": "49eb280e492e151e90e341f03eb935252cee53e225c4a8a98fdfa7d980d67f96"
+    },
+    {
+      "path": "proof/Covering/src/FirstInnerLower.lean",
+      "sha256": "f9ba3a1bd9586d6d81bc125e145799c1052b7e5cbd2b05a2a2f8447c23d34526"
+    },
+    {
+      "path": "proof/Covering/src/FirstOuterLower.lean",
+      "sha256": "d8dd9d760e2e2dd05f115101914c353d61a055643497750004eea8a561fc0b09"
+    },
+    {
+      "path": "proof/Covering/src/FirstTrapKernel.lean",
+      "sha256": "2a136619e82013889b90db27e77ae0413b78fd397533bcdad366672984bb42b2"
+    },
+    {
+      "path": "proof/Covering/src/FirstUpper.lean",
+      "sha256": "de04ee374cdd079a748b03039ec58e4339d42987a9fabcaaf56d1321a284cb8b"
+    },
+    {
+      "path": "proof/Covering/src/HistoryBudget.lean",
+      "sha256": "68113e0ae82ed490df176a247bbdd5adb25bbfa4e2d7d8f80b94c9aea2e50442"
+    },
+    {
+      "path": "proof/Covering/src/HistoryRoots.lean",
+      "sha256": "9b4a0b39147ba0e3d389bd9273741a07c5805b4b482855062f6b39701c23b25f"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Arithmetic.lean",
+      "sha256": "386544899fe32edc2074ff399fb28036da8999c23261822fd7ad77d4cd376d76"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Assembly.lean",
+      "sha256": "fde7bf63bd54209dfb5d3c9f10e0c02af20d8ccb7b8a83b3da0059a7479a2bfb"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/CandidateCapacity.lean",
+      "sha256": "4b1330dbac2bec085abb862d43228793dd47c23973dcffa4a6f699e8938d015b"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/CandidateLogic.lean",
+      "sha256": "3d7d66b92a39fd22ef1f2b9932e07c5bde6e29235d35bf9499b738cbe5abdcff"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Capacity.lean",
+      "sha256": "ee8f6cd2beca9c82239876594b859f90fdc3913cbe526291d91b5cb176b8979b"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Core.lean",
+      "sha256": "05d21cc65c2fd710ee1a3942f4a9e7fa42fc2765c0eb2047b59de7d58b212512"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Families.lean",
+      "sha256": "b1dd610f978ce53fbed99a3e833b9fd796fca29590c7b7d7605b5d7e5a06f255"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/MoveFacts.lean",
+      "sha256": "3c2201952aa4ce6805b4b01fb55a19b370201fdbd18de72e9ee2ee560d53d690"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/OpeningProofs.lean",
+      "sha256": "0a51c2dac64221dcca1e0f2ebad285feadbf9bfad5f91e474ce3431c7f0a765b"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Permanent.lean",
+      "sha256": "a6e9b662c3f2c32549b0fdbf2ff82a60ffcbc730ec769d8972de6c01feed24f9"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/SecondTransitions.lean",
+      "sha256": "b32748e3ca94a9068746b5767f6d38d40666417a4cc4742461c58d5094dd13f7"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Strategy.lean",
+      "sha256": "1076dbe655e26f83659bc423856367af77a3d35b1cd1e8cb3445cf73f93926fa"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/StructuralProofs.lean",
+      "sha256": "ab308d111fd30345e0f7d2e5e9fd66109b6c055a482a58365c6cb2243733fad2"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Support.lean",
+      "sha256": "40a20bb84e1677f90cd0269809be0160f283cd2fed1c31b0d2cddb32c75955c8"
+    },
+    {
+      "path": "proof/Covering/src/OddHeight/Words.lean",
+      "sha256": "1992c4063429c7c7625afa71d4d141fe033129989efa3cf552df597ca9a784e5"
+    },
+    {
+      "path": "proof/Covering/src/ReflectionKernel.lean",
+      "sha256": "08ac7cc9a13d21cd18cbf58ae4b553df033d3e06e476d98d6b71bce093688b14"
+    },
+    {
+      "path": "proof/Covering/src/ReserveArithmetic.lean",
+      "sha256": "788e603a9c9c574097b13ad00ce416a7027250e17c2403786077fec97e477ec6"
+    },
+    {
+      "path": "proof/Covering/src/SafetyKernel.lean",
+      "sha256": "7510f22afea5ddf8aafe6e66429544850da484e19c3fc1f83664f3e3264163f3"
+    },
+    {
+      "path": "proof/Covering/src/SecondExact.lean",
+      "sha256": "38af4e92a09f28a3439840c316e5c6808962e0155d8a163d924379d55851e426"
+    },
+    {
+      "path": "proof/Covering/src/SecondLowerBound.lean",
+      "sha256": "b791bced5034bf389f01c5558c03bc6c08895faaa30e17307d6f727040332958"
+    },
+    {
+      "path": "proof/Covering/src/SecondUpper.lean",
+      "sha256": "3420e97fde2e3b06c9f2c7055e39a593b17e1bb0f2c23985f2c0fe3956e7742f"
+    },
+    {
+      "path": "proof/Covering/src/SegmentBoundArithmetic.lean",
+      "sha256": "dc22b26f0703dc6ad49272af4dfd70ad90e89ec5411cfe7122126e75d5fd0bef"
+    },
+    {
+      "path": "proof/Covering/src/U1.lean",
+      "sha256": "04023fae49c705084fc9ff5232c1708f93205876e8ed49b17057e9edb066ff65"
+    },
+    {
+      "path": "proof/Covering/src/U1LowerBounds.lean",
+      "sha256": "511371dd95fab5f9eabe8e9d8866aec01f8a163cd662f9ab1a91096c90467f96"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/AClosure.lean",
+      "sha256": "6faf84d5a130a1fbd4e0ba135e07d666c3babc2204b7568497df3374487aff0a"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/BCClosure.lean",
+      "sha256": "e8cab3c7a9ad7dab873f9212dfb7cb8ea341fb1b27d2879c12674822811de2ab"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/CClosure.lean",
+      "sha256": "78779d97d4372def3abf37bd803a5919781a07da1614eb01543fc3517ec1b36e"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/CertificateController.lean",
+      "sha256": "f5f6cdcac293fccbae751312b26018cfe08122c7d303ef41696eaa265e6f2077"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/Certificates.lean",
+      "sha256": "6e37bbcd422b0eb020f99e80116f2c428e96cd574f67a39e198c813edd6e76f1"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/Controller.lean",
+      "sha256": "9f91c7a635664ad142b410440719646af325212c58e1424d9b2630afdd53195b"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/FiniteChecker.lean",
+      "sha256": "27bf120b45de77117d17e07dac8f326cd1f23e34e2077ef5cbc15bd68a5a4c4a"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/FirstRoot.lean",
+      "sha256": "af096a8e9615ab68b609b9ecb52fd7274489c71c541f115ea2964658ae2429bf"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/InitialCertificates.lean",
+      "sha256": "6414378385e92b15949e5f9e501a45cbd53c6e1a7cd62719dd170f7bba0b8614"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/Observations.lean",
+      "sha256": "21a8f9176ffc957ced316de20c9da711324af9f37842dc876157ffb8a2f1dafc"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/OpeningClosure.lean",
+      "sha256": "d3f0f50bf9634f32d2be56f5ead3ea740d5af546e8c48c79377508202df95484"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/OpeningExits.lean",
+      "sha256": "49749a1685345facd99ab96abeca7afd9f7bd54f564db1324d02558d53f43ee7"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/OpeningFallback.lean",
+      "sha256": "1a75759a58517d43c4b22274fc02bb4c44e72db8b4d9d5fc61bf3c5f5530e9e4"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/OpeningWExits.lean",
+      "sha256": "55854364aa32c514ba827d30946314e5c2ee8e16dd355252238290171f666912"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/Priority.lean",
+      "sha256": "66719a1d2c8e5424adfed76ffb17cee58ee5a6f22115c52fd4303da44225be71"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/RoundFacts.lean",
+      "sha256": "556940e58ebf19a22699d11c69994d537a53d34eb4a5ec78713d4a5dfb650b3a"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/SecondEntry.lean",
+      "sha256": "4e26277d3eb1621473c9d4c0c596c4836b79b854b3d6446469a1c75817099fd9"
+    },
+    {
+      "path": "proof/Covering/src/UniformFour/SecondRoot.lean",
+      "sha256": "7d125e4237170b8143cb0d0004183646bc923bd6e0ca2cb3dcc0deae039e947d"
+    },
+    {
+      "path": "proof/Narrow/Connect4Proof/Basic.lean",
+      "sha256": "d484005b771ae895e0e0cbf2eb9f49a7f4a38fec1675c60dccf2d62af3aaf93a"
+    },
+    {
+      "path": "proof/Narrow/experiments/FourColumns.lean",
+      "sha256": "2349724277603110efc00a49ad5d0692d4d362af160d1782452028966da2bddd"
+    },
+    {
+      "path": "proof/Narrow/experiments/InfiniteNarrowBoards.lean",
+      "sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0"
+    },
+    {
+      "path": "proof/Narrow/experiments/NarrowBoards.lean",
+      "sha256": "eff3438ba14d7aa596bd52c73836059ec3785159c250947901f941e4ea3d1db7"
+    },
+    {
+      "path": "proof/Narrow/NarrowAudit.lean",
+      "sha256": "20994bf41bdd980294a05e105793062ae729496888b0f2945baf77add4d497a1"
+    }
+  ]
+}

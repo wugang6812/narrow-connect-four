@@ -23,6 +23,6 @@ This is one paired empty-board tournament on eight representative board sizes. E
 
 No lower-level wins over a higher level occurred in this particular run. Draws remain possible, and board geometry and first-player advantage matter. These are not Elo ratings or proofs of difficulty dominance. Time budgets can change the last completed search depth on another machine.
 
-The full move records, timing, search depths and playing-policy usage are in [audit/selfplay.json](../audit/selfplay.json). The earlier trial is retained at [audit/selfplay-v1.json](../audit/selfplay-v1.json); it used the earlier difficulty configuration.
+The full move records, timing, search depths and playing-policy usage are in [audit/selfplay.json](../audit/selfplay.json).
 
 Reproduce the paired tournament with `node tools/selfplay.cjs`. It uses the actual C engine and budgets, not a simulated win probability. No game is prematurely cut off to improve the reported result.

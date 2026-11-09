@@ -1,66 +1,81 @@
 # 窄棋盘重力四子棋
 
-本项目整理了**一至四列、任意有限高度重力四子棋的和棋策略**，提供中英文论文、Lean 形式化证明、原验收记录，以及可以在浏览器中玩的小游戏。
+[English](README.md) · [项目首页](https://wugang6812.github.io/narrow-connect-four/) · [在线试玩](https://wugang6812.github.io/narrow-connect-four/game/)
 
-署名：GPT。
+**一至四列、任意有限高度的重力四子棋，空盘最优结果均为和棋。** 双方各有固定不败策略；有底边、无顶边的真正无限高度也有相应结论。本仓库提供数学证明、最优主动换列次数、Lean 源码、配套算法论文和规则演示游戏。
 
-[English](README.md) · [中文论文](papers/paper-zh.pdf) · [英文论文](papers/paper-en.pdf) · [验证说明](docs/verification.md)
+## 阅读论文
 
-## 玩一局
+| 论文 | 中文 | English |
+|---|---|---|
+| **和棋策略与最优主动换列次数**：全部有限高度、无限高度及次数的上下界 | [PDF](papers/paper-zh.pdf) · [正文](papers/paper-zh.md) | [PDF](papers/paper-en.pdf) · [source](papers/paper-en.md) |
+| **统一回应算法与交替段压缩**：证书、选列顺序、九段界及区间扫描 | [PDF](papers/algorithm-zh.pdf) · [正文](papers/algorithm-zh.md) | [PDF](papers/algorithm-en.pdf) · [source](papers/algorithm-en.md) |
 
-下载仓库 ZIP 并解压，直接用浏览器打开 **[game/index.html](game/index.html)**。游戏无需安装、服务器或联网。
+最优次数及其完整数学证明放在第一篇。算法和压缩在第二篇展开。[排版源码与参考文献](papers/README.md)一并提供。
 
-启用 GitHub Pages 后，在线地址为 **https://wugang6812.github.io/narrow-connect-four/game/**。
+## 结论范围
 
-棋盘行数与列数均可选择 1～20。黑方先手，双方轮流选择一列；棋子落在该列最低的空格中。横、竖、斜向先连成至少四颗同色棋子的一方获胜。棋盘填满且无人获胜才是和棋；最后一格形成四连时按获胜处理。
-
-游戏支持双人、简单/普通/超级难三档 C 语言电脑、选择执黑或执白、悔棋、中英文切换、棋谱导入与导出，以及浏览器本地续局。导入棋谱会重新检查每一步的合法性，不接受满列落子或终局后的续着。手机上的大棋盘可左右滑动。
-
-电脑核心用 C 编写，在浏览器工作线程中运行。简单偏重自己的棋形，普通堵住眼前威胁并做短程搜索，超级难使用深搜索，并在标准棋盘执黑、沿规定开局时复用已验收的先手必胜策略。其他局面采用限时搜索，没有对所有局面最优的保证，详见 [C bot 说明](docs/bot.md)。理论和棋表示双方均有不败策略，实际对局仍可能因走错而输。模式、执棋方和难度立即生效，棋盘尺寸通过新对局应用。
-
-## 已证明什么
-
-| 棋盘范围 | 结论 |
+| 棋盘 | 空盘结果 |
 |---|---|
-| 一至三列，任意有限高度 | 双方均有不败策略 |
-| 四列，任意有限高度，包含奇数与偶数 | 双方均有不败策略 |
-| 一至四列，真正无限高 | 存在固定策略阻止对手首次获胜，无限进行按约定为和棋 |
-| 五列及更宽 | 不属于本文分类范围 |
+| 一至三列，任意有限高度 | 和棋 |
+| 四列，任意有限高度，含全部奇偶高度 | 和棋 |
+| 一至四列，真正无限高 | 固定策略保护每个有限前缀，无人首次获胜；无限进行定义为和棋 |
+| 五列及以上 | 不属于本文分类范围 |
 
-奇数高度的核心是一个容量七排、双方仅以底部六排四连得分的控制游戏。有限控制证书通过提升引理覆盖全部较大奇数高度，明确处理满列、对手先胜和控制盘填满后的真实续局。高度一、三、五另有证书。有限证书材料包含39,616个显式节点和14个根。
+四列棋盘保证不败所需的**最坏情形主动换列次数最优值**为：
 
-论文将经典偶数高度后手防守归属 Allis，将窄棋盘无限高度已有结果归属 Yamaguchi 等人，没有宣称整套分类的历史首创。已验收证明基线为 `5a1c02e`。
+| 高度 | 先手 | 后手 |
+|---|---:|---:|
+| 0、1 | 0 | 0 |
+| 2、3 | 0 | 1 |
+| 至少5的奇数 | 0 | 1 |
+| 至少4的偶数 | 1 | 1 |
+| 真正无限高 | 0 | 1 |
 
-## 如何核对证明
+主动换列指对方刚下的列仍可落子，自己却改走别列。先手首子免费，立即获胜的回应照常计数。一至三列的双方最优主动预算均为零。此指标与胜负结果、总换列次数不同。
 
-Lean 项目位于 [proof/Connect4Proof](proof/Connect4Proof)，源码和历史记录保留原始字节。最终四列有限高度定理在 [FourColumnsOddFinal.lean](proof/Connect4Proof/experiments/FourColumnsOddFinal.lean)，已经装入实际证书根，不要求使用者再提供证书假设。
+论文将经典偶数高度后手配对策略归于 Allis，并交代 Yamaguchi 等人的无限棋盘研究，不宣称整套和棋分类首次被发现。
 
-使用 Python 3.10 及以上版本运行：
+## 核验证明
 
-```sh
+- [proof/Covering](proof/Covering/)：**55个模块**，四列全部有限高度、双方统一回应、精确主动预算及完整历史语义，只需 Lean 随附库。
+- [proof/Narrow](proof/Narrow/)：**5个模块**，一至三列有限高度及一至四列无限高度，使用固定版本 Mathlib。
+
+两工程均已重新编译并以信任级别零导入重放。20项重点声明的公理闭包仅含 `propext`、`Classical.choice`、`Quot.sound`。两工程的棋盘模型不同，模型间等价尚未形式化。
+
+安装 Python 3.10 以上版本后，在仓库根目录执行：
+
+~~~sh
 python tools/verify_proof.py
-```
+~~~
 
-默认检查公开包完整性、69个专项模块的源码哈希，以及原编译和重放报告。它不重新运行 Lean。完整源码依赖链还包含共享 Basic 模块，共70个本地模块。新增构建与重放需使用固定的 Lean `4.34.0-rc2` 和 Mathlib 版本，见[验证说明](docs/verification.md)。直接运行默认 `lake build` 只检查 Basic，不能代替完整验收。
+默认核对源码哈希与回执，不运行 Lean。安装 **Lean 4.34.0-rc2** 并将 `lean` 加入 PATH，或设置 `LEAN_BIN`，再运行：
 
-公理白名单为 `propext`、`Classical.choice` 和 `Quot.sound`。内核检查给定定义下的证明；游戏模型与文字是否对应、既有研究归属及原创性，仍需要阅读和审查。
+~~~sh
+python tools/verify_proof.py --build --replay
+~~~
 
-## 如何检查小游戏
+这会重新构建并内核重放55模块工程。GitHub Actions 同时运行该流程和游戏测试。依赖 Mathlib 的支持工程有独立复现命令，详见[验证说明](docs/verification.md)和[验收回执](audit/proof-verification.json)。
 
-安装 Node.js 20 或以上版本后运行：
+通用多目标引理、总换列上界、九段界背后的完整事件计数、完整压缩程序的精化及成本证明，不全属于已验收的 Lean 根定理；论文逐项说明。[有限实验](experiments/)不替代任意高度证明。
 
-```sh
+## 试玩与测试
+
+[在线试玩](https://wugang6812.github.io/narrow-connect-four/game/)，或打开 [game/index.html](game/index.html)。行列可选1至20，支持双人、C/WebAssembly 电脑及三档难度，含标准棋盘先手策略的离线使用。
+
+电脑是单独的程序，窄棋盘定理不保证它每一步都最优。标准7列6行策略用于受支持的先手分支，其他局面采用限时搜索。详见[电脑说明](docs/bot.md)和[互打结果](docs/selfplay.md)。
+
+Node.js 20 以上版本可运行：
+
+~~~sh
 node --test tests/engine.test.cjs tests/bot.test.cjs
-```
+python tools/check_publication.py
+~~~
 
-不需要安装 npm 依赖。测试覆盖重力、满列、四连方向、终局、最后一格获胜、和棋、悔棋及棋谱合法性，并在全部400种尺寸上进行抽样对局，与独立的全棋盘判胜程序比较。浏览器检查另覆盖人机模式、棋谱导入导出、本地保存、键盘和手机布局。小游戏的测试不是 JavaScript 的形式化证明。
+测试覆盖重力、各方向四连、终局优先级、悔棋与棋谱，以及全部400种尺寸的抽样对局。`tools/test_browser.py` 通过 Playwright 检查真实浏览器交互。
 
-最新一轮48局互打的棋盘、胜负与完整棋谱见[难度对战结果](docs/selfplay.md)。这轮没有低难度击败高难度，不代表对所有局面或机器的保证。
+## 许可和引用
 
-## 文件与署名
+项目以 **GPT** 署名。原创代码 [MIT](LICENSE)，两篇论文及源码 [CC BY 4.0](papers/LICENSE.txt)；保留[第三方许可](THIRD_PARTY.md)。引用信息见 [CITATION.cff](CITATION.cff)及 [references.bib](papers/references.bib)。
 
-`papers` 提供双语论文及可编辑源文件；`proof` 保留已验收证明；`game` 是规则演示；`audit` 记录打包和游戏检查。另附从已验收的标准7列6行归档导出的紧凑对弈策略，用于超级难电脑。完整标准棋盘 Lean 证明、五列巨型搜索数据、个人云盘设置和编辑往来信件没有混入公开包。
-
-本项目以 GPT 署名。论文尚未获期刊录用，自动核验不称为人类同行评审。
-
-原创游戏代码、Lean 代码与辅助脚本采用 [MIT](LICENSE)；论文和论文源文件采用 [CC BY 4.0](papers/LICENSE.txt)。第三方代码保留原许可，尤其 Lean 官方重放工具的 Apache 2.0，详见[第三方说明](THIRD_PARTY.md)。引用信息见 [CITATION.cff](CITATION.cff)。GitHub 公开仓库用于传播和复核研究材料，不等于期刊发表或 DOI。
+公开的是研究稿件和可复核材料，不表示期刊录用或已经过人类同行评审。当前文件使用稳定地址，修改由 Git 提交和发布标签记录。
