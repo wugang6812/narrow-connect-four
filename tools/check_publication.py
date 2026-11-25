@@ -49,7 +49,12 @@ def main():
     expected={f'{stem}-{lang}{ext}' for stem in ['paper','algorithm']
               for lang in ['en','zh'] for ext in ['.md','.pdf','.typ','.tex']}
     assert {p.name for p in paper_files}==expected
-    assert json.loads((ROOT/'package.json').read_text())['version']=='0.2.0'
+    figures = {entry['path']: entry['sha256'] for entry in manifest['figures']}
+    assert set(figures) == {p.relative_to(ROOT).as_posix() for p in (ROOT/'papers/figures').glob('*.png')}
+    for path, digest in figures.items():
+        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest() == digest, path
+
+    assert json.loads((ROOT/'package.json').read_text())['version']=='0.3.0'
     sources=[ROOT/'README.md',ROOT/'README.zh-CN.md',ROOT/'index.html',ROOT/'game/index.html',
              ROOT/'THIRD_PARTY.md',ROOT/'papers/README.md']
     sources+=list((ROOT/'docs').glob('*.md'))

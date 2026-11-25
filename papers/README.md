@@ -17,7 +17,7 @@ directory; PAPER_TOOLS optionally selects a Python dependency directory.
 The original rendering used Windows fonts; font changes can alter pagination.
 Page images and render reports stay in the ignored papers/render-qa directory.
 
-Optimality and its full mathematical proofs are in the first paper. The second
+The first paper includes four illustrated positions, the optimal active-switch counts and the finite total-switch bounds. Its figures are in the figures directory. The second
 develops the uniform algorithm and compression. Each states its formal scope.
 See [references.bib](references.bib) for external works and both paper citations,
 and [LICENSE.txt](LICENSE.txt) for CC BY 4.0.

@@ -1,7 +1,7 @@
 # Verification
 
-The public source package contains a 55-module finite four-column development
-and a five-module supporting development for small widths and infinite height.
+The public source package contains a 60-module finite four-column development
+and a eight-module supporting development for small widths and infinite height.
 Their definitions are separate; a formal bridge between the models is not supplied.
 
 ## 1. Source and receipt check
@@ -12,8 +12,8 @@ With Python 3.10 or later, from the repository root:
 python tools/verify_proof.py
 ~~~
 
-This checks all 60 local Lean source hashes, the module counts, the recorded
-trust-zero results, and 20 selected axiom closures. It performs no new Lean run.
+This checks all 68 local Lean source hashes, the module counts, the recorded
+trust-zero results, and 32 selected axiom closures. It performs no new Lean run.
 The public records are [source manifest](../audit/proof-manifest.json) and
 [verification receipt](../audit/proof-verification.json).
 
@@ -26,7 +26,7 @@ is required for this project. Put lean on PATH or set LEAN_BIN to its executable
 python tools/verify_proof.py --build --replay
 ~~~
 
-The command builds all 55 modules, checks 14 selected axiom closures and 70
+The command builds all 60 modules, checks 22 selected axiom closures and 70
 runtime response comparisons, then imports the complete local closure with
 Lean's trust level set to zero. Axiom use is restricted to propext,
 Classical.choice, and Quot.sound. Runtime examples are auxiliary tests; the
@@ -50,8 +50,7 @@ Mathlib cache in that project using Lake, then run:
 python tools/verify_proof.py --supporting --build --replay
 ~~~
 
-This compiles Basic, NarrowBoards, FourColumns, InfiniteNarrowBoards and
-NarrowAudit in dependency order, checks six selected axiom closures, and replays
+This compiles eight local modules in dependency order, checks ten selected axiom closures, and replays
 the transitive imports at trust zero. Local output stays in proof/Narrow/build
 and logs. A prepared project with exactly matching dependency pins can be reused
 with --dependencies-from PATH. The default Lake target alone compiles only Basic.
@@ -76,15 +75,22 @@ The experiments/ scripts check coordinate traps, the reference policy, the
 nine-segment witness, and the A2 interval scan. Their finite results do not prove
 an all-height statement or a compressed-program refinement.
 
-## Scope
+## Paper 1 theorem index
 
-The first paper contains the draw classification and complete mathematical
-active-budget lower bounds. The second paper develops the current-board
-certificate rule and compression. The accepted finite roots include the exact
-budgets and their equivalence to complete-history semantics.
+| Mathematical statement | Lean entry |
+|---|---|
+| Finite width four, exact active budgets | [HistoryRoots](../proof/Covering/src/HistoryRoots.lean), both exact history budgets |
+| Finite widths one to three, including height zero | [NarrowCost](../proof/Narrow/Completion/NarrowCost.lean), `narrow_finite_exact` |
+| No ceiling, fixed strategy for every finite horizon | [InfiniteExact](../proof/Narrow/Completion/InfiniteExact.lean), `narrow_infinite_exact`, `four_infinite_first_exact`, `four_infinite_second_exact` |
+| Four columns, first-player total ≤ 4, including winning replies | [TotalSwitch](../proof/Covering/src/Completion/TotalSwitch.lean), `first_total_from_root` and `first_total_zero` |
+| Four columns, second-player total ≤ 2 and exact active upper bound for the same policy | [SecondTotal](../proof/Covering/src/Completion/SecondTotal.lean), `second_total_and_active` |
+| Nonvertical support descent and permanent defence | [Support](../proof/Covering/src/OddHeight/Support.lean), [Permanent](../proof/Covering/src/OddHeight/Permanent.lean) |
+| Protected cells, a reserved cell is taken unless play ends earlier | [ProtectedCells](../proof/Covering/src/Completion/ProtectedCells.lean), `even_distance_protected` and the two single-target theorems |
+| Multiple pending targets, safe half-moves, ordinary release and finite resolution | [Reserves](../proof/Covering/src/Completion/Reserves.lean), `multitarget_resource` |
+| At most one passive transfer after the two-odd-column rule starts | [TwoOdd](../proof/Covering/src/Completion/TwoOdd.lean), `two_odd_controller` |
 
-The general multi-target resource lemma, total-switch counts, event injection
-for the full nine-segment argument, complete compressed engine, and machine-cost
-theorem are not all formalized. The papers state these limits explicitly.
-The browser bot is a separate bounded-search implementation; the narrow-board
-theorem does not certify every move of that bot.
+Finite four-column histories use the relative roles P and Q. The supporting
+project uses Black and White with Black first. Each model proves the results
+listed for it directly. The second paper’s full nine-segment event count,
+compressed implementation, refinement, and computational cost are separate
+from the first paper’s three theorems.

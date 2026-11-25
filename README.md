@@ -38,10 +38,10 @@ The papers credit Allis for classical even-height second-player pairing and disc
 
 ## Verify the proofs
 
-- [proof/Covering](proof/Covering/): **55 modules**, finite four-column heights, shared response, exact active budgets and full-history semantics. Only Lean's bundled libraries are needed.
-- [proof/Narrow](proof/Narrow/): **5 modules**, finite widths 1–3 and genuinely infinite height at widths 1–4, using pinned Mathlib.
+- [proof/Covering](proof/Covering/): **60 modules** covering all finite four-column heights, exact active budgets, total-switch bounds, protected cells and multi-target release. Only Lean's bundled libraries are needed.
+- [proof/Narrow](proof/Narrow/): **8 modules** for finite widths 1–3 and genuinely infinite height at widths 1–4, including exact active budgets in both roles, using pinned Mathlib.
 
-Both projects were freshly compiled and imported at trust level zero. Twenty selected axiom closures use only `propext`, `Classical.choice` and `Quot.sound`. Their board models are separate; formal equivalence is not supplied.
+Both projects were freshly compiled and imported at trust level zero. Thirty-two selected axiom closures use only `propext`, `Classical.choice` and `Quot.sound`. Their board models are separate; formal equivalence is not supplied.
 
 With Python 3.10+, check published source hashes and receipts:
 
@@ -57,7 +57,7 @@ python tools/verify_proof.py --build --replay
 
 GitHub Actions runs these checks and the game tests. The Mathlib-dependent supporting project has a separate reproduction command. See the [verification guide](docs/verification.md) and [acceptance receipt](audit/proof-verification.json).
 
-The generic multi-target lemma, total-switch bounds, full event-counting argument for nine segments, and a complete compressed engine with refinement and cost proofs remain outside the accepted formal roots. The papers identify these limits. Finite [experiments](experiments/) are supplementary evidence.
+The first paper’s three main theorems have Lean proofs. The complete-history budgets and finite total bounds are indexed in the [verification guide](docs/verification.md). The companion paper gives the full segment-counting and compressed-engine arguments on paper. [Finite experiments](experiments/) accompany the formal results.
 
 ## Play and test
 

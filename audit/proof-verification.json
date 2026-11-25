@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-11-09T00:56:55.666011+00:00",
-  "source_manifest_sha256": "bf6f3101143cfe7ace5bb47fdeea092e4d14e31466cd08ed7a602607d8b2faa8",
+  "checked_at": "2026-11-25T09:48:44.935267+00:00",
+  "source_manifest_sha256": "be538bd7dc2760310f00507e09d3ee6e89c5c2d7146bbbdd5b33905a7b2b2daa",
   "covering": {
     "status": "accepted",
-    "source_modules": 55,
+    "source_modules": 60,
     "source_and_artifact_hashes_match": true,
     "source_escape_scan": "passed",
     "root_axioms": {
@@ -73,6 +73,46 @@
       "U1Improvement.candidate_segment_bound": [
         "propext",
         "Quot.sound"
+      ],
+      "UniformFour.PaperOne.first_total_from_root": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.PaperOne.first_total_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.PaperOne.second_total_and_active": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.PaperOne.two_odd_controller": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.Reserves.multitarget_resource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.Reserves.even_distance_protected": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.Reserves.one_blocking_target": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "UniformFour.Reserves.one_winning_target": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
       ]
     },
     "whitelist": [
@@ -84,19 +124,19 @@
     "kernel_replay": {
       "exit_code": 0,
       "imported_module": "Audit",
-      "transitive_local_modules": 55,
+      "transitive_local_modules": 60,
       "log_sha256": "2aa578b73580eec0812d0ec5f37c0309fbd487a66c4dffc3284694f0bef423df",
       "trust_level": 0
     },
     "compiler_version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
     "compiler_sha256": "37dfe799f69b990251f3b6bcff8a1c10c1afe2adcdecc5c580cc6726ffb63433",
-    "elapsed_seconds": 2.38,
-    "scope": "Finite four-column U1 active-budget optimum and U2 safety in the standalone model; exact history-prefix bridge. No old-repository IsDraw bridge, infinite-height theorem, full U3 compressed engine or Lean complexity theorem.",
+    "elapsed_seconds": 2.017,
+    "scope": "Finite four-column draws, exact active budgets, total-switch bounds, protected cells, two-column control and multi-target release.",
     "modules": [
       {
         "module": "Audit",
-        "source_sha256": "35a64ed1cdf127cf383657cfc6ddd66cc22fc31753e2e29ff97ac8d732f8901f",
-        "artifact_sha256": "df054a4b1cc81158d1abe02dfeedf2d0124f447ee65302e9667f8051287cb108",
+        "source_sha256": "20a67ae9526f25ee72f4de0a61b3f0ce51c898f3b8fe3695f3e665dbc0956565",
+        "artifact_sha256": "30bb8ed4731a4913dbcf2a159db6bac67afb0010508a36e60d7849de38dbbfaf",
         "exit_code": 0
       },
       {
@@ -115,6 +155,36 @@
         "module": "BudgetTools",
         "source_sha256": "8f1909ac98b921e16128a8be5bdb91a3c1e54b68f35ee6db9f09c3085716c782",
         "artifact_sha256": "1028dccc5e79b6846497829fe857d208c5b9fdb118f81dd79cc29cdad31e9cb9",
+        "exit_code": 0
+      },
+      {
+        "module": "Completion.ProtectedCells",
+        "source_sha256": "325ae30cc512a1ac3e0b9543b6e2155a9e75d8fcbfe4543455464c81d89d3c99",
+        "artifact_sha256": "58d466033c9692c2da2dacf4802f803e44152f0096c0c49f598241ca91289005",
+        "exit_code": 0
+      },
+      {
+        "module": "Completion.Reserves",
+        "source_sha256": "5a38038adfd6c0b41e495b783993c839017c2f8d785f1ade56c62bd8e34d6011",
+        "artifact_sha256": "19650aea906ce1279ada4f7f500438550e69d0607c8ddb4b3e3c8b9724e06f73",
+        "exit_code": 0
+      },
+      {
+        "module": "Completion.SecondTotal",
+        "source_sha256": "9f5bbc64e94d0e42adfe71a395afa44042dac9824c9cf5cedebb27bf6968958f",
+        "artifact_sha256": "68456add1b12c412821fdd840e834932217ae9c855557dfc7defe38a3ae94471",
+        "exit_code": 0
+      },
+      {
+        "module": "Completion.TotalSwitch",
+        "source_sha256": "da3366b926e88a90287f9150059d8a910b28422ecde79730ca755f77cdea10a5",
+        "artifact_sha256": "a5aa7afd08e32efa99c2273c98c933e403b6e6f297bcab8c7a59f88d819c3352",
+        "exit_code": 0
+      },
+      {
+        "module": "Completion.TwoOdd",
+        "source_sha256": "0cd4d3d5855391dc3ef44643fea93f9a065e156871cd4e5a179aa8a8edb95260",
+        "artifact_sha256": "dee0178dff59ea313e5777c364cc14bc3e339b0a668b4c7a6e5414003a7abae7",
         "exit_code": 0
       },
       {
@@ -318,19 +388,19 @@
       {
         "module": "UniformFour.AClosure",
         "source_sha256": "6faf84d5a130a1fbd4e0ba135e07d666c3babc2204b7568497df3374487aff0a",
-        "artifact_sha256": "e1555a15114a262a2740cff0562e9911eb17cebd6751490371b3ac348bb0b921",
+        "artifact_sha256": "ad638dc297c8d25358f695244fd6a0c469ca86f691826753bb8e8f436e3bd698",
         "exit_code": 0
       },
       {
         "module": "UniformFour.BCClosure",
-        "source_sha256": "e8cab3c7a9ad7dab873f9212dfb7cb8ea341fb1b27d2879c12674822811de2ab",
-        "artifact_sha256": "455974585ec1c52b0614740b184bcd41cd58518c310a1027800228b39fda7b36",
+        "source_sha256": "3b861b4901dacf9f67e978e37103b4edd0c30d0f598585b7fe444958555cf167",
+        "artifact_sha256": "dafa3a386e1a03c293e17d59cf019d23adc661be327e41d90b9f10eea1fd5d29",
         "exit_code": 0
       },
       {
         "module": "UniformFour.CClosure",
         "source_sha256": "78779d97d4372def3abf37bd803a5919781a07da1614eb01543fc3517ec1b36e",
-        "artifact_sha256": "79a7936d8b2317846c5694fc2a4fc6f46536dfc501a50f282cc9f42101904a62",
+        "artifact_sha256": "aac817961cef14d56ddd22e9121a569cd301cd8c024322bd34d5d450d27c8c94",
         "exit_code": 0
       },
       {
@@ -341,8 +411,8 @@
       },
       {
         "module": "UniformFour.Certificates",
-        "source_sha256": "6e37bbcd422b0eb020f99e80116f2c428e96cd574f67a39e198c813edd6e76f1",
-        "artifact_sha256": "66edb26c635310c83da4d5fa2f090f1043cad0d93b5f4b0524f430f808fbd7d0",
+        "source_sha256": "3c10431a95fc37d684935d267b7ea01376274330e6b557ac04f5bd971b670d24",
+        "artifact_sha256": "b736103404782011a1a5a40b7be31dba99ab465cc2d368d5b74f5f6e657e98f9",
         "exit_code": 0
       },
       {
@@ -354,7 +424,7 @@
       {
         "module": "UniformFour.FiniteChecker",
         "source_sha256": "27bf120b45de77117d17e07dac8f326cd1f23e34e2077ef5cbc15bd68a5a4c4a",
-        "artifact_sha256": "cfa24ef4e0911455d1827b04a7fac4a59472911e3ab4967abd25467270819d48",
+        "artifact_sha256": "af18ee128ea415f89a6ef2263b11523a576301efa33bc8ded946b20d7f4bd343",
         "exit_code": 0
       },
       {
@@ -366,7 +436,7 @@
       {
         "module": "UniformFour.InitialCertificates",
         "source_sha256": "6414378385e92b15949e5f9e501a45cbd53c6e1a7cd62719dd170f7bba0b8614",
-        "artifact_sha256": "2634a549af0212d461e1c6fd8ebc52724cd5c0336ff7484957993448baf4c119",
+        "artifact_sha256": "4cca7c1d668ae83f6e4e587038c5317da5dce783912f803cead1c8c7ae203bda",
         "exit_code": 0
       },
       {
@@ -378,13 +448,13 @@
       {
         "module": "UniformFour.OpeningClosure",
         "source_sha256": "d3f0f50bf9634f32d2be56f5ead3ea740d5af546e8c48c79377508202df95484",
-        "artifact_sha256": "90b69a6a80016283fe672cfcdfc7988f96275bdaa9a3c406b3ecffc8450f222a",
+        "artifact_sha256": "49ca57200066b1483a7d5fcdba9cf712de36cdd45f1d768ae226a5170d6adc13",
         "exit_code": 0
       },
       {
         "module": "UniformFour.OpeningExits",
         "source_sha256": "49749a1685345facd99ab96abeca7afd9f7bd54f564db1324d02558d53f43ee7",
-        "artifact_sha256": "01ab5f43631d6c29ba023b86edf6e5569bea7b20b3e88fc5fbedf37ef71c5c1a",
+        "artifact_sha256": "075c7c1772ffec7b9d1aa6113fe907488055e7078d7b0341fdb8fa720c82332f",
         "exit_code": 0
       },
       {
@@ -408,13 +478,13 @@
       {
         "module": "UniformFour.RoundFacts",
         "source_sha256": "556940e58ebf19a22699d11c69994d537a53d34eb4a5ec78713d4a5dfb650b3a",
-        "artifact_sha256": "6c0e543ae618fd1cd3cd14a3a2fc1ec34dca8c93fc7c90000a83d3ec2cf85c8e",
+        "artifact_sha256": "19800435c196f3960ac8b4344127cadf30b5b110f1a668b402a426426b034dc1",
         "exit_code": 0
       },
       {
         "module": "UniformFour.SecondEntry",
         "source_sha256": "4e26277d3eb1621473c9d4c0c596c4836b79b854b3d6446469a1c75817099fd9",
-        "artifact_sha256": "2f763f479370c62c23866cdaeffa3cd2b29ffc24e64738d60a07a3805bf269ba",
+        "artifact_sha256": "c9f8abf8ac1432d7b2d7f30c790ad2622ee4a920dbdc6a39066e122bbbf7e593",
         "exit_code": 0
       },
       {
@@ -423,7 +493,9 @@
         "artifact_sha256": "268d4e29cbef801884cd081854838253365db3904e34c325e71262c4dff49ed9",
         "exit_code": 0
       }
-    ]
+    ],
+    "fresh_build": true,
+    "threads_per_lean": 16
   },
   "supporting": {
     "status": "accepted",
@@ -452,14 +524,32 @@
       {
         "module": "experiments.InfiniteNarrowBoards",
         "source": "experiments/InfiniteNarrowBoards.lean",
-        "source_sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0",
-        "artifact_sha256": "d81973a0ef1752cc804e8726d9efad9452d6a27a6622fd77910c3bf6474acfed"
+        "source_sha256": "fe4d498af5a60b9922819a0e91f1b1251031321c47071627dedf6c13287e1f01",
+        "artifact_sha256": "2a96f7a6905ea77a1d7e44b8fc204d22524879779b10f3d7e1214d5e1f76d69e"
+      },
+      {
+        "module": "Completion.NarrowCost",
+        "source": "Completion/NarrowCost.lean",
+        "source_sha256": "ae564ddf3b77df2680fc966d9c12ea680dc6d5d8eaaa2071e15035e9108b1d18",
+        "artifact_sha256": "1f8d85c8544ebc5e06f676401265137b2ea87aaa873b87ee4b05f136e7141eee"
+      },
+      {
+        "module": "Completion.InfiniteCost",
+        "source": "Completion/InfiniteCost.lean",
+        "source_sha256": "d56d1b93fc705955a7d6061fd4cbed9da5c4ecd0afbcc4dfc6e74eb472a35530",
+        "artifact_sha256": "8127ef0d97fb5f22a9e1963f178d90ddf12cfaec729a7304789d41a255fc3de2"
+      },
+      {
+        "module": "Completion.InfiniteExact",
+        "source": "Completion/InfiniteExact.lean",
+        "source_sha256": "7d1766077a27d9759b200135ee54c96a8c3a001327efeb92799650e0b1ffddb4",
+        "artifact_sha256": "4d923bdd9ae3d97443218eddaacdbb99f5cc0165894c8bcc20d4babdcfe48fff"
       },
       {
         "module": "NarrowAudit",
         "source": "NarrowAudit.lean",
-        "source_sha256": "20994bf41bdd980294a05e105793062ae729496888b0f2945baf77add4d497a1",
-        "artifact_sha256": "947e6bc69db0f7d97c6bdcec87398f24b2694d3e41918057c3de0393f58c40e4"
+        "source_sha256": "bd1c8af059ead7c6675a0619b5b72ae3fa111cb63babe7f99d0496d33471ce80",
+        "artifact_sha256": "0690fca90d1b3d6439f2128cbf441bb13d2d0dfaf36c332f17634633076e448a"
       }
     ],
     "root_axioms": {
@@ -492,19 +582,39 @@
         "propext",
         "Classical.choice",
         "Quot.sound"
+      ],
+      "Connect4.NarrowBoards.Cost.narrow_finite_exact": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.InfiniteNarrowBoards.Cost.narrow_infinite_exact": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.InfiniteNarrowBoards.Cost.four_infinite_first_exact": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "Connect4.InfiniteNarrowBoards.Cost.four_infinite_second_exact": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
       ]
     },
     "kernel_replay": {
       "exit_code": 0,
       "trust_level": 0,
       "import": "NarrowAudit",
-      "local_modules": 5,
+      "local_modules": 8,
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "fresh_build": true,
-    "seconds": 75.655,
-    "scope": "Finite widths one to three and genuinely infinite heights at widths one to four; supporting model, not an equivalence to the finite four-column model.",
-    "source_modules": 5
+    "seconds": 90.423,
+    "scope": "Draws and exact active-switch budgets at finite widths one to three and at infinite height on widths one to four.",
+    "source_modules": 8
   },
-  "scope": "Fresh local compilation and trust-zero import replay; two separate board models, with no formal equivalence claimed. Runtime paths and machine-specific commands omitted."
+  "scope": "Paper 1. Fresh builds and trust-zero import replay. Finite four-column and supporting models establish their respective results independently."
 }

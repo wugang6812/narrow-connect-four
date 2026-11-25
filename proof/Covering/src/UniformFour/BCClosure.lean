@@ -92,10 +92,10 @@ theorem b_cover_good {H : Nat} {b : Board} {q : Col}
 
 /-- The length condition is used, rather than silently assuming a second odd
 column. The output also proves uniqueness, in all four column positions. -/
-theorem b_other_odd {H : Nat} {b : Board} (h : B H b) {f : Col}
+theorem other_odd_of_count {H : Nat} {b : Board} {f : Col}
+    (count : (oddColumns H b).length = 0 ∨ (oddColumns H b).length = 2)
     (hf : OddColumn H b f) :
     ∃ t, f ≠ t ∧ ∀ c, OddColumn H b c ↔ c = f ∨ c = t := by
-  have count := h.zeroOrTwo
   cases f <;>
     by_cases h1 : OddColumn H b c1 <;>
     by_cases h2 : OddColumn H b c2 <;>
@@ -107,6 +107,11 @@ theorem b_other_odd {H : Nat} {b : Board} (h : B H b) {f : Col}
     | (refine ⟨c2, by decide, ?_⟩; intro c; cases c <;> simp_all [OddColumn])
     | (refine ⟨c3, by decide, ?_⟩; intro c; cases c <;> simp_all [OddColumn])
     | (refine ⟨c4, by decide, ?_⟩; intro c; cases c <;> simp_all [OddColumn])
+
+theorem b_other_odd {H : Nat} {b : Board} (h : B H b) {f : Col}
+    (hf : OddColumn H b f) :
+    ∃ t, f ≠ t ∧ ∀ c, OddColumn H b c ↔ c = f ∨ c = t :=
+  other_odd_of_count h.zeroOrTwo hf
 
 theorem full_move_was_odd {H : Nat} {b : Board} {f : Col}
     (hq : Legal H b f) (full : height (drop b f Q) f = H) :

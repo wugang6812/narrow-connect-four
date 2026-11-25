@@ -1,6 +1,6 @@
 
 #set document(title: "Draw Strategies for Gravity Connect Four on One to Four Columns", author: "GPT",
-    date: datetime(year: 2026, month: 11, day: 8))
+    date: datetime(year: 2026, month: 11, day: 25))
 #set page(paper: "a4", margin: (x: 22mm, top: 21mm, bottom: 21mm),
     numbering: "1", number-align: center,
     header: context {
@@ -29,940 +29,717 @@
 
 = Draw Strategies for Gravity Connect Four on One to Four Columns
 <draw-strategies-for-gravity-connect-four-on-one-to-four-columns>
-#align(center)[#text(size: 12pt, weight: "bold")[Covering strategies, optimal active-switch budgets, and Lean verification]]
-#align(center)[GPT #linebreak() 8 November 2026]
+#align(center)[#text(size: 12pt, weight: "bold")[Covering, at most one exception, and Lean verification]]
+#align(center)[GPT #linebreak() 25 November 2026]
 
-=== Abstract
-<abstract>
-We give fixed non-losing strategies for both players in gravity Connect
-Four on boards of width one to four, for every finite height and for
-genuinely unbounded height. Consequently, the empty-board value under
-optimal play is a draw. For four columns we determine the minimum
-worst-case number of active column switches required by a non-losing
-strategy. The first player needs one exactly at even heights at least
-four, and zero otherwise; the second player needs one at every height at
-least two, and zero at heights zero and one. A switch is active when the
-opponent's last column remains playable. The opening move is free, while
-a winning reply is charged normally. The proof separates support
-descent, protection of unresolved lines, and even capacity outside
-reserved targets. A two-column capacity controller handles full-column
-transfers. Every reserved exit in the even-height first-player
-construction needs only one target, whereas the odd-height second-player
-construction may protect two distinct diagonals. Parametric
-counterstrategies establish the lower bounds for every opening column
-and every passive choice.
+#strong[Abstract] We give explicit non-losing strategies for both
+players in gravity Connect Four on boards one to four columns wide, at
+every finite height and on a board with no ceiling. The value of the
+game on all these boards is therefore a draw. Each player covers
+whenever possible, with at most one exception. To cover is to answer in
+the opponent's column. To switch actively is to answer elsewhere while
+that column is still playable. A forced change after a column fills
+counts only toward the total. For four columns we determine exactly how
+many active switches a non-losing strategy needs in the worst case. The
+first player needs one at even heights #emph[H]~≥~4 and none otherwise.
+The second player needs one at every height #emph[H]~≥~2 and none at
+#emph[H]~≤~1. The upper bounds rest on three facts. Support descent
+leaves only the bottom lines and a few exceptional lines to watch.
+Covering hands the defender every cell at even distance above a column
+top; we call these cells protected. The parity of the remaining capacity
+decides whether the defender can stay out of the column holding the
+protected cell it relies on. Explicit counter-strategies give the
+matching lower bounds. Lean 4 verifies the draw and exact active budgets
+throughout this range, and total-switch bounds of four and two for the
+first and second player on finite four-column boards.
 
-A companion Lean 4 development verifies a shared response rule and the
-exact active budgets at all finite four-column heights, including an
-equivalence with legal-history prefix semantics. Its 55 source modules,
-14 selected axiom closures, and trust-zero import replay passed
-validation. A separate five-module development verifies the small-width
-and infinite-height draw results. The general resource lemma,
-total-switch bounds, and active budgets outside the finite four-column
-model remain paper proofs. Algorithm design and compressed execution are
-treated in a separate paper.
+#strong[Keywords:] gravity Connect Four; non-losing strategy; covering;
+parity; Lean 4; formal verification.
 
-Keywords: gravity Connect Four; non-losing strategy; parity invariant;
-resource lemma; Lean 4; formal verification.
+== 1 Introduction
+<introduction>
+=== 1.1 Results
+<results>
+The board has 1 ≤ #emph[w] ≤ 4 columns and height #emph[H]\; the first
+player F and the second player S drop stones in turn, and the first four
+in a row wins. To #emph[cover] is to reply in the column the opponent
+has just played. A reply in another column is #emph[passive] if the
+opponent has just filled its column and #emph[active] otherwise. The
+first player's opening move is not a reply and costs nothing.
 
-=== Background and scope
-<background-and-scope>
-Allis explicitly gave a second-player non-losing strategy for boards
-with at most six columns and a positive even number of rows \[1, §2.2\].
-His convention is White first and Black second; we use player order
-throughout. The pairing mechanism in our even-height second-player proof
-is inherited from that work. We prove the required four-column instance
-directly, including its switch count, rather than assume that deleting
-columns preserves a strategy. Claimeven and the even-capacity condition
-for releasing combined rules \[1, §§6.1, 7.1\] provide related
-background.
+#strong[Theorem 1 (covering strategies).] For w ≤ 4 and every finite H ≥
+0, each player has a fixed non-losing strategy that covers whenever
+covering is legal, with at most one exception, which is an active
+switch. The same holds for a board with no ceiling.
 
-Yamaguchi et al.~studied infinite and semi-infinite boards under several
-placement restrictions \[2\]. We make no priority claim for
-infinite-board draws. Our particular model has a floor, no ceiling, at
-most four columns, and gravity; the proof supplies fixed strategies
-protecting every finite prefix.
-
-“Covering strategy” means that a strategy with the stated restricted
-actions exists; we do not prove a transformation of every non-losing
-strategy into a normal form. Optimal play and minimum active-switch cost
-are distinct objectives, both addressed below. Sections 1-8 contain the
-mathematical proofs; Section 9 specifies the formal scope. The shared
-response algorithm, certificate checker, and compressed representation
-are developed separately \[4\].
-
-== 1 Rules and the quantity to minimize
-<rules-and-the-quantity-to-minimize>
-=== 1.1 Game and fixed strategies
-<game-and-fixed-strategies>
-The width is a positive integer $w lt.eq 4$. A finite height $H$ is a
-nonnegative integer. Columns are numbered from left to right and rows
-from the floor upward, starting at one. A move places a stone in the
-lowest vacant square of a nonfull column. Four consecutive stones
-horizontally, vertically, or along either diagonal win. Play stops at
-the first four-in-a-row; the losing player receives no repair move. A
-full board with no winner is drawn.
-
-For genuinely infinite height there is a floor but no ceiling. Only
-finitely many stones exist at each finite time. An infinite play with no
-winner is called a draw. A fixed strategy must protect all its finite
-prefixes; a separate strategy for each finite height does not establish
-this property.
-
-We write $F$ for the first player's stone and $S$ for the second
-player's stone. Column words run from bottom to top; for example
-$\[ F S \, emptyset \, emptyset \, F \]$. A line with an out-of-board
-square is not a winning line. In general lemmas $P$ is the defending
-player and $Q$ the opponent, irrespective of player order.
-
-A strategy assigns a legal move at each of its nonterminal legal
-histories. Whenever the construction allows several equivalent choices,
-choose the leftmost allowed column. Histories inconsistent with the
-construction may be assigned the leftmost legal move. Only consistent
-histories enter the non-loss proof.
-
-=== 1.2 Active and passive switches
-<active-and-passive-switches>
-We count one player's replies, not the sum for both players. A reply in
-a different column is #strong[active] if the opponent's last column is
-still playable, and #strong[passive] if the opponent just filled that
-column. A reply in the same column is called a cover. The first player's
-opening stone is not a reply and is free. If the opponent's move ends
-the game, there is no reply to count. A reply that itself wins is
-charged by the same rule before play stops.
-
-For a fixed non-losing strategy, its active budget is the supremum of
-its active-switch count over all legal opponent continuations. Minimize
-this budget over all fixed non-losing strategies to obtain the optimal
-active budget. A lower bound must address every such strategy, including
-arbitrary history-dependent choices after a column becomes full.
-
-=== 1.3 Main results
-<main-results>
-#strong[Theorem 1 (covering strategies).] For $w lt.eq 4$ and every
-finite $H gt.eq 0$, each player has a fixed non-losing strategy using at
-most one active switch. Except for this possible reply, it covers
-whenever covering is legal. The same assertion holds for genuinely
-infinite height.
-
-#strong[Theorem 2 (exact four-column active budgets).]
-
-#figure(
-  align(center)[#table(
-    columns: 3,
-    align: (auto,right,right,),
-    table.header([Height], [First player], [Second player],),
-    table.hline(),
-    [$H = 0 \, 1$], [0], [0],
-    [$H = 2 \, 3$], [0], [1],
-    [Odd $H gt.eq 5$], [0], [1],
-    [Even $H gt.eq 4$], [1], [1],
-  )]
-  , kind: table
-  )
-
-For infinite height the exact budgets are zero and one, respectively. At
-widths at most three both exact budgets are zero, at every finite or
-infinite height.
-
-#strong[Theorem 3 (total-switch upper bounds).] The constructed finite
-four-column strategies use at most four switches in total. The
-second-player constructions use at most two, including their opening
-reply. These are upper bounds, not claims that the optimal total budgets
-are four and two.
-
-== 2 Support and targets that can be discharged separately
-<support-and-targets-that-can-be-discharged-separately>
-This section concerns finite height only. Its lemmas apply to either
-defending player.
-
-=== 2.1 Support descent and permanent defence
-<support-descent-and-permanent-defence>
-If a nonvertical $Q$ four-in-a-row avoids the bottom row and every stone
-has a $P$ stone directly below it, translating the line down one row
-gives an earlier $P$ four-in-a-row. Gravity ensures that all four
-supporting stones existed before the last $Q$ stone. Such a line
-therefore cannot give $Q$ the first win.
-
-At a $Q$-to-move position, record the complete exception set $E$: every
-nonbottom $Q$ square immediately above another $Q$ stone, and the next
-vacant square of every nonfull $Q$-topped column. The latter records a
-possible exception on the next visit. Do not include a square beyond a
-full column. The nonvertical lines meeting the bottom row or $E$ are the
-lines requiring direct inspection. A line containing a $P$ stone is
-permanently blocked.
-
-#strong[Lemma 4 (permanent defence).] Suppose the position is
-nonterminal, the top run of $Q$ stones in every nonfull column has
-length at most two, $E$ is complete, and all lines requiring inspection
-are blocked by $P$. Then $P$ is non-losing by covering whenever possible
-and, after $Q$ fills a column, replying in any other legal column.
-
-#strong[Proof.] A top $Q$ run grows by at most one before it is capped
-by $P$ or the ceiling, so no new vertical four arises. All possible new
-support exceptions are already recorded in $E$. After a column has been
-processed and remains growable it is $P$-topped; adding another $P$
-stone creates no new $Q$ exception. The bottom and exception lines
-remain blocked. Support descent excludes every other nonvertical first
-win. Crucially, this reasoning applies immediately after the $Q$ move,
-before the reply. A cover is legal if the original column is nonfull,
-and some other move exists if that column is full but the board is not.
-Stop at an earlier $P$ win or a full board. $square.stroked.tiny$
-
-If these conditions hold with $P$ to move, any legal $P$ stone preserves
-them; then apply the lemma, unless that stone already ends the game.
-
-=== 2.2 Target distances and external capacity
-<target-distances-and-external-capacity>
-At a nonterminal $Q$ turn choose targets $\( j \, g_j \)$, at most one
-per column. If column $j$ has height $q_j$, require
-
-$ q_j < g_j lt.eq H \, #h(2em) g_j - q_j equiv 0 med \( mod med 2 \) . $
-
-Let $J$ be the unresolved target columns. Their complement must have
-even total remaining capacity $O$. The defender never enters a target
-column voluntarily: after a $Q$ move there it covers; outside $J$ it
-covers if possible, and after an outside column fills it chooses another
-legal #strong[outside] column.
-
-The target distances remain positive and even at every $Q$ turn. The
-opponent can reach at most the square just below a target, and the cover
-is legal; thus a target can only be acquired by $P$. If $Q$ enters the
-outside, its positive even capacity was at least two, leaving an outside
-reply. Each complete outside round uses two squares. Replacing “outside
-column” by “any column” would invalidate the reservation.
-
-=== 2.3 Three target types and one resource lemma
-<three-target-types-and-one-resource-lemma>
-Let $U_0$ be the initially unblocked lines requiring inspection. Define
-
-$ chi \( j \, g_j \) = \( H - g_j \) med mod med 2 . $
-
-An #strong[ordinary blocking target] protects lines through its square
-and requires $chi = 0$. A #strong[terminal blocking target] lies on
-every line in $U_0$, so obtaining it ends the whole blocking task; its
-$chi$ is unrestricted. A #strong[winning target] completes a
-four-in-a-row with three already fixed $P$ stones. It may protect lines
-through a square in its column at or above the target, and its $chi$ is
-also unrestricted.
-
-Every line of $U_0$ must be protected by some pending target. One target
-may protect several lines. The terminal blocking condition refers to all
-of the initial $U_0$, hence also to every later unresolved subset.
-
-#strong[Lemma 5 (target resources).] Assume the structural hypotheses of
-Lemma 4, allowing the lines $U_0$ to remain unblocked, and the target,
-capacity, and protection conditions above. Follow the prescribed
-replies. On acquiring an ordinary target, release its column and remove
-the lines just blocked. On acquiring a terminal blocking target, enter
-permanent defence. On acquiring a winning target, stop with a win. An
-earlier transition to permanent defence is allowed only when all
-unresolved lines have been blocked. This is a legal non-losing strategy.
-
-#strong[Proof.] Maintain that the current exceptions are contained in
-the original $E$, all existing blockers remain fixed, every unresolved
-line has a pending protector, all pending distances are positive and
-even, and $O$ is even. Before choosing a reply, exclude a first $Q$ win.
-An ordinary or terminal blocking target is still empty. A winning target
-and the squares above it in its column are still empty by gravity. Thus
-no protected line has completed. All other nonvertical lines are blocked
-or excluded by support descent; top-run length excludes vertical wins.
-
-Reply legality follows from Section 2.2. Covering or ceiling-capping
-introduces no exception outside $E$, and an outside $P$ stone introduces
-none. Stop if any chosen $P$ move wins early.
-
-Acquiring an ordinary target blocks all lines assigned to it. Any
-remaining line still has another pending protector. Releasing its column
-adds $H - g_j$ to $O$, an even amount. Release permits subsequent
-ordinary covering in that column; it does not freeze the column. Other
-targets and the fixed stones supporting a winning target remain
-unchanged.
-
-A terminal blocking target closes all initial obligations, giving Lemma
-\4. A winning target ends play immediately after the opponent's previous
-first win has been excluded. Neither case needs the old parity condition
-after termination, which explains why $chi = 1$ is allowed.
-
-For termination use the total remaining capacity
-
-$ cal(R) = O + sum_(j in J) \( H - q_j \) . $
-
-Release transfers the same remaining squares from a summand to $O$ and
-does not change $cal(R)$. Each actual complete round reduces it by two.
-Pending protection prevents the necessary reply from disappearing into a
-full-board draw; finite capacity therefore forces all obligations to
-close or a terminal target to be obtained, unless play has already
-ended. Emptying only the ordinary-target subset is not a sufficient exit
-condition: a terminal or winning target may still protect an unresolved
-line. $square.stroked.tiny$
-
-The shortened expression $O + sum_j \( g_j - q_j \)$ is not
-automatically a valid decreasing quantity across release, which makes
-squares above the target available. Likewise, two independent ordinary
-targets cannot be replaced by the promise to acquire at least one of
-them.
-
-=== 2.4 One parity identity
-<one-parity-identity>
-On a four-column board the total capacity is even. At a $Q$ turn the
-remaining capacity has parity $epsilon = 1$ when $P$ is first and
-$epsilon = 0$ when $P$ is second. Since all target gaps are even,
-outside capacity is even exactly when
-
-$ sum_(j in J) chi \( j \, g_j \) equiv epsilon med \( mod med 2 \) . $
-
-This is accounting, not a substitute for geometric safety. At other
-widths the right side must be the actual remaining-capacity parity.
-Within this interface a first-player waiting phase cannot use only
-ordinary targets, all of which have $chi = 0$\; it needs a terminal or
-winning target with odd residual capacity. An odd-height second player
-can use two third-row ordinary targets, since $H - 3$ is even. These are
-restrictions of this lemma, not impossibility results for every
-conceivable strategy.
-
-== 3 A controller for two odd-capacity columns
-<a-controller-for-two-odd-capacity-columns>
-#strong[Lemma 6.] Suppose exactly two columns have odd remaining
-capacity at a nonterminal $Q$ turn; let their set be $R$. Cover until
-$Q$ first fills a column. It belongs to $R$. Reply in the other member
-of $R$, then cover forever until termination. All prescribed moves are
-legal, and the controller uses at most one switch, which is passive.
-
-#strong[Proof.] Covers consume two squares and preserve all capacity
-parities. A playable even-capacity column contains at least two
-vacancies at the start of a $Q$ turn and cannot be filled by $Q$. The
-other odd-capacity column has positive capacity when the first fills, so
-the transfer is legal. Both odd capacities become even; from then on
-every cover exists. $square.stroked.tiny$
-
-The lemma is independent of the parity of $H$ and proves legality and
-count, not geometric safety. The safety of the following entries is
-proved separately. To retain the one-switch count, the transfer must use
-the other odd-capacity column, even if a more permissive resource or
-permanent-defence lemma would allow additional choices.
-
-== 4 The second player at odd heights
-<the-second-player-at-odd-heights>
-Assume odd $H gt.eq 3$. Reflect columns by $c mapsto 5 - c$ to reduce
-openings in columns three and four to columns two and one.
-
-=== 4.1 An interior opening
-<an-interior-opening>
-After $F \( 2 \, 1 \)$, reply $S \( 1 \, 1 \)$ and start Lemma 6 with
-$R = { 3 \, 4 }$. Before the first filled column, every $F$-turn
-position is
-
-$ \[ S \( F S \)^a \, med F \( F S \)^b \, med \( F S \)^c \, med \( F S \)^d \] . $
-
-The first two columns have odd height and cannot be filled by $F$. The
-only actual or potential support exception is $\( 2 \, 2 \)$. The bottom
-horizontal and rising bottom diagonal are blocked by $S \( 1 \, 1 \)$.
-Write
-
-$ D = \( \( 1 \, 4 \) \, \( 2 \, 3 \) \, \( 3 \, 2 \) \, \( 4 \, 1 \) \) . $
-
-The square $\( 2 \, 3 \)$ stays empty or belongs to $S$, protecting $D$.
-The exceptional second-row horizontal is protected by $\( 3 \, 2 \)$ and
-$\( 4 \, 2 \)$: before transfer, $F$ occupies only odd rows in these
-columns. The other valid diagonal through $\( 2 \, 2 \)$ is already
-blocked by $\( 1 \, 1 \)$.
-
-When $F$ first fills column three or four, its second square is
-permanently $S$, also for $H = 3$. Transfer to the other odd-capacity
-column. Even if that column's row parity changes, the filled column
-continues to block row two. Column two never participates in the
-transfer, preserving the guard at $\( 2 \, 3 \)$. Its initial $F$ stone
-can become a bottom pair but is then covered; all other $F$ stones are
-separated. Support descent handles the remaining lines. These arguments
-include the column-filling move itself, before $S$ replies. Thus $S$ is
-non-losing, with one active opening reply and at most one passive
-transfer.
-
-=== 4.2 An exterior opening
-<an-exterior-opening>
-After $F \( 1 \, 1 \)$ reply $S \( 1 \, 2 \)$. While both middle columns
-remain empty, cover in the outside columns. The waiting shape is
-
-$ \[ \( F S \)^a \, emptyset \, emptyset \, \( F S \)^d \] \, #h(2em) a gt.eq 1 \, med d gt.eq 0 . $
-
-Empty middle columns exclude nonvertical wins and alternating outside
-columns exclude vertical wins. Finite capacity forces a first event:
+#strong[Theorem 2 (exact active budgets on four columns).] The least
+worst-case number of active switches of a non-losing strategy is:
 
 #figure(
   align(center)[#table(
     columns: 3,
     align: (auto,auto,auto,),
-    table.header([First event by $F$], [Reply by $S$], [Odd-capacity set
-      afterwards],),
+    table.header([Height], [First player], [Second player],),
     table.hline(),
-    [Enters $\( 2 \, 1 \)$], [$\( 3 \, 1 \)$], [${ 1 \, 4 }$],
-    [Enters $\( 3 \, 1 \)$], [$\( 2 \, 1 \)$], [${ 1 \, 4 }$],
-    [Fills column one], [$\( 3 \, 1 \)$], [${ 2 \, 4 }$],
-    [Fills column four], [$\( 2 \, 1 \)$], [${ 1 \, 3 }$],
+    [#emph[H] = 0, 1], [0], [0],
+    [#emph[H] = 2, 3], [0], [1],
+    [odd #emph[H] ≥ 5], [0], [1],
+    [even #emph[H] ≥ 4], [1], [1],
+    [no ceiling], [0], [1],
   )]
   , kind: table
   )
 
-The event leaves at least one middle column empty; a column-filling
-stone is supported by $S$. Hence it does not win. Each reply is in an
-empty middle column and is legal. Then use Lemma 6, with no further
-classification by $a \, d$ or special transition rounds.
+At widths at most three both budgets are zero, at every finite height
+and with no ceiling.
 
-=== 4.3 Safety after a middle-column event
-<safety-after-a-middle-column-event>
-Both middle columns have height one, with one bottom $F$ and one bottom
-$S$. The bottom horizontal is blocked. The sole potential exception is
-the second square of the $F$-bottomed middle column; its horizontal is
-blocked by the fixed $S \( 1 \, 2 \)$. Let
+#strong[Theorem 3 (total switches).] The finite four-column strategies
+constructed below use at most four switches in total; those of the
+second player use at most two. These are upper bounds for our
+constructions, not optimal totals.
 
-$ R_0 = \( \( 1 \, 1 \) \, \( 2 \, 2 \) \, \( 3 \, 3 \) \, \( 4 \, 4 \) \) . $
+=== 1.2 The idea
+<the-idea>
+If the defender always covers, every opponent stone outside the bottom
+row rests on a defender stone, except where the defender failed to
+cover. A first opponent four supported in this way is impossible,
+because the defender's four one row lower would have come first. So only
+a handful of lines can ever hurt the defender: the three lines that
+touch the bottom row, and the lines through the few cells where the
+opponent's stone stands on its own colour. Covering also decides the
+future of every column. If the opponent enters a column and the defender
+immediately covers, the defender receives the 2nd, 4th, 6th, … cell
+above the current top. It is enough to give each dangerous line one cell
+of this kind and to keep it.
 
-The targets $\( 3 \, 3 \)$ and $\( 2 \, 3 \)$ protect $R_0$ and $D$,
-respectively. Middle-column heights stay odd, with $F$ entering even
-rows and $S$ covering odd rows. Only outside columns take part in the
-capacity transfer.
+Two things can spoil the plan. The #emph[bottom row] comes first. The
+first player's opening already blocks it. The second player has no stone
+there yet, and if it only covers, the first player completes the bottom
+row in four moves. This is why the second player must switch once. The
+#emph[ceiling] comes second. When the opponent fills a column, the
+defender has to play elsewhere, and the column it enters shifts its
+protected cells by one row. Whether the defender can choose where such
+forced moves go is a matter of parity: an opponent can fill a column
+only if an odd number of its cells remain. For the first player at odd
+height, the three columns outside the one it relies on hold an even
+number of cells, so it is never forced into that column and needs no
+active switch. At even heights of at least four the outside count is
+odd, and the lower bound in Section 7 shows that one active switch is
+necessary.
 
-When the potential middle exception becomes actual it remains in the
-exception list. Its second-row line is still blocked, and its relevant
-bottom diagonal still has an empty or acquired target. No new first-win
-route appears. The top $F$ run reaches at most two and is covered;
-support descent handles other lines.
+=== 1.3 Relation to earlier work
+<relation-to-earlier-work>
+Allis gave a non-losing strategy for the second player on boards with at
+most six columns and a positive even number of rows \[1, §2.2\]; he
+calls the first player White and the second Black. We use F and S for
+the two roles. We prove the four-column instance directly, with its
+switch count. Claimeven and the even-capacity rules of \[1, §§6.1, 7.1\]
+are related background. Yamaguchi et~al.~studied infinite boards under
+several placement rules \[2\]; we make no priority claim for boards
+without a ceiling and include a short self-contained proof for our model
+(a floor, no ceiling, at most four columns). Tromp's computer search
+reports width-four boards of heights 4 to 11 as draws \[3\]. This paper
+replaces the version of 13 September 2026 \[5\], whose proof of the
+finite-height draws relied in part on finite certificates. The new proof
+is uniform in the height and uses no large enumerated strategy
+certificates. It also adds the exact active budgets and their lower
+bounds. A uniform response algorithm and its compressed execution are
+treated in the companion paper \[6\].
 
-For $H gt.eq 5$, Lemma 5 also explains separate discharge. Both
-third-row targets have gap two and even residual capacity $H - 3$.
-Outside capacity $\( H - 2 a \) + \( H - 2 d \)$ is even. After one
-target is acquired, release its even residual capacity and continue to
-protect the other line. Acquiring either one alone is not enough to
-discard both obligations.
+Sections 2 and 3 fix the rules and prove five lemmas. Sections 4 and 5
+construct the strategies for the first and the second player, Section 6
+treats boards without a ceiling, Section 7 proves the lower bounds,
+Section 8 assembles the theorems, and Section 9 describes the formal and
+computational checks.
 
-For $H = 3$, the diagonals do not exist. The bottom and exceptional
-second-row horizontals are already blocked. Permanent defence is safe,
-but retain the specific controller to preserve the count.
+== 2 Rules and the cost of a strategy
+<rules-and-the-cost-of-a-strategy>
+Columns are numbered 1 to #emph[w] from the left and rows 1 to #emph[H]
+from the floor; (#emph[c],~#emph[r]) is the cell in column #emph[c], row
+#emph[r]. A move puts a stone in the lowest empty cell of a column that
+is not full. Four stones of one player in a horizontal, vertical or
+diagonal line win; play stops at the first such four, and a full board
+without one is a draw. With no ceiling there is a floor but no top row;
+a play that never produces a four is a draw. Column contents are written
+bottom to top, for example \[FS,~∅,~∅,~F\]. In the lemmas, P is the
+defending player and Q its opponent, whichever moves first. Three lines
+recur:
 
-=== 4.4 Safety after an outside column fills
-<safety-after-an-outside-column-fills>
-If column one fills and $S$ replies at $\( 3 \, 1 \)$, then for
-$H gt.eq 5$ the fixed $S \( 1 \, 4 \)$ blocks $D$, while $\( 3 \, 3 \)$
-protects $R_0$. The only $F$-topped column is full, so its out-of-board
-successor is not a potential exception. The odd-capacity columns are two
-and four, leaving column three's protection unchanged.
+#emph[R]#sub[0] = (1,1)(2,2)(3,3)(4,4), ~~ #emph[D] =
+(1,4)(2,3)(3,2)(4,1), ~~ #emph[U]#sub[1] = (1,3)(2,4)(3,5)(4,6).
 
-If column four fills, reply at $\( 2 \, 1 \)$. Now $S \( 4 \, 4 \)$
-blocks $R_0$, and $\( 2 \, 3 \)$ protects $D$\; the odd-capacity columns
-are one and three. For $H = 3$ both diagonals are absent and the bottom
-$S$ stone blocks the remaining bottom horizontal. The same vertical and
-support arguments apply.
+A strategy chooses a legal move at every history consistent with it;
+where the construction allows several moves we take the leftmost. We
+count the switches of one player only. The #emph[active budget] of a
+non-losing strategy is the largest number of active switches it makes
+against any opponent play; Theorem 2 minimises this over all non-losing
+strategies, including ones that depend on the whole history. A reply
+that itself wins is counted by the same rule.
 
-=== 4.5 Counts and fixed choices
-<counts-and-fixed-choices>
-An interior opening spends one active switch immediately, followed by at
-most one passive transfer. For an exterior opening, the waiting phase
-only covers. A first middle-column event uses one active switch, then at
-most one passive transfer. A first filled-outside-column event uses one
-passive switch, then at most one more passive transfer. These
-alternatives are exclusive. In every case the active budget is at most
-one and the total count at most two.
+== 3 Five lemmas
+<five-lemmas>
+=== 3.1 Support descent and the lines to watch
+<support-descent-and-the-lines-to-watch>
+#strong[Lemma 1 (support descent).] Let a non-vertical line avoid the
+bottom row and carry four Q stones, each with a P stone directly below
+it. Then these four Q stones are not Q's first four.
 
-== 5 Upper bounds for the remaining cases
-<upper-bounds-for-the-remaining-cases>
-=== 5.1 Small widths and small heights
-<small-widths-and-small-heights>
-At widths at most three, only vertical fours exist. The first player
-opens in a fixed column; thereafter either defending player covers
-whenever possible and switches only after a column fills. Before its
-opponent's turn, each growable nonempty column is defender-topped,
-precluding an opponent vertical four. This uses zero active switches. At
-infinite height covering is always legal.
+#strong[Proof.] The four supporting P stones lie on the line one row
+lower. By gravity each of them was placed before the Q stone on top of
+it, so P completed that lower four before Q's last stone. □
 
-Height zero is already full. On a four-column board of height one each
-player places at most two stones, so no four exists; every reply to a
-move in a different column is passive.
+At a position with Q to move, the #emph[exception set] #emph[E] consists
+of every Q stone above row 1 that stands on a Q stone, together with the
+next empty cell of every column that is not full and has a Q stone on
+top. The second kind records an exception that may appear on the next
+visit to the column. The #emph[watched lines] are the non-vertical lines
+that meet the bottom row or #emph[E]\; a watched line is #emph[open] if
+it contains no P stone. By Lemma 1, a first Q four on a non-vertical
+line must use an open watched line, as long as no new exception appears.
 
-At four-column heights two and three, the first player occupies any
-fixed bottom square and thereafter covers or switches after a fill. Only
-horizontals can win. The opening blocks the bottom horizontal, and every
-higher opponent horizontal would have an earlier first-player supporting
-horizontal. Thus the first-player budget is zero. At height three the
-second player uses Section 4; an unrelated row-partner strategy that
-switches repeatedly cannot establish our active count.
+#strong[Lemma 2 (permanent defence).] At a position with Q to move,
+suppose that the run of Q stones at the top of each column that is not
+full has length at most two, and that no watched line is open. Then P
+does not lose if it covers whenever possible and plays in any legal
+column after Q fills a column.
 
-=== 5.2 The first player at odd heights
-<the-first-player-at-odd-heights>
-Let odd $H gt.eq 5$. Open at $\( 1 \, 1 \)$, blocking the bottom
-horizontal and $R_0$. There are no opponent exceptions, leaving only
-$D$. Reserve $\( 3 \, 2 \)$, of gap two, with outside capacity $3 H - 1$
-even.
+#strong[Proof.] A cover puts P on top of Q's stone, and a move after a
+fill puts P on some top; neither creates a new exception, and every
+potential exception that becomes actual was already in #emph[E]. A Q run
+at the top of a column grows by one and is then capped, so no vertical
+four appears. Watched lines keep their P stones, and every other
+non-vertical line is excluded by Lemma 1. The argument applies to each Q
+move before P replies; a cover is legal unless Q filled the column, and
+then another legal move exists unless the board is full. □
 
-Cover outside the target column, transferring only to another outside
-column after a fill. Once the opponent enters column three, cover at
-$\( 3 \, 2 \)$, block $D$, and enter permanent defence. Before then, the
-target stays empty, while fixed blockers or support descent protect
-every other line. Lemma 5 prevents an illegal early entry into the
-target column and ensures eventual acquisition unless play ends sooner.
-No active switch is used.
+If the same top-run and blocking conditions hold at a live position with
+P to move, any legal P stone keeps them, so P may play anywhere and then
+apply Lemma 2.
 
-=== 5.3 The second player at even heights
-<the-second-player-at-even-heights>
-For even $H gt.eq 2$, use the pairing mechanism of Allis \[1, §2.2\].
-Pair columns ${ 1 \, 2 }$ and ${ 3 \, 4 }$. Reply to the opening by
-taking the partner's bottom square, an active switch. The initial pair
-has odd heights and odd capacities; the other pair has even heights and
-even capacities. Apply Lemma 6.
+=== 3.2 Protected cells
+<protected-cells>
+#strong[Lemma 3 (protected cells).] Suppose column j has height h at a Q
+turn. Whenever Q plays there and a cover is legal, P must cover. P
+otherwise stays out of column j. Every in-board cell (j, h + 2k), k ≥ 1,
+then remains empty or belongs to P.
 
-In the other adjacent pair, $F$ occupies only odd rows. A diagonal uses
-opposite row parities in adjacent columns, so no $F$ diagonal is
-possible; this pair also excludes even-row horizontals. In the initial
-pair, apart from the opening bottom stone, $F$ occupies only even rows
-before the transfer. Hence higher odd-row horizontals are excluded,
-while the opening $S$ stone blocks the bottom row. After a fill, the
-filled initial column has permanent $S$ stones in rows three, five, and
-so on, preserving the higher odd-row blocks.
+#strong[Proof.] While the column remains open, each visit by Q is paired
+with a cover by P. In each pair Q occupies the odd offset and P the
+following even offset. If Q fills the column, that unpaired stone also
+has an odd offset, and nobody can enter the column again. □
 
-The only possible adjacent $F$ pair is at the bottom of its opening
-column, then covered or ceiling-capped when $H = 2$. No vertical four
-arises. The reasoning applies before the reply to every $F$ move. Thus
-the strategy is non-losing, using at most one active and one passive
-switch.
+We call these cells #emph[protected]. A line through a protected cell
+cannot be completed by Q while the hypothesis of Lemma 3 holds. The
+hypothesis fails only if P has to play in column #emph[j] after a fill
+elsewhere, or chooses to. The next two lemmas control exactly this.
 
-=== 5.4 The first player at even heights: outside waiting
-<the-first-player-at-even-heights-outside-waiting>
-Assume even $H gt.eq 4$ and open at $\( 1 \, 1 \)$. If the first $S$
-reply is in column one, reply at $\( 4 \, 1 \)$ and use Section 5.5.
-Otherwise use the outside waiting family
+=== 3.3 One reserved cell
+<one-reserved-cell>
+#strong[Lemma 4 (one reserved cell).] At a position with Q to move,
+suppose that the Q runs at the top of non-full columns have length at
+most two. Let t = (j, g) be an empty cell with g − h#sub[j] positive and
+even, where h#sub[j] is the height of column j, and let the columns
+other than j have an even number of empty cells in total. Assume one of
+the following.
 
-$ \[ F \( S F \)^a \, emptyset \, emptyset \, \( S F \)^d \] \, #h(2em) a \, d gt.eq 0 . $
++ \(Blocking) Every open watched line passes through t.
++ \(Winning) P already owns three cells of a line through t, and every
+  open watched line passes through a cell (j, r) with r ≥ g.
 
-The initial state has $a = d = 0$, with the just-mentioned exceptional
-first reply handled separately. During outside waiting, $a gt.eq 1$
-implies $d gt.eq 1$: a later visit to column one requires a previous
-visit to column four. Cover in column four and in column one whenever it
-has not filled. Column four has even height and cannot be filled by
-$S$\; column one has odd height and may fill. Empty middle columns and
-alternating outside words exclude first wins. Finite capacity forces one
-of three exits.
+P covers whenever possible; after Q fills a column other than j, P plays
+in another column other than j. Then P does not lose, and P obtains t
+unless the game ends earlier. At that moment P has won in case 2, and in
+case 1 Lemma 2 applies.
 
-If $S$ enters $\( 2 \, 1 \)$, add $F$ in column one:
+#strong[Proof.] The rule is legal. Before Q's move the columns other
+than #emph[j] hold an even number of empty cells. If Q plays among them
+and fills a column, it took one of at least two such cells, so at least
+one remains for P. A Q move in column #emph[j] lands at odd distance
+below #emph[t] and can always be covered. Each round therefore uses two
+cells outside #emph[j] or two cells of #emph[j], and the parity is
+restored. So P enters column #emph[j] only to cover, and #emph[t] is
+protected by Lemma 3; only P can obtain it. If the current height is q,
+the positive even gap gives q + 1 \< g ≤ H. Thus Q cannot fill the
+target column before P can cover.
 
-$ \[ F \( S F \)^a F \, S \, emptyset \, \( S F \)^d \] . $
+No Q move can be a first win. Lines through #emph[t], and in case 2
+lines through a cell of column #emph[j] above #emph[t], still have an
+empty cell. Every other watched line holds a P stone. P's moves create
+no exception outside #emph[E], so Lemma 1 excludes all other
+non-vertical lines, and top runs exclude vertical fours. The board
+cannot fill while #emph[t] is empty, and only P can fill #emph[t], so P
+eventually takes it unless the game ends earlier. In case 2 that move
+wins. In case 1 every open watched line now contains a P stone, which is
+the hypothesis of Lemma 2. □
 
-This is legal because the former height of column one is odd and less
-than even $H$. It is one active switch. The only potential exception
-$\( 2 \, 2 \)$ has its horizontal blocked by $F \( 1 \, 2 \)$ when
-$a = 0$, or by $F \( 4 \, 2 \)$ when $a gt.eq 1$, since then
-$d gt.eq 1$. Its rising line and the bottom horizontal and $R_0$ are
-blocked by $F \( 1 \, 1 \)$\; the other diagonal is out of bounds. If
-$a = 1$, the newly acquired $\( 1 \, 4 \)$ also blocks $D$, so use
-permanent defence. Otherwise reserve only $\( 2 \, 3 \)$, at gap two, to
-block $D$.
+#strong[The parity of a reserved cell.] A four-column board has
+4#emph[H] cells, an even number. At a Q turn the number of empty cells
+is odd if P moved first and even otherwise. Since #emph[g] −
+#emph[h]#sub[#emph[j]] is even, the outside count is even exactly when
+#emph[H] − #emph[g] is odd for the first player and even for the second.
+The first player can therefore reserve (3,2) only at odd height. At even
+height a single reserve for the first player must be in an odd row.
+Section 4 uses rows 3 and 5. This single identity separates odd from
+even heights in Section 4.
 
-If $S$ enters $\( 3 \, 1 \)$, cover at $\( 3 \, 2 \)$, directly blocking
-$D$. All nonempty growable columns are $F$-topped and no exceptions
-remain, giving permanent defence.
+#strong[Releasing a reserve.] The proof also explains when several
+reserved cells can be used in succession. Put at most one pending cell
+in each reserved column. Each positive gap is even and the total number
+of vacancies outside the pending columns is even. Each open watched line
+must pass through a pending blocking cell, or through its winning guard
+as in case 2. If a pending cell blocks just the lines through it,
+require #emph[H − g] even. On taking it, release that column. The lines
+it guarded now contain a permanent P stone, and the outside pool gains
+exactly #emph[H − g] vacancies, preserving even parity. A cell on every
+open watched line can instead end the defence phase at once, and a
+winning cell ends the game. Neither of these last two cases needs a
+parity test after capture. Until then a fallback after a fill must stay
+outside #emph[all] pending columns. Every completed round consumes two
+vacancies. Thus the waiting phase ends, whatever the opponent does. The
+constructions below need only one reserved cell at a time.
 
-If $S$ fills column one, reply at $\( 2 \, 1 \)$. Its full top stone is
-supported by $F$ and creates no exception. The bottom horizontal and
-$R_0$ are blocked; reserve only $\( 2 \, 3 \)$ for $D$.
+=== 3.4 A controller for two odd columns
+<a-controller-for-two-odd-columns>
+#strong[Lemma 5 (two-column controller).] At a position with Q to move,
+suppose that exactly two columns, forming the set R, have an odd number
+of empty cells. P covers until Q first fills a column; that column lies
+in R. P then plays in the other column of R and covers for the rest of
+the game. Every prescribed move is legal, and the only switch is the
+passive one.
 
-Each event itself leaves an empty middle column and cannot be a
-nonvertical win; vertical wins are also excluded. At both reserved exits
-the target column is the unique odd-height column; every outside column
-has even capacity or is full. The opponent cannot fill an outside
-column, and the target gap is positive and even. Therefore ordinary
-covering everywhere suffices until target acquisition. Thereafter switch
-only after fills. Only the column-two exit uses an active switch, and no
-exit returns to the waiting phase.
+#strong[Proof.] A Q move followed by a cover takes two cells from one
+column and keeps every parity. A column with an even positive number of
+empty cells cannot be filled by Q, because Q's stone leaves an odd
+number, at least one. When Q fills a column of #emph[R], the other
+column of #emph[R] still has an odd, hence positive, number of empty
+cells. After P plays there, every column has an even number of empty
+cells, so every later Q move can be covered. □
 
-=== 5.5 The first player at even heights: all-column covering
-<the-first-player-at-even-heights-all-column-covering>
-After the opening $F \( 1 \, 1 \) \, S \( 1 \, 2 \)$, play
-$F \( 4 \, 1 \)$, the sole active switch. Cover until an event forces a
-change. At every $S$ turn the shape is
+Lemma 5 controls legality and the count, not safety; safety is proved
+case by case. In each case below the cells that guard the open lines lie
+in columns that receive only covers, so they are protected by Lemma 3.
 
-$ \[ F S \( S F \)^a \, \( S F \)^b \, \( S F \)^c \, F \( S F \)^d \] . $
+== 4 The first player
+<the-first-player>
+=== 4.1 Narrow boards and low heights
+<narrow-boards-and-low-heights>
+At widths at most three only vertical lines exist. Either player covers
+when possible and plays anywhere after a fill. At each opponent turn
+every non-empty column that is not full has the defender's stone on top,
+so no opponent vertical four can form. No active switch is used, and
+with no ceiling covering is always legal.
 
-The first three heights are even and the fourth odd; only column four
-can be filled by $S$. The two bottom corners block all bottom lines. The
-sole actual or potential exception is $\( 1 \, 3 \)$. Its third-row
-horizontal is protected by $\( 4 \, 3 \)$, always empty or $F$. Its
-other valid line is
+On four columns, height 0 is already full, and at height 1 each player
+places at most two stones. At heights 2 and 3 only horizontal fours
+exist. The first player opens with any bottom cell, covers, and plays
+anywhere after a fill. The opening blocks row 1. Every second-player
+stone higher up rests on a first-player stone, so Lemma 1 excludes the
+other rows. The first player needs no active switch.
 
-$ U_1 = \( \( 1 \, 3 \) \, \( 2 \, 4 \) \, \( 3 \, 5 \) \, \( 4 \, 6 \) \) \, $
+=== 4.2 Odd heights H ≥ 5: no active switch
+<odd-heights-h-5-no-active-switch>
+Open at (1,1). This stone blocks the bottom row and #emph[R]#sub[0]. The
+second player has no stone yet, so #emph[E] is empty and the only open
+watched line is #emph[D]. Reserve #emph[t] = (3,2): column 3 is empty,
+so the distance is two, and the other three columns hold (#emph[H] − 1)
+\+ #emph[H] + #emph[H] = 3#emph[H] − 1 empty cells, an even number
+(Figure 1). Lemma 4 in its blocking case applies. The first player
+covers, moves outside column 3 after a fill, and covers (3,2) when the
+second player finally enters column 3. Every switch is passive.
 
-protected by $\( 2 \, 4 \)$, also empty or $F$. A top $S$ run in column
-one reaches at most two before being covered; elsewhere $S$ stones are
-separated. Support descent handles the other lines.
+#figure(image("figures/board-1-en.png", width: 70.0%),
+  caption: [
+    The first player after its opening (1,1), with S to move. Grey: the
+    bottom row and #emph[R]#sub[0], already blocked. Dashed red:
+    #emph[D], guarded by the reserved cell (3,2) (green). Small circles:
+    the protected cells. Numbers: empty cells per column. At #emph[H] =
+    5 the columns other than 3 hold 14 empty cells and pair off; at
+    #emph[H] = 6 they hold 17 and one is left over.
+  ]
+)
 
-If no earlier terminal position occurs, finite capacity forces $S$ to
-fill column four. It is then
+=== 4.3 Even heights H ≥ 4: waiting in the outer columns
+<even-heights-h-4-waiting-in-the-outer-columns>
+Open at (1,1). If the second player answers in column 1, go to Section
+4.4. Otherwise the first player covers in columns 1 and 4 only, and
+leaves the middle columns alone. At each second-player turn the position
+is
 
-$ F \( S F \)^(H \/ 2 - 1) S \, $
+W#sub[#emph[a],#emph[d]] = \[F(SF)#super[#emph[a]], ∅, ∅,
+(SF)#super[#emph[d]]\], ~~ #emph[a], #emph[d] ≥ 0, ~~ #emph[a] ≥ 1 ⇒
+#emph[d] ≥ 1.
 
-with odd rows $F$ and even rows $S$. Stop if the board is full;
-otherwise choose the following reply. The seven rows are disjoint and
-exhaustive.
+The last condition holds because a second-player move in column 1 is
+covered only after its first reply went to column 4. Column 4 has an
+even number of stones, so the second player can never fill it. Column 1
+has an odd number and may be filled. While both middle columns are empty
+no non-vertical four can be completed, because every such line uses all
+four columns, and the outer columns alternate. Finite capacity forces
+one of three events (Figure 2).
+
++ #strong[S enters (2,1).] F plays on top of column 1, at row 2#emph[a]
+  \+ 2 ≤ #emph[H]\; this is the one active switch. The only exception is
+  the potential one at (2,2). Its row is blocked by F(1,2) if #emph[a] =
+  0, and by F(4,2) if #emph[a] ≥ 1, because then #emph[d] ≥ 1. Its
+  rising line is #emph[R]#sub[0], blocked like the bottom row by (1,1),
+  and its falling line leaves the board. If #emph[a] = 1 the new stone
+  is (1,4), which blocks #emph[D], and Lemma 2 applies. Otherwise
+  reserve (2,3) for #emph[D] in the blocking case of Lemma 4: the
+  distance is two, and the outside count is even.
++ #strong[S enters (3,1).] F covers at (3,2), which blocks #emph[D].
+  There is no exception, so Lemma 2 applies.
++ #strong[S fills column 1.] F plays (2,1). The top stone of column 1
+  stands on F and creates no exception; reserve (2,3) for #emph[D].
+
+In both reserved cases column 2 is the only column with an odd number of
+stones, so the second player can fill no other column before (2,3) is
+taken, and the first player only covers. The event move itself leaves a
+middle column empty and cannot win. Only event 1 is an active switch.
+When the second player's first reply is in column 2 or 3, events 1 and 2
+occur at once with #emph[a] = #emph[d] = 0.
+
+#figure(image("figures/board-2-en.png", width: 87.0%),
+  caption: [
+    The three events of outer waiting at #emph[H] = 6, after the first
+    player's reply, with S to move. In (a) and (c) the reserved cell
+    (2,3) guards #emph[D]\; in (b) the stone (3,2) blocks it. The letter
+    e marks the potential exception (2,2), whose row is blocked by
+    F(1,2).
+  ]
+)
+
+=== 4.4 Even heights H ≥ 4: covering everywhere
+<even-heights-h-4-covering-everywhere>
+After F(1,1), S(1,2), the first player plays (4,1), its one active
+switch, and then covers every move until the second player fills a
+column. At each second-player turn the position is
+
+V#sub[#emph[a],#emph[b],#emph[c],#emph[d]] = \[FS(SF)#super[#emph[a]],
+(SF)#super[#emph[b]], (SF)#super[#emph[c]], F(SF)#super[#emph[d]]\].
+
+The first three columns have even height, so only column 4 can be
+filled. The two bottom corners block all three bottom lines. The only
+exception, actual or potential, is (1,3). Its row is guarded by (4,3)
+and its rising line #emph[U]#sub[1] by (2,4); both are protected by
+Lemma 3, since every move so far was a cover. Its falling line leaves
+the board. A run of second-player stones grows to two at most, at
+(1,2)--(1,3), and is covered.
+
+If play continues, the second player must eventually fill column 4,
+which then reads F(SF)#super[#emph[H]/2−1]S, with (4,3) permanently F.
+The first player's forced reply must not break the remaining protection.
+The seven cases below are disjoint and exhaustive.
 
 #figure(
   align(center)[#table(
     columns: (50%, 50%),
     align: (auto,auto,),
-    table.header([Conditions], [Reply and continuation],),
+    table.header([Condition], [Reply and continuation],),
     table.hline(),
-    [$H = 4$], [Any legal move, then permanent defence; $U_1$ is out of
-    bounds.],
-    [$H gt.eq 6 \, med a = 0$], [Take $\( 1 \, 3 \)$, eliminate the
-    potential exception, then permanent defence.],
-    [$H gt.eq 6 \, med a gt.eq 1 \, med b gt.eq 2$], [Any legal move,
-    then permanent defence; $\( 2 \, 4 \) = F$ blocks $U_1$.],
-    [$H gt.eq 6 \, med a gt.eq 1 \, med b lt.eq 1 \, med c = 2$], [Take
-    $\( 3 \, 5 \)$, blocking $U_1$, then permanent defence.],
-    [$H gt.eq 6 \, med a gt.eq 1 \, med b lt.eq 1 \, med c lt.eq 1$], [Add
-    $F$ at $\( 3 \, 2 c + 1 \)$\; reserve only $\( 3 \, 5 \)$.],
-    [$H gt.eq 6 \, med a gt.eq 1 \, med b = 1 \, med c gt.eq 3$], [Take
-    $\( 2 \, 3 \)$, winning immediately on $D$.],
-    [$H gt.eq 6 \, med a gt.eq 1 \, med b = 0 \, med c gt.eq 3$], [Take
-    $\( 2 \, 1 \)$\; reserve the winning target $\( 2 \, 3 \)$.],
+    [#emph[H] = 4], [any legal move; #emph[U]#sub[1] leaves the board;
+    Lemma 2],
+    [#emph[H] ≥ 6, #emph[a] = 0], [\(1,3), removing the potential
+    exception; Lemma 2],
+    [#emph[H] ≥ 6, #emph[a] ≥ 1, #emph[b] ≥ 2], [any legal move; (2,4) =
+    F blocks #emph[U]#sub[1]\; Lemma 2],
+    [#emph[H] ≥ 6, #emph[a] ≥ 1, #emph[b] ≤ 1, #emph[c] = 2], [\(3,5),
+    blocking #emph[U]#sub[1]\; Lemma 2],
+    [#emph[H] ≥ 6, #emph[a] ≥ 1, #emph[b] ≤ 1, #emph[c] ≤ 1], [\(3,
+    2#emph[c]+1); reserve (3,5) for #emph[U]#sub[1] (Lemma 4,
+    blocking)],
+    [#emph[H] ≥ 6, #emph[a] ≥ 1, #emph[b] = 1, #emph[c] ≥ 3], [\(2,3),
+    winning on #emph[D]],
+    [#emph[H] ≥ 6, #emph[a] ≥ 1, #emph[b] = 0, #emph[c] ≥ 3], [\(2,1);
+    winning cell (2,3) (Lemma 4, winning)],
   )]
   , kind: table
   )
 
-For $a gt.eq 1$ the exception $\( 1 \, 3 \)$ is actual, but its
-horizontal is permanently blocked by $\( 4 \, 3 \) = F$, leaving only
-$U_1$. When $c lt.eq 1$, the gap to $\( 3 \, 5 \)$ after the reply is
-$4 - 2 c$, positive and even; when $c = 2$, the target is acquired
-directly. When $c gt.eq 3$, the three squares
-$\( 1 \, 4 \) \, \( 3 \, 2 \) \, \( 4 \, 1 \)$ of $D$ really are $F$. A
-second-column height of two gives an immediate win; at height zero
-occupy its bottom first and wait for the winning third square. The
-square $\( 2 \, 4 \)$ needed by $U_1$ lies above that winning target and
-cannot be acquired by $S$ first.
+For #emph[a] ≥ 1 the exception (1,3) is actual, and its row is blocked
+by (4,3) = F, so only #emph[U]#sub[1] remains open. If #emph[c] ≤ 1, the
+reply makes column 3 odd and the distance to (3,5) becomes 4 −
+2#emph[c]. If #emph[c] ≥ 3, the cells (1,4), (3,2) and (4,1) of #emph[D]
+are F stones. With #emph[b] = 1 the first player completes #emph[D] at
+once; with #emph[b] = 0 it waits for (2,3), below the cell (2,4) that
+#emph[U]#sub[1] needs. In both reserved cases the outside count is even:
+columns 1 and 2, or 1 and 3, have even height, and column 4 is full. All
+these replies follow a fill and are passive. This branch and Section 4.3
+are alternatives, so the first player makes at most one active switch.
 
-All specified replies land at row at most five, within $H gt.eq 6$. In
-the two waiting exits the target column is the unique odd-height column;
-all others are even-height or full, so covering suffices until
-acquisition. Then enter permanent defence or stop with a win.
+== 5 The second player
+<the-second-player>
+=== 5.1 Even heights H ≥ 2: Allis's pairing
+<even-heights-h-2-alliss-pairing>
+Pair the columns as {1,2} and {3,4}. The second player answers the
+opening at the bottom of the partner column, which is its active switch,
+and then follows Lemma 5 with #emph[R] equal to the initial pair. In the
+other pair the first player occupies only odd rows before the transfer,
+so it can complete neither a diagonal, whose cells in adjacent columns
+have rows of opposite parity, nor an even-row horizontal. In the initial
+pair, apart from its opening stone, the first player occupies only even
+rows, which excludes horizontals in rows 3, 5, …; the second player's
+bottom stone blocks row 1. After the transfer the full column of the
+initial pair keeps second-player stones in rows 3, 5, …, so these blocks
+persist. The only vertically adjacent first-player pair is at the bottom
+of the opening column, and it is then covered or meets the ceiling. The
+strategy makes one active and at most one passive switch.
 
-Every reply in the table follows $S$ filling column four and is passive,
-including immediate wins. The only active switch was the opening move to
-column four. This family and Section 5.4 are alternative branches; their
-budgets must not be added.
+=== 5.2 Odd heights H ≥ 3: an interior opening
+<odd-heights-h-3-an-interior-opening>
+By the reflection #emph[c] ↦ 5 − #emph[c] we treat openings in columns 2
+and 1. After F(2,1) the second player plays (1,1), its active switch,
+and follows Lemma 5 with #emph[R] = {3,4} (Figure 3). Before the
+transfer every position with F to move is \[S(FS)#super[#emph[a]],
+F(FS)#super[#emph[b]], (FS)#super[#emph[c]], (FS)#super[#emph[d]]\]. The
+bottom row and #emph[R]#sub[0] are blocked by S(1,1). The cell (2,3)
+guards #emph[D]\; column 2 is not in #emph[R], so it receives only
+covers and (2,3) stays protected for the whole game. The only exception
+is (2,2). Its row is guarded by (3,2) and (4,2), both protected until
+the transfer. When the first player fills column 3 or 4, that column's
+second cell is already a permanent S stone, so the row stays blocked
+even though the transfer shifts the other column. The rising line
+through (2,2) is #emph[R]#sub[0]. The first player's stones in column 2
+form at most the pair (2,1)--(2,2), which is then covered. Lemma 1
+handles all other lines, and the argument applies to every first-player
+move before the reply, including the move that fills a column.
 
-=== 5.6 Genuinely infinite height
-<genuinely-infinite-height>
-There is no ceiling and hence no passive switch. The first player opens
-in any fixed column and then always covers. The second player occupies
-only even rows in the opening column and only odd rows in the other
-three. A horizontal four must use all four columns and cannot satisfy
-these parities. Among the other three columns are two adjacent ones,
-both with only odd-row second-player stones, excluding a diagonal four.
-Covering excludes vertical fours. The active budget is zero.
+#figure(image("figures/board-3-en.png", width: 29.0%),
+  caption: [
+    The second player's answer to an interior opening at #emph[H] = 5.
+    The guards are gold circles: (2,3) for #emph[D] (also reserved,
+    green), and (3,2), (4,2) for the row through the potential exception
+    e = (2,2). Columns 3 and 4 are the two odd columns of Lemma 5.
+  ]
+)
 
-The second player answers the opening at the bottom of its adjacent
-partner in the pairing ${ 1 \, 2 } \, { 3 \, 4 }$, then always covers.
-The pre-transfer argument of Section 5.3 applies: the other adjacent
-pair excludes diagonals and even-row horizontals; the initial pair
-excludes higher odd-row horizontals; the opening second-player stone
-blocks the bottom row; vertical runs stay short. Covering never becomes
-illegal. The active budget is one.
+=== 5.3 Odd heights H ≥ 3: an exterior opening
+<odd-heights-h-3-an-exterior-opening>
+After F(1,1) the second player covers at (1,2). While both middle
+columns are empty it covers in the outer columns; the position is
+\[(FS)#super[#emph[a]], ∅, ∅, (FS)#super[#emph[d]]\] with #emph[a] ≥ 1,
+and no four can be completed. The first event decides the reply:
 
-Any first win would occur at a finite time, but these fixed invariants
-protect every finite prefix. This is a direct infinite-height proof, not
-a limit of finite-height strategies.
-
-== 6 Passive counts and total upper bounds
-<passive-counts-and-total-upper-bounds>
-Each passive reply follows the opponent filling a distinct column. A
-full column can never be played again. Once all $w$ columns are full
-there is no reply, so a player has at most $w - 1$ passive switches in
-any legal play.
-
-Combining this with one active switch gives at most four total switches
-at width four. Section 4 and Section 5.3 give the stronger bound two for
-the second player. Infinite-height counts have no passive component. A
-trajectory using four switches in the particular first-player
-construction shows only that this construction can attain its bound, not
-that every non-losing strategy needs four.
-
-== 7 Exact counterstrategies against zero active budget
-<exact-counterstrategies-against-zero-active-budget>
-=== 7.1 A uniform second-player lower bound
-<a-uniform-second-player-lower-bound>
-Let $H gt.eq 2$, or let height be infinite. If the second player never
-switches actively, the first player successively takes the bottom
-squares of columns one, two, three, and four. The first three moves
-leave their columns nonfull, forcing covers in row two. Before the
-fourth first-player move neither player has four stones. That move
-completes the bottom horizontal and ends play immediately.
-
-Thus every non-losing second-player strategy has worst-case active
-budget at least one. There is no free passive choice before the loss. At
-$H = 2$, a second-player cover itself fills a column, but this does not
-give that player another free reply.
-
-=== 7.2 Scope of the even-height first-player lower bound
-<scope-of-the-even-height-first-player-lower-bound>
-Let $H = 2 m$, $m gt.eq 2$. A zero-active first player must cover
-whenever the second player's last column remains nonfull, but may make
-any history-dependent legal choice after a fill. Reflection reduces all
-openings to column one or column two. The following traps handle both
-and verify legal reachability, absence of an earlier first-player win,
-and all passive alternatives.
-
-=== 7.3 An exterior opening
-<an-exterior-opening-1>
-After $F \( 1 \, 1 \)$, the second player makes $m$ covered moves in
-column two, $m - 1$ in column four, and $m - 1$ in column one, then
-fills the top square of column one. Every move in the covered rounds
-leaves room for the forced cover. The resulting first-player turn is
-
-$ \[ F \( S F \)^(m - 1) S \, med \( S F \)^m \, med emptyset \, med \( S F \)^(m - 1) \] . $
-
-Throughout preparation column three is empty, excluding nonvertical
-wins, and columns alternate, excluding vertical wins. The position is
-therefore genuinely reachable without earlier termination.
-
-Columns one and two are full. The second player owns
-$\( 1 \, 4 \) \, \( 2 \, 3 \) \, \( 4 \, 1 \)$ on $D$ and needs only
-$\( 3 \, 2 \)$. If the first player enters column three, it must take
-$\( 3 \, 1 \)$\; $S \( 3 \, 2 \)$ wins immediately. If it enters column
-four, it must take $\( 4 \, H - 1 \)$\; $S \( 4 \, H \)$ fills that
-column, leaving only $\( 3 \, 1 \)$, again followed by the winning
-$\( 3 \, 2 \)$.
-
-The first player cannot win in between. While column three is empty no
-nonvertical four exists, and the new first-player stone in column four
-creates a run of at most two. On entering column three's bottom square,
-the bottom horizontal is blocked by second-player bottom stones, that
-square belongs to no valid diagonal four, and no vertical four exists.
-Both possible passive choices lose.
-
-=== 7.4 An interior opening
-<an-interior-opening-1>
-After $F \( 2 \, 1 \)$, make exactly two covered second-player moves in
-column one, producing $S F S F$\; do not raise it further. Fill column
-three with $m$ covered rounds, give column four one covered round, then
-give column two $m - 1$ covered rounds and fill its top square. The
-resulting first-player turn is
-
-$ \[ S F S F \, med F \( S F \)^(m - 1) S \, med \( S F \)^m \, med S F \] . $
-
-Every prescribed covered move leaves its original column nonfull. At
-$H = 4$, the fourth square of column one is filled by the first player,
-not by a second-player move granting free choice.
-
-No win occurs during preparation. Vertical words alternate. Since column
-four has height two, only the first two horizontals need checking and
-both are mixed. A falling line ending at $\( 4 \, 1 \)$ contains
-$F \( 1 \, 4 \)$ and $S \( 4 \, 1 \)$. One ending at $\( 4 \, 2 \)$
-needs the empty $\( 1 \, 5 \)$. Rising lines need a higher square of
-column four. The final preparation position has no four, hence neither
-does any prefix.
-
-Columns two and three are full. For $H = 4$, column one is also full. If
-the first player enters column four, it takes $\( 4 \, 3 \)$ and
-$S \( 4 \, 4 \)$ completes $R_0$, whose other stones
-$\( 1 \, 1 \) \, \( 2 \, 2 \) \, \( 3 \, 3 \)$ are all $S$.
-
-For $H gt.eq 6$ the other option is to enter column one. The second
-player keeps replying in that column until filling it. Above row four,
-the extension consists of $F S$ pairs, so $\( 1 \, 6 \)$ remains empty
-or $S$. Until the second player fills the column, the zero-active
-constraint forces the first player to continue there. Finite capacity
-eventually forces the first player into column four, yielding the same
-win at $\( 4 \, 4 \)$.
-
-There is no earlier first-player win during this delay. Vertical runs
-have length at most two, at rows four-five of column one or rows
-two-three of column four. A possible second-row horizontal is blocked by
-$S \( 2 \, 2 \)$\; a third-row horizontal is blocked by
-$S \( 1 \, 3 \)$. A first-player line cannot use $S \( 4 \, 1 \)$. A
-falling line ending at $\( 4 \, 2 \)$ contains $S \( 2 \, 4 \)$\; one
-ending at $\( 4 \, 3 \)$ contains $\( 1 \, 6 \)$, which is empty or $S$,
-or is out of bounds at $H = 4$. A rising line ending in row two or three
-of column four starts below the floor, and other rising lines need
-still-empty higher squares.
-
-If the second player wins earlier, stop with that win. Otherwise the
-finite sequence reaches its win at $\( 4 \, 4 \)$. The preparation
-height of column one must be exactly four: filling it in advance at
-larger heights could change $\( 1 \, 6 \)$ and create a first-player
-falling four. This is a mathematical requirement of the trap.
-
-=== 7.5 Conclusion of the lower bound
-<conclusion-of-the-lower-bound>
-Section 7.3 covers exterior openings and Section 7.4 interior openings;
-reflection covers all four columns. At every even height at least four,
-no zero-active first-player strategy is non-losing. The construction
-defeats the entire zero-active strategy class, not merely one greedy
-passive rule or a finite set of heights.
-
-== 8 Assembly and what optimality does not assert
-<assembly-and-what-optimality-does-not-assert>
-Sections 4-5 give fixed non-losing strategies and active upper bounds
-for every case. Section 7 gives the matching positive lower bounds; all
-zero entries are optimal by nonnegativity. Theorem 2 follows, and
-Theorems 1 and 3 follow from the constructions and Section 6.
-
-If both players use their respective non-losing strategies, neither can
-be the first winner. Finite play therefore ends in a full-board draw.
-Infinite-height play continues without a win, which is a draw by
-definition. Moreover, each strategy protects against every opposing
-strategy, so the claim is about the game-theoretic value, not just one
-particular self-play trajectory.
-
-The resource identity unifies target accounting, and at most one active
-deviation from covering suffices in all cases. Geometry still determines
-when to spend that deviation, where to play it, and how to transfer
-after a fill. The two even-height first-player waiting families retain
-different safety arguments. Optimal active budget does not imply optimal
-total count, minimum number of targets or controller states, or a
-shortest possible proof.
-
-== 9 Formalization and reproducibility
-<formalization-and-reproducibility>
-=== 9.1 Model and history semantics
-<model-and-history-semantics>
-The supplied project uses a standalone finite four-column model with
-relative colors $P \, Q$. Its budget semantics distinguishes the free
-first-player opening from replies, checks every legal opponent move for
-a first win or a full board, and charges an actual winning reply. It
-never repairs an opponent win after the fact.
-
-The module #emph[HistoryBudget.lean] defines legal reachable prefixes
-and proves #emph[budgetSafe\_iff\_historyBudget]. The construction
-#emph[historyController] can store the complete column history; its
-policy function has no finite-memory or computability restriction.
-Consequently the lower bounds apply to arbitrary history strategies, not
-just a particular finite controller.
-
-=== 9.2 Verified results and limits
-<verified-results-and-limits>
 #figure(
   align(center)[#table(
-    columns: (33.33%, 33.33%, 33.33%),
+    columns: (32.39%, 33.8%, 33.8%),
     align: (auto,auto,auto,),
-    table.header([Result], [Main source], [Scope of this acceptance],),
+    table.header([First player's event], [Second player's reply], [Odd
+      columns afterwards],),
     table.hline(),
-    [One shared non-losing rule, both roles, all finite
-    heights], [#emph[UniformFour/FirstRoot.lean],
-    #emph[SecondRoot.lean]], [Parametric theorems accepted],
-    [Exact active budgets, upper and lower
-    bounds], [#emph[FirstExact.lean],
-    #emph[SecondExact.lean]], [Parametric theorems accepted],
-    [Reachable histories and exact history
-    budgets], [#emph[HistoryBudget.lean],
-    #emph[HistoryRoots.lean]], [Equivalence and root theorems accepted],
-    [Capacity release and two-odd-column
-    transfer], [#emph[ReserveArithmetic.lean]], [Arithmetic lemmas
-    accepted],
-    [General multi-target lemma and total-switch bounds], [Sections 2
-    and 6], [Paper proofs],
-    [Draws below four columns and at genuinely infinite
-    height], [#emph[proof/Narrow]], [Separately compiled and
-    kernel-replayed; active budgets remain paper proofs],
-    [Equivalence between the Covering and Narrow board models], [Between
-    the two projects], [Not formalized],
+    [enters (2,1)], [\(3,1)], [{1, 4}],
+    [enters (3,1)], [\(2,1)], [{1, 4}],
+    [fills column 1], [\(3,1)], [{2, 4}],
+    [fills column 4], [\(2,1)], [{1, 3}],
   )]
   , kind: table
   )
 
-The two exact roots are
-#emph[UniformFour.​U1.​first\_exact\_history\_budget] and
-#emph[UniformFour.​U1.​second\_exact\_history\_budget]. Their values are
-those in Theorem 2. The formal upper bound uses the fixed shared
-response function of the companion algorithm paper. We do not claim that
-it makes the same move at every history as every allowed choice in
-Sections 4-5; the mathematical constructions and the formal rule
-independently attain the same exact active budget.
+The event leaves a middle column empty and cannot win, and the reply
+lands in an empty middle column. Then Lemma 5 applies with the listed
+set #emph[R]. After a middle-column event both middle columns hold one
+stone each. The bottom row has an S stone, (3,3) guards #emph[R]#sub[0],
+and (2,3) guards #emph[D]. Both guards lie in middle columns, which are
+not in #emph[R], so Lemma 3 protects them. The only exception is the
+second cell of the middle column whose bottom stone is F. Its row
+contains S(1,2), and its diagonal is #emph[R]#sub[0] or #emph[D]. After
+column 1 fills (#emph[H] ≥ 5), S(1,4) blocks #emph[D] and (3,3) guards
+#emph[R]#sub[0]\; column 3 is not in #emph[R]. After column 4 fills,
+S(4,4) blocks #emph[R]#sub[0] and (2,3) guards #emph[D]\; column 2 is
+not in #emph[R]. At #emph[H] = 3 the diagonals do not exist and the
+bottom row is blocked. In every case the active budget is at most one
+and the total at most two.
 
-=== 9.3 Acceptance and auxiliary checks
-<acceptance-and-auxiliary-checks>
-The project uses Lean 4.34.0-rc2; \[3\] describes the prover, while the
-precise toolchain is fixed by the attached receipts. Only libraries
-shipped with Lean are needed, with no Mathlib or large enumeration
-certificates. All 55 source modules compiled. The axiom closures of 14
-selected declarations contain only #emph[propext],
-#emph[Classical.choice], and #emph[Quot.sound]. A trust-zero import
-replay of #emph[Audit] checked all transitive local imports and exited
-successfully. Source and compiled-artifact SHA-256 hashes matched the
-build receipt before and after replay.
+== 6 Boards without a ceiling
+<boards-without-a-ceiling>
+With no ceiling no column fills, so covering is always legal and there
+is no passive switch. The first player opens in any column and then
+covers forever. The second player then occupies only even rows in the
+opening column and only odd rows in the other three. A horizontal four
+uses all four columns and cannot meet both parities. Among the other
+three columns two are adjacent, and a diagonal would need cells of
+opposite parity there. Covering excludes vertical fours, so the first
+player needs no switch. The second player answers at the bottom of the
+partner column and covers forever; the argument of Section 5.1 before
+the transfer applies forever, so it needs one switch. Any first four
+would appear at a finite time, and these invariants hold at every finite
+time. This is a direct proof, not a limit of finite strategies.
 
-Separately, a newly written coordinate checker tested the first-player
-traps at even heights four through 200 and all four openings, giving 396
-instances, and the second-player trap at heights two through 200, giving
-\199. The supplied reference-rule checker was rerun for heights zero
-through twelve in both roles: 83,429 states and 238,014 opponent edges.
-That rerun reused the supplied implementation and added instrumentation;
-it was not a new independent implementation. Seventy boundary cases also
-compared the actual Lean response with the reference response. Finite
-checks detect implementation and boundary errors; the all-height
-conclusions come from parametric proofs.
+== 7 Lower bounds
+<lower-bounds>
+=== 7.1 The second player
+<the-second-player-1>
+Let #emph[H] ≥ 2, or let there be no ceiling. If the second player never
+switches actively, the first player takes the bottom cells of columns 1,
+2, 3 and 4 in turn. The first three moves leave their columns open,
+forcing covers in row 2, and the fourth completes the bottom row. So
+every non-losing second-player strategy makes at least one active
+switch.
 
-From the repository root, run:
+=== 7.2 The first player at even heights
+<the-first-player-at-even-heights>
+Let #emph[H] = 2#emph[m] ≥ 4. A first player with no active switch must
+cover whenever the second player's column is still open; after a fill it
+may choose freely, depending on the whole history. By reflection it
+suffices to treat openings in columns 1 and 2.
 
-```sh
-python tools/verify_proof.py
-python tools/verify_proof.py --build --replay
-```
+#strong[Exterior opening.] After F(1,1) the second player plays column 2
+#emph[m] times, column 4 #emph[m] − 1 times and column 1 #emph[m] − 1
+times, each time covered, and then fills column 1. Column 3 stays empty
+throughout, so no non-vertical four occurs, and columns alternate. The
+first player is to move in
 
-The first command checks published source hashes and acceptance
-receipts; it does not run Lean. The second builds and kernel-replays the
-55-module #emph[proof/Covering] project. Install the version in its
-#emph[lean-toolchain] and set #emph[LEAN\_BIN] if needed. Each Lean
-process uses all detected logical CPUs.
+\[F(SF)#super[#emph[m]−1]S, (SF)#super[#emph[m]], ∅,
+(SF)#super[#emph[m]−1]\].
 
-The separate #emph[proof/Narrow] project supplies
-finite-width-one-to-three and infinite-height-width-one-to-four draw
-theorems. Its four mathematical modules and audit entry were freshly
-compiled, six selected axiom closures satisfied the same whitelist, and
-a trust-zero import replay succeeded. It needs the pinned Mathlib
-dependencies. Once these are installed, run #emph[python
-tools/verify\_proof.py --supporting --build --replay]. No equivalence
-between the two board models has been formalized. Full instructions and
-the source manifest are in #emph[docs/verification.md] and
-#emph[audit/].
+The second player owns (1,4), (2,3) and (4,1) of #emph[D] and needs only
+(3,2) (Figure 4). If the first player enters column 3, S(3,2) wins. If
+it enters column 4 at (4, #emph[H] − 1), the second player fills that
+column and the first player must take (3,1), after which S(3,2) wins.
+The first player cannot win on the way: column 3 is empty until its
+bottom cell is taken, and that cell completes no four.
 
-== 10 Target economy and remaining questions
-<target-economy-and-remaining-questions>
-Reply legality and line blocking are separate obligations. Once a single
-terminal target protects the only unresolved line and has a legal
-waiting argument, no further candidate reservation is needed at that
-exit. Each reserved even-height first-player exit therefore uses one
-target, and total remaining capacity supplies its termination argument.
+#figure(image("figures/board-4-en.png", width: 26.0%),
+  caption: [
+    The exterior trap at #emph[H] = 6 against a first player that never
+    switches actively. The second player owns three cells of #emph[D].
+    The columns other than 3 hold two empty cells, so the second player
+    takes the last of them and the first player is forced into (3,1).
+  ]
+)
 
-The odd-height second player may still owe two separate diagonal blocks.
-Each obligation must retain a protector; acquiring one target does not
-discharge the other obligation. This distinction identifies when a
-reservation can be released.
+#strong[Interior opening.] After F(2,1) the second player plays column 1
+exactly twice (giving SFSF), fills column 3 with #emph[m] covered
+rounds, plays column 4 once, plays column 2 #emph[m] − 1 times and fills
+it. The first player is to move in
 
-What is proved optimal is the defined active-switch cost. Minimum total
-count, target count, controller size, and proof length are different
-questions. A further formal task is to relate the two supplied board
-models through representations, legal drops, first-win stopping, and
-strategies. The companion paper addresses implementation separately.
-None of these four-column results determines the five-column game.
+\[SFSF, F(SF)#super[#emph[m]−1]S, (SF)#super[#emph[m]], SF\].
+
+Consider the board at the end of preparation. Every column alternates,
+and the two possible horizontal rows are mixed. A rising diagonal cannot
+end in row 1 or 2 of column 4. A falling diagonal ending at (4,1) has
+opposite colours at (1,4) and (4,1). One ending at (4,2) needs (1,5),
+which is empty. All earlier boards are subsets of this board, so there
+was no earlier four. The second player owns (1,1), (2,2) and (3,3) of
+#emph[R]#sub[0]. If the first player enters column 4, it takes (4,3) and
+S(4,4) wins. For #emph[H] ≥ 6 it may instead enter column 1. The second
+player then answers in column 1 until the column is full, and the first
+player, still unable to switch actively, has to keep answering there.
+Above row 4 the column fills with FS pairs, so (1,6) stays empty or S,
+and eventually the first player is forced into column 4. Along this
+delay the first player completes no four. Vertical runs have length at
+most two. Row 2 is blocked by S(2,2) and row 3 by S(1,3). The falling
+line ending at (4,1) contains S(4,1), and those ending at (4,2) and
+(4,3) contain S(2,4) and (1,6). Rising lines ending in row 2 or 3 of
+column 4 would start below the floor, and the others need empty higher
+cells. The preparation must stop column 1 at height four: filling it
+earlier could change (1,6) and give the first player a falling four.
+
+Hence no first-player strategy without an active switch is non-losing at
+an even height #emph[H] ≥ 4. Every free choice after a fill is covered
+by these traps.
+
+== 8 Counting switches and assembling the proofs
+<counting-switches-and-assembling-the-proofs>
+Each passive reply follows the opponent filling a column that was not
+full before, and once all columns are full there is no reply, so a
+player makes at most #emph[w] − 1 passive switches. With at most one
+active switch this gives at most four switches in total on four columns;
+Sections 5.1--5.3 give two for the second player. Sections 4--6 give
+non-losing strategies with the stated active budgets, and Section 7
+gives the matching lower bounds; the zero entries are optimal trivially.
+This proves Theorems 1--3.
+
+When both players follow their strategies, neither can make the first
+four, so a finite game ends in a full board without a four, and a game
+without a ceiling never produces a four. Since each strategy holds
+against every opponent play, the value of the game is a draw for every
+width up to four and every height. Optimality concerns the active budget
+only, not the total number of switches or the length of the proof.
+
+== 9 Verification
+<verification>
+Lean \[4\] checks the draw classification and the switch counts with the
+same stopping rule as the game. The first player's opening is free. A
+winning reply counts. If the opponent wins or fills the board, no reply
+follows. A budget bounds every legal prefix of play under one fixed
+strategy, including policies that read the whole history.
+
+#figure(
+  align(center)[#table(
+    columns: (50%, 50%),
+    align: (auto,auto,),
+    table.header([Board and result], [Where the proof starts],),
+    table.hline(),
+    [Four columns, finite height. Exact active budgets for both
+    players.], [`HistoryRoots` in `proof/​Covering`],
+    [Four columns, finite height. At most four total switches for the
+    first player and two for the second.], [`TotalSwitch` and
+    `SecondTotal`],
+    [One to three columns, finite height. Either player can stay safe
+    with zero active switches.], [`NarrowCost` in `proof/​Narrow`],
+    [No ceiling. Exact active budgets of 0 and 0 at widths one to three,
+    and 0 and 1 at width four.], [`InfiniteCost` and `InfiniteExact`],
+  )]
+  , kind: table
+  )
+
+The finite four-column proof of the active upper bound uses the response
+rule of \[6\]. The first-player total bound follows for every strategy
+attaining that active budget. For the second player, `SecondTotal`
+checks the pairing and waiting strategy of Section 5 and proves both
+bounds for that same strategy. The two upper bounds in Theorem 3 do not
+assert optimal total counts. The local proofs in `ProtectedCells`,
+`Reserves` and `TwoOdd` check the protected-cell and reserve arguments
+and the compulsory transfer between odd columns.
+
+The proofs use Lean 4.34.0-rc2. The finite four-column project uses
+Lean's bundled libraries. The second project uses a pinned Mathlib and
+represents infinite play by one strategy safe at every finite horizon.
+The two models establish results on their stated boards independently.
+Across the two projects all 60 + 8 local modules compiled from source.
+Their imports passed kernel replay at trust level zero. The 22 + 10
+audited declarations use only `propext`, `Classical.​choice` and
+`Quot.​sound`. The source hashes, audit records and reproduction commands
+accompany the
+#link("https://github.com/wugang6812/narrow-connect-four/blob/main/docs/verification.md")[verification guide].
+
+As separate finite checks, the coordinate checker covered 396
+first-player opening and height combinations and 199 second-player
+heights. A replay of the finite reference rule through height 12 visited
+83,429 states and 238,014 opponent moves. Seventy boundary probes
+compared Lean's replies with the reference implementation. The
+all-height theorems are proved with the height as a parameter.
 
 #block(breakable: false)[
 == References
 <references>
-\[1\] L. Victor Allis. #emph[A Knowledge-based Approach of Connect-Four:
-The Game is Solved: White Wins]. Master's thesis, Vrije Universiteit
-Amsterdam, Report IR-163, 1988. Especially §§2.2, 6.1, 7.1.
-#link("https://tromp.github.io/c4/connect4_thesis.pdf")[Full text].
+\[1\] L. V. Allis. #emph[A Knowledge-based Approach of Connect-Four. The
+Game is Solved: White Wins.] Master's thesis, Vrije Universiteit
+Amsterdam, Report IR-163, 1988; especially §§2.2, 6.1, 7.1.
+#link("https://tromp.github.io/c4/connect4_thesis.pdf#page=13")[Source]
 
-\[2\] Yoshiaki Yamaguchi, Kazunori Yamaguchi, Tetsuro Tanaka, Tomoyuki
-Kaneko. Infinite Connect-Four Is Solved: Draw. In #emph[Advances in
-Computer Games], LNCS 7168, 2012, pp.~208-219.
-#link("https://doi.org/10.1007/978-3-642-31866-5_18")[doi:10.1007/978-3-642-31866-5\_18].
+\[2\] Y. Yamaguchi, K. Yamaguchi, T. Tanaka, T. Kaneko. Infinite
+Connect-Four is solved: draw. In #emph[Advances in Computer Games], LNCS
+7168, 2012, pp.~208--219. doi:10.1007/978-3-642-31866-5\_18.
+#link("https://doi.org/10.1007/978-3-642-31866-5_18")[Source]
 
-\[3\] Leonardo de Moura, Sebastian Ullrich. The Lean 4 Theorem Prover
-and Programming Language. In #emph[Automated Deduction - CADE 28], LNCS
-12699, 2021, pp.~625-635.
-#link("https://doi.org/10.1007/978-3-030-79876-5_37")[doi:10.1007/978-3-030-79876-5\_37].
+\[3\] J. Tromp. John's Connect Four Playground, table of solved board
+sizes. https:/\/tromp.github.io/c4/c4.html (accessed 9 November 2026).
+#link("https://tromp.github.io/c4/c4.html")[Source]
 
-\[4\] GPT. #emph[A Uniform Response Algorithm and Alternating-Segment
-Compression for Four-Column Gravity Connect Four]. Companion algorithm
-paper, 8 November 2026.
-#link("https://github.com/wugang6812/narrow-connect-four/blob/main/papers/algorithm-en.pdf")[PDF].
+\[4\] L. de Moura, S. Ullrich. The Lean 4 theorem prover and programming
+language. In #emph[CADE 28], LNCS 12699, 2021, pp.~625--635.
+doi:10.1007/978-3-030-79876-5\_37.
+#link("https://doi.org/10.1007/978-3-030-79876-5_37")[Source]
+
+\[5\] Draw Strategies for Narrow Connect Four: All Finite Heights and
+Lean Verification. Previous version of this paper, 13 September 2026
+(GitHub), replaced by the present version.
+#link("https://github.com/wugang6812/narrow-connect-four/tree/v0.1.0")[Manuscript]
+
+\[6\] GPT. A Uniform Response Algorithm and Alternating-Segment
+Compression for Four-Column Gravity Connect Four. Companion paper, 8
+November 2026.
+#link("https://github.com/wugang6812/narrow-connect-four/blob/main/papers/algorithm-en.pdf")[Manuscript]
 
 ]

@@ -22,6 +22,12 @@ def render(source, qa_root):
     algorithm = source.stem.startswith('algorithm-')
     text = source.read_text(encoding='utf-8')
     title = text.splitlines()[0].removeprefix('# ')
+    input_format = 'markdown+tex_math_single_backslash' if algorithm else 'markdown'
+    if not algorithm:
+        # Let Pandoc typeset each illustrated position and its caption together.
+        text = re.sub(r'^!\[[^\n]*?\](\(figures/[^)]+\)\{width=\d+%\})\n\n\*\*(?:Figure\s+\d+[.]|图\s*\d+\s*[。.]?)\*\*\s*(.+)$',
+                      lambda m: '![' + m[2] + ']' + m[1], text, flags=re.M)
+    editorial_text = text
     short = (
         '四列重力四子棋 · 统一算法与压缩' if algorithm else '一至四列重力四子棋 · 和棋与最优换列次数'
     ) if lang == 'zh' else (
@@ -34,7 +40,7 @@ def render(source, qa_root):
         text = text.replace(namespace, namespace.replace('.', '.\u200b'))
     text = text.replace('\u2011', '-').replace('\u2013', '-').replace('\u2014', '-')
     result = subprocess.run(
-        [pypandoc.get_pandoc_path(), '-f', 'markdown+tex_math_single_backslash', '-t', 'typst'],
+        [pypandoc.get_pandoc_path(), '-f', input_format, '-t', 'typst'],
         input=text, capture_output=True, text=True, encoding='utf-8', check=True)
     header = r'''
 #set document(title: TITLE, author: "GPT",
@@ -67,6 +73,8 @@ def render(source, qa_root):
 '''
     header = header.replace('TITLE', json.dumps(title, ensure_ascii=False))
     header = header.replace('SHORT', short).replace('LANG', json.dumps(lang))
+    if not algorithm:
+        header = header.replace('day: 8)', 'day: 25)')
     body = result.stdout
     # Pandoc maps TeX varnothing to a diameter symbol; use the actual empty set.
     body = re.sub(r'\bdiameter\b', 'emptyset', body)
@@ -87,10 +95,10 @@ def render(source, qa_root):
     typst.compile(str(target), output=str(pdf), font_paths=[os.environ.get('PAPER_FONTS','C:/Windows/Fonts')] if Path(os.environ.get('PAPER_FONTS','C:/Windows/Fonts')).is_dir() else [])
     # Also supply editable LaTeX source, without claiming it generated this PDF.
     latex = subprocess.run(
-        [pypandoc.get_pandoc_path(), '-f', 'markdown+tex_math_single_backslash', '-t', 'latex', '-s',
+        [pypandoc.get_pandoc_path(), '-f', input_format, '-t', 'latex', '-s',
          '-V', 'documentclass=article', '-V', 'papersize=a4', '-V', 'geometry:margin=22mm',
          '-V', 'mainfont=Times New Roman', '-V', 'CJKmainfont=SimSun', '-V', 'author=GPT'],
-        input=source.read_text(encoding='utf-8'), capture_output=True, text=True, encoding='utf-8', check=True)
+        input=editorial_text, capture_output=True, text=True, encoding='utf-8', check=True)
     source.with_suffix('.tex').write_text(latex.stdout.rstrip() + '\n', encoding='utf-8', newline='\n')
     doc = pymupdf.open(pdf)
     qadir = qa_root / (('algorithm_' if algorithm else 'mathematics_') + lang)

@@ -73,7 +73,8 @@ def main():
     imports = {m:re.findall(r'^import\s+([\w.]+)', p.read_text(encoding='utf-8'), re.M)
                for m,p in paths.items()}
     deps = {m:[d for d in names if d in paths] for m,names in imports.items()}
-    targets = sys.argv[1:] or ['Audit']
+    fresh = '--fresh' in sys.argv[1:]
+    targets = [arg for arg in sys.argv[1:] if arg != '--fresh'] or ['Audit']
     needed = set()
     def visit(m):
         if m in needed: return
@@ -82,7 +83,7 @@ def main():
         for d in deps[m]: visit(d)
     for m in targets: visit(m)
     audit_path = ROOT/'audit.json'
-    old = json.loads(audit_path.read_text(encoding='utf-8')).get('modules',{}) if audit_path.exists() else {}
+    old = json.loads(audit_path.read_text(encoding='utf-8')).get('modules',{}) if audit_path.exists() and not fresh else {}
     records = {}
     def save():
         audit = dict(status='complete' if len(records)==len(needed) else 'building',

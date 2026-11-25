@@ -3,7 +3,7 @@
   "sources": [
     {
       "path": "proof/Covering/src/Audit.lean",
-      "sha256": "35a64ed1cdf127cf383657cfc6ddd66cc22fc31753e2e29ff97ac8d732f8901f"
+      "sha256": "20a67ae9526f25ee72f4de0a61b3f0ce51c898f3b8fe3695f3e665dbc0956565"
     },
     {
       "path": "proof/Covering/src/BottomBudget.lean",
@@ -16,6 +16,26 @@
     {
       "path": "proof/Covering/src/BudgetTools.lean",
       "sha256": "8f1909ac98b921e16128a8be5bdb91a3c1e54b68f35ee6db9f09c3085716c782"
+    },
+    {
+      "path": "proof/Covering/src/Completion/ProtectedCells.lean",
+      "sha256": "325ae30cc512a1ac3e0b9543b6e2155a9e75d8fcbfe4543455464c81d89d3c99"
+    },
+    {
+      "path": "proof/Covering/src/Completion/Reserves.lean",
+      "sha256": "5a38038adfd6c0b41e495b783993c839017c2f8d785f1ade56c62bd8e34d6011"
+    },
+    {
+      "path": "proof/Covering/src/Completion/SecondTotal.lean",
+      "sha256": "9f5bbc64e94d0e42adfe71a395afa44042dac9824c9cf5cedebb27bf6968958f"
+    },
+    {
+      "path": "proof/Covering/src/Completion/TotalSwitch.lean",
+      "sha256": "da3366b926e88a90287f9150059d8a910b28422ecde79730ca755f77cdea10a5"
+    },
+    {
+      "path": "proof/Covering/src/Completion/TwoOdd.lean",
+      "sha256": "0cd4d3d5855391dc3ef44643fea93f9a065e156871cd4e5a179aa8a8edb95260"
     },
     {
       "path": "proof/Covering/src/ExecutableProbes.lean",
@@ -155,7 +175,7 @@
     },
     {
       "path": "proof/Covering/src/UniformFour/BCClosure.lean",
-      "sha256": "e8cab3c7a9ad7dab873f9212dfb7cb8ea341fb1b27d2879c12674822811de2ab"
+      "sha256": "3b861b4901dacf9f67e978e37103b4edd0c30d0f598585b7fe444958555cf167"
     },
     {
       "path": "proof/Covering/src/UniformFour/CClosure.lean",
@@ -167,7 +187,7 @@
     },
     {
       "path": "proof/Covering/src/UniformFour/Certificates.lean",
-      "sha256": "6e37bbcd422b0eb020f99e80116f2c428e96cd574f67a39e198c813edd6e76f1"
+      "sha256": "3c10431a95fc37d684935d267b7ea01376274330e6b557ac04f5bd971b670d24"
     },
     {
       "path": "proof/Covering/src/UniformFour/Controller.lean",
@@ -222,8 +242,24 @@
       "sha256": "7d125e4237170b8143cb0d0004183646bc923bd6e0ca2cb3dcc0deae039e947d"
     },
     {
+      "path": "proof/Narrow/Completion/InfiniteCost.lean",
+      "sha256": "d56d1b93fc705955a7d6061fd4cbed9da5c4ecd0afbcc4dfc6e74eb472a35530"
+    },
+    {
+      "path": "proof/Narrow/Completion/InfiniteExact.lean",
+      "sha256": "7d1766077a27d9759b200135ee54c96a8c3a001327efeb92799650e0b1ffddb4"
+    },
+    {
+      "path": "proof/Narrow/Completion/NarrowCost.lean",
+      "sha256": "ae564ddf3b77df2680fc966d9c12ea680dc6d5d8eaaa2071e15035e9108b1d18"
+    },
+    {
       "path": "proof/Narrow/Connect4Proof/Basic.lean",
       "sha256": "d484005b771ae895e0e0cbf2eb9f49a7f4a38fec1675c60dccf2d62af3aaf93a"
+    },
+    {
+      "path": "proof/Narrow/NarrowAudit.lean",
+      "sha256": "bd1c8af059ead7c6675a0619b5b72ae3fa111cb63babe7f99d0496d33471ce80"
     },
     {
       "path": "proof/Narrow/experiments/FourColumns.lean",
@@ -231,15 +267,11 @@
     },
     {
       "path": "proof/Narrow/experiments/InfiniteNarrowBoards.lean",
-      "sha256": "ef4767e36a00b87ef695efd5c92d4f862c41234a9310e6add81e1c9eec0234b0"
+      "sha256": "fe4d498af5a60b9922819a0e91f1b1251031321c47071627dedf6c13287e1f01"
     },
     {
       "path": "proof/Narrow/experiments/NarrowBoards.lean",
       "sha256": "eff3438ba14d7aa596bd52c73836059ec3785159c250947901f941e4ea3d1db7"
-    },
-    {
-      "path": "proof/Narrow/NarrowAudit.lean",
-      "sha256": "20994bf41bdd980294a05e105793062ae729496888b0f2945baf77add4d497a1"
     }
   ]
 }

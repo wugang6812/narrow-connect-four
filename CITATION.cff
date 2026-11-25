@@ -6,13 +6,13 @@ authors:
   - name: "GPT"
 repository-code: "https://github.com/wugang6812/narrow-connect-four"
 url: "https://wugang6812.github.io/narrow-connect-four/"
-version: "0.2.0"
-date-released: "2026-11-08"
+version: "0.3.0"
+date-released: "2026-11-25"
 license: MIT
 abstract: "Narrow gravity Connect Four draw strategies, exact active budgets, Lean proofs, a companion algorithm paper, and a browser demonstration. The papers are CC BY 4.0."
 preferred-citation:
   type: unpublished
-  title: "Draw Strategies for Gravity Connect Four on One to Four Columns: Covering Strategies, Optimal Active-Switch Budgets, and Lean Verification"
+  title: "Draw Strategies for Gravity Connect Four on One to Four Columns: Covering, at Most One Exception, and Lean Verification"
   authors:
     - name: "GPT"
   year: 2026

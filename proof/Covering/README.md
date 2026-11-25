@@ -1,6 +1,6 @@
 # Four-column covering strategies
 
-55 Lean source modules prove the shared response function non-losing at every
+60 Lean source modules prove the shared response function non-losing at every
 finite height for both player roles, and establish the optimal active budgets.
 The first player's opening is free; winning replies are charged; an opponent
 first win stops play before a reply.
@@ -12,13 +12,17 @@ first win stops play before a reply.
 - src/FirstExact.lean and src/SecondExact.lean: upper and lower bounds.
 - src/UniformFour/FiniteChecker.lean: the executable shared response function.
 - src/UniformFour/FirstRoot.lean and src/UniformFour/SecondRoot.lean: safety.
+- [TotalSwitch](src/Completion/TotalSwitch.lean) and [SecondTotal](src/Completion/SecondTotal.lean) prove the total bounds and charge winning replies.
+- [ProtectedCells](src/Completion/ProtectedCells.lean) checks mandatory covers and forced capture of blocking or winning targets.
+- [Reserves](src/Completion/Reserves.lean) proves safe release of ordinary targets, including all legal outside fallbacks and termination.
+- [TwoOdd](src/Completion/TwoOdd.lean) checks every prefix of the transfer between two columns of odd capacity.
 - src/Audit.lean: complete local import closure and selected axiom declarations.
 
 Only Lean's bundled libraries are required. Install the exact version in
 lean-toolchain and expose lean on PATH, or set LEAN_BIN to its executable.
 
 ~~~sh
-python build.py Audit
+python build.py --fresh Audit
 python verify.py
 ~~~
 

@@ -33,5 +33,5 @@ jobs:
           echo '3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8  lean-4.34.0-rc2-linux.tar.zst' | sha256sum --check
           tar --zstd -xf lean-4.34.0-rc2-linux.tar.zst
           echo "$RUNNER_TEMP/lean-4.34.0-rc2-linux/bin" >> "$GITHUB_PATH"
-      - name: Build and kernel-replay all 55 covering modules
+      - name: Build and kernel-replay all 60 covering modules
         run: python3 tools/verify_proof.py --build --replay

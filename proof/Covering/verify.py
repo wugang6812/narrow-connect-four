@@ -66,7 +66,7 @@ def main():
     expected=re.findall(r'^#print axioms ([\w.]+)',(ROOT/'src/Audit.lean').read_text(encoding='utf-8'),re.M)
     log=(ROOT/'logs/Audit.log').read_text(encoding='utf-8')
     axioms={name:[a.strip() for a in terms.split(',') if a.strip()]
-            for name,terms in re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]",log)}
+            for name,terms in re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]",log)}
     assert set(axioms)==set(expected),(axioms.keys(),expected)
     for name,used in axioms.items():
         assert set(used)<=ALLOWED,(name,used)
@@ -91,7 +91,7 @@ def main():
                                    log_sha256=sha(replay/'kernel.log')),
                 compiler_version=audit['compiler_version'],compiler_sha256=audit['compiler_sha256'],
                 build_audit_sha256=sha(ROOT/'audit.json'),elapsed_seconds=round(time.monotonic()-start,3),
-                scope='Finite four-column U1 active-budget optimum and U2 safety in the standalone model; exact history-prefix bridge. No old-repository IsDraw bridge, infinite-height theorem, full U3 compressed engine or Lean complexity theorem.')
+                scope='Finite four-column draws, exact active budgets, total-switch bounds, protected cells, two-column control and multi-target release.')
     (ROOT/'kernel_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(dict(status='accepted',modules=len(files),axiom_closures=len(axioms),seconds=report['elapsed_seconds'])),flush=True)
 

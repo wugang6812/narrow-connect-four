@@ -38,10 +38,10 @@
 
 ## 核验证明
 
-- [proof/Covering](proof/Covering/)：**55个模块**，四列全部有限高度、双方统一回应、精确主动预算及完整历史语义，只需 Lean 随附库。
-- [proof/Narrow](proof/Narrow/)：**5个模块**，一至三列有限高度及一至四列无限高度，使用固定版本 Mathlib。
+- [proof/Covering](proof/Covering/)：**60 个模块**，涵盖四列任意有限高度、精确主动预算、总换列上界、保护格和多个预留列的依次释放，只需 Lean 随附库。
+- [proof/Narrow](proof/Narrow/)：**8 个模块**，涵盖一至三列有限高度，以及一至四列无限高度的和棋与最优主动换列次数，使用固定版本 Mathlib。
 
-两工程均已重新编译并以信任级别零导入重放。20项重点声明的公理闭包仅含 `propext`、`Classical.choice`、`Quot.sound`。两工程的棋盘模型不同，模型间等价尚未形式化。
+两工程均已重新编译并以信任级别零导入重放。32 项重点声明的公理闭包仅含 `propext`、`Classical.choice`、`Quot.sound`。两工程的棋盘模型不同，模型间等价尚未形式化。
 
 安装 Python 3.10 以上版本后，在仓库根目录执行：
 
@@ -55,9 +55,9 @@ python tools/verify_proof.py
 python tools/verify_proof.py --build --replay
 ~~~
 
-这会重新构建并内核重放55模块工程。GitHub Actions 同时运行该流程和游戏测试。依赖 Mathlib 的支持工程有独立复现命令，详见[验证说明](docs/verification.md)和[验收回执](audit/proof-verification.json)。
+这会重新构建并内核重放 60 模块的四列有限盘工程。GitHub Actions 同时运行该流程和游戏测试。依赖 Mathlib 的支持工程有独立复现命令，详见[验证说明](docs/verification.md)和[验收回执](audit/proof-verification.json)。
 
-通用多目标引理、总换列上界、九段界背后的完整事件计数、完整压缩程序的精化及成本证明，不全属于已验收的 Lean 根定理；论文逐项说明。[有限实验](experiments/)不替代任意高度证明。
+第一篇的三个主定理均已有 Lean 证明。主动与总换列次数使用的棋局历史、两个工程各自的定理入口和复现命令见[核验指南](docs/verification.md)。第二篇另行讨论压缩与成本。[有限实验](experiments/)提供独立的边界检查。
 
 ## 试玩与测试
 

@@ -335,7 +335,7 @@ private theorem unresolved_guard_nonvertical_safe
     intro ex
     exact checked ⟨hv, hn, x, hx, Or.inr (existing_exception_after_Q hq ex)⟩
 
-private theorem unresolved_guard_Q_move_safe
+theorem unresolved_guard_Q_move_safe
     {H : Nat} {b : Board} (h : Common H b) {q : Col} (hq : Legal H b q)
     (guard : ∀ L, Unresolved H b L →
       ¬ (∀ x ∈ L.cells, stoneAt (drop b q Q) x = some Q)) :

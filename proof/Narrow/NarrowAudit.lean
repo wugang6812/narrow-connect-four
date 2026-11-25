@@ -1,3 +1,5 @@
+import Completion.NarrowCost
+import Completion.InfiniteExact
 import experiments.NarrowBoards
 import experiments.InfiniteNarrowBoards
 
@@ -7,3 +9,7 @@ import experiments.InfiniteNarrowBoards
 #print axioms Connect4.NarrowBoards.three_columns_draw
 #print axioms Connect4.InfiniteNarrowBoards.four_columns_infinite_draw
 #print axioms Connect4.InfiniteNarrowBoards.narrow_infinite_draw
+#print axioms Connect4.NarrowBoards.Cost.narrow_finite_exact
+#print axioms Connect4.InfiniteNarrowBoards.Cost.narrow_infinite_exact
+#print axioms Connect4.InfiniteNarrowBoards.Cost.four_infinite_first_exact
+#print axioms Connect4.InfiniteNarrowBoards.Cost.four_infinite_second_exact

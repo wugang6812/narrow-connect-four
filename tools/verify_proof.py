@@ -8,6 +8,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import sys
 
@@ -32,10 +33,13 @@ def check_sources():
     assert expected==actual,('Unexpected or missing proof source',sorted(expected^actual))
     for row in manifest['sources']:
         assert sha(ROOT/row['path'])==row['sha256'],('Source differs from accepted snapshot',row['path'])
-    for group,count,roots in [('covering',55,14),('supporting',5,6)]:
+    for group,count,roots in [('covering',60,22),('supporting',8,10)]:
         r=receipt[group]
         assert r['status']=='accepted' and r['source_modules']==count
         assert r['kernel_replay']['exit_code']==0 and r['kernel_replay']['trust_level']==0
+        audit_source = ROOT/('proof/Covering/src/Audit.lean' if group == 'covering' else 'proof/Narrow/NarrowAudit.lean')
+        declared = set(re.findall(r'^#print axioms ([\w.]+)', audit_source.read_text(encoding='utf-8'), re.M))
+        assert set(r['root_axioms']) == declared, ('Audited theorems differ', group)
         assert len(r['root_axioms'])==roots
         assert all(set(used)<=ALLOWED for used in r['root_axioms'].values())
         assert len(r['modules'])==count
@@ -51,8 +55,8 @@ def check_sources():
         prefix='proof/Covering/' if group=='covering' else 'proof/Narrow/'
         assert accepted_sources=={row['path']:row['sha256'] for row in manifest['sources']
                                   if row['path'].startswith(prefix)},'Receipt/source mismatch'
-    return {'status':'passed','source_files':len(expected),'covering_modules':55,'supporting_modules':5,
-            'selected_axiom_closures':20,'fresh_compilation':False,'fresh_kernel_replay':False,
+    return {'status':'passed','source_files':len(expected),'covering_modules':60,'supporting_modules':8,
+            'selected_axiom_closures':32,'fresh_compilation':False,'fresh_kernel_replay':False,
             'scope':'Published source hashes and acceptance receipts only.'}
 
 
@@ -76,7 +80,7 @@ def main():
         else:
             project=ROOT/'proof/Covering'
             if args.build:
-                subprocess.run([sys.executable,'build.py','Audit'],cwd=project,check=True)
+                subprocess.run([sys.executable,'build.py','--fresh','Audit'],cwd=project,check=True)
             if args.replay:
                 subprocess.run([sys.executable,'verify.py'],cwd=project,check=True)
         result.update(fresh_compilation=args.build,fresh_kernel_replay=args.replay,

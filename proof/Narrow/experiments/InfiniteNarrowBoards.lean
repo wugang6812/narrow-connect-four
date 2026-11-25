@@ -174,8 +174,7 @@ theorem empty_no_four (w : Nat) (p : Player) : ¬ HasFour (emptyBoard w) p := by
     obtain ⟨c, _, _, _, hs⟩ := cellAtInt_some (hd 0) <;>
     simp [emptyBoard, stone] at hs
 
-theorem black_nonloss : CanAvoidLoss .black (emptyBoard 4) := by
-  refine ⟨blackStrategy, ?_⟩
+theorem black_nonloss_fixed : ∀ k, SafeUsing .black blackStrategy k [] (emptyBoard 4) := by
   intro k
   cases k with
   | zero => exact empty_no_four _ _
@@ -194,6 +193,9 @@ theorem black_nonloss : CanAvoidLoss .black (emptyBoard 4) := by
       · subst d; simp [play, emptyBoard, blackParity]
       · simp [play, emptyBoard, blackParity, hd]
     · rw [toMove_play', toMove_empty]
+
+theorem black_nonloss : CanAvoidLoss .black (emptyBoard 4) :=
+  ⟨blackStrategy, black_nonloss_fixed⟩
 
 /-! White's fixed first response and the subsequent pairing phase. -/
 def whiteStrategy : Strategy 4
@@ -224,8 +226,7 @@ theorem white_pattern_safe (q : Fin 4) (b : Board 4) (hp : Paint .white (whiteMa
     · simpa [whiteParity, hd] using he
     · exact False.elim (hd (Or.inl he))
 
-theorem white_nonloss : CanAvoidLoss .white (emptyBoard 4) := by
-  refine ⟨whiteStrategy, ?_⟩
+theorem white_nonloss_fixed : ∀ k, SafeUsing .white whiteStrategy k [] (emptyBoard 4) := by
   intro k
   cases k with
   | zero => exact empty_no_four _ _
@@ -276,6 +277,9 @@ theorem white_nonloss : CanAvoidLoss .white (emptyBoard 4) := by
             simp [emptyBoard, whiteParity, InP, hdq, hdp]
       · rw [toMove_play', toMove_play', toMove_empty]; rfl
 
+theorem white_nonloss : CanAvoidLoss .white (emptyBoard 4) :=
+  ⟨whiteStrategy, white_nonloss_fixed⟩
+
 /-- Both strategies are fixed functions, safe for every finite prefix of the
     genuinely unbounded game. Infinite play without a winner is a draw. -/
 theorem four_columns_infinite_draw : IsDraw (emptyBoard 4) :=
@@ -311,9 +315,9 @@ def coverStrategy (first : Fin w) : Strategy w
   | [] => first
   | c :: _ => c
 
-theorem narrow_white_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
-    CanAvoidLoss .white (emptyBoard w) := by
-  refine ⟨coverStrategy first, fun k => ?_⟩
+theorem narrow_white_nonloss_fixed {w : Nat} (first : Fin w) (hw : w ≤ 3) :
+    ∀ k, SafeUsing .white (coverStrategy first) k [] (emptyBoard w) := by
+  intro k
   apply (pairing .white (coverStrategy first) (fun _ => True) (fun _ _ _ => rfl)
     (fun _ _ _ => True.intro) (fun _ i => i % 2 = 0) (fun _ => 0)
     (fun _ _ h => h) (narrow_pattern_safe hw .white (fun _ => 0)) k).1 _ _ True.intro
@@ -321,10 +325,14 @@ theorem narrow_white_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
   · intro d; rfl
   · rw [toMove_empty]; rfl
 
-theorem narrow_black_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
-    CanAvoidLoss .black (emptyBoard w) := by
+theorem narrow_white_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
+    CanAvoidLoss .white (emptyBoard w) :=
+  ⟨(coverStrategy first), narrow_white_nonloss_fixed first hw⟩
+
+theorem narrow_black_nonloss_fixed {w : Nat} (first : Fin w) (hw : w ≤ 3) :
+    ∀ k, SafeUsing .black (coverStrategy first) k [] (emptyBoard w) := by
   let r : Fin w → Nat := fun d => if d = first then 1 else 0
-  refine ⟨coverStrategy first, fun k => ?_⟩
+  intro k
   cases k with
   | zero => exact empty_no_four _ _
   | succ k =>
@@ -341,6 +349,10 @@ theorem narrow_black_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
       · subst d; simp [play, emptyBoard, r]
       · simp [play, emptyBoard, r, hd]
     · rw [toMove_play', toMove_empty]
+
+theorem narrow_black_nonloss {w : Nat} (first : Fin w) (hw : w ≤ 3) :
+    CanAvoidLoss .black (emptyBoard w) :=
+  ⟨(coverStrategy first), narrow_black_nonloss_fixed first hw⟩
 
 /-- Paper Theorem 1.1(3), with explicit uniform strategies on the infinite board. -/
 theorem narrow_infinite_draw (w : Nat) (hw0 : 1 ≤ w) (hw4 : w ≤ 4) :

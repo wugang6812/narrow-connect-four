@@ -2,7 +2,7 @@
 
 Normal use requires the pinned dependencies installed with Lake in proof/Narrow.
 --dependencies-from reuses an already installed project with the identical lock
-file, but compiles all five local modules into this project's own build directory.
+file, but compiles all local modules into this project's own build directory.
 """
 from pathlib import Path
 import argparse
@@ -18,7 +18,8 @@ import time
 ROOT=Path(__file__).resolve().parents[1]
 PROJECT=ROOT/'proof/Narrow'
 MODULES=['Connect4Proof.Basic','experiments.NarrowBoards','experiments.FourColumns',
-         'experiments.InfiniteNarrowBoards','NarrowAudit']
+         'experiments.InfiniteNarrowBoards','Completion.NarrowCost','Completion.InfiniteCost',
+         'Completion.InfiniteExact','NarrowAudit']
 ALLOWED={'propext','Classical.choice','Quot.sound'}
 
 
@@ -103,7 +104,8 @@ def main():
     audit_log=(logs/'NarrowAudit.txt').read_text(encoding='utf-8')
     roots={name:[x.strip() for x in terms.split(',') if x.strip()]
            for name,terms in re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]",audit_log)}
-    assert len(roots)==6 and all(set(x)<=ALLOWED for x in roots.values()),roots
+    expected_roots = set(re.findall(r'^#print axioms ([\w.]+)', (PROJECT/'NarrowAudit.lean').read_text(encoding='utf-8'), re.M))
+    assert set(roots)==expected_roots and all(set(x)<=ALLOWED for x in roots.values()),roots
     replay_record=None
     if args.replay:
         probe=output/'Replay.lean'
@@ -123,7 +125,7 @@ def main():
             'dependency_manifest_sha256':sha(PROJECT/'lake-manifest.json'),
             'modules':entries,'root_axioms':roots,'kernel_replay':replay_record,
             'fresh_build':args.build,'seconds':round(time.monotonic()-started,3),
-            'scope':'Finite widths one to three and genuinely infinite heights at widths one to four; supporting model, not an equivalence to the finite four-column model.'}
+            'scope':'Draws and exact active-switch budgets at finite widths one to three and at infinite height on widths one to four.'}
     (PROJECT/'local-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'status':'accepted','modules':len(entries),'axiom_closures':len(roots),
                       'replayed':args.replay,'seconds':report['seconds']}),flush=True)

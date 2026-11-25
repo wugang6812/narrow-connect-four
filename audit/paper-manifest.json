@@ -5,23 +5,23 @@
       "id": "paper-en",
       "title": "Draw Strategies for Gravity Connect Four on One to Four Columns",
       "author": "GPT",
-      "pages": 10,
+      "pages": 9,
       "files": [
         {
           "path": "papers/paper-en.md",
-          "sha256": "3be6bce46790ead3136ff1462c8e46d740d3d00ee2f6c21a5c708dffbb074871"
+          "sha256": "1a02d914dc000181fe80c9741619318d337253f5c8373d9b61e05abdf46d5730"
         },
         {
           "path": "papers/paper-en.pdf",
-          "sha256": "c64237a2dac19f3d9b3bc5a21055b84479f34e61977a956d7a2d18cd9aeba24a"
+          "sha256": "e131e5490b9f2eef2766da78584f02b6ad5a00ed7849f77b2df93b2205799e80"
         },
         {
           "path": "papers/paper-en.typ",
-          "sha256": "cb0afe9176c7f3d914a87e64ba7f43aaf849bbe916e25e4364c7d355cff52af7"
+          "sha256": "f98e55190ad7075b936fe6304332752842b650b119eca7f4b764ce354fe14689"
         },
         {
           "path": "papers/paper-en.tex",
-          "sha256": "789a86304dec1d6e683062ba7a42c5b99be854ca3077db6a9d411f01090c9c8b"
+          "sha256": "64d1110865b0049e3690270027d3b2dcec072a269d6a5148abf22f673eb9fc67"
         }
       ]
     },
@@ -29,23 +29,23 @@
       "id": "paper-zh",
       "title": "一至四列重力四子棋的和棋策略",
       "author": "GPT",
-      "pages": 10,
+      "pages": 8,
       "files": [
         {
           "path": "papers/paper-zh.md",
-          "sha256": "ea0f9f13e194620ff4e637736465f00cfe7b51a9ec2aae7bed967829b9c37f6f"
+          "sha256": "1d473bb96c42e6a3b29d12d0cb1c1e84209adf782c3e5605ac688c5966f24d01"
         },
         {
           "path": "papers/paper-zh.pdf",
-          "sha256": "c6d37fbe63b7580c2570e2f7acd6894be79c12c1d25030fbaf2086a6791fb73e"
+          "sha256": "8a8e788c81338432ae008df093548bf90045a4231a064df4f52afcec378090ee"
         },
         {
           "path": "papers/paper-zh.typ",
-          "sha256": "6d929ca991952082e6d25887711d2e4fd1a6a8cf0046b09e0f85899b5e276ee4"
+          "sha256": "9e2c13eb33d3825813082be3f2e1e24ca9ec30bacd12e29e6ed92d55bfece9b0"
         },
         {
           "path": "papers/paper-zh.tex",
-          "sha256": "920ccd7a07d79c9149a3b171cd07a9b7ba06509062bb9636c0b95948cd710b7e"
+          "sha256": "b7ba0cedc1b6b5d1346dc7f48bd339551998fb297492cfcde9d9907391b8a3ff"
         }
       ]
     },
@@ -98,5 +98,39 @@
       ]
     }
   ],
-  "renderer": "Pandoc 3.9 and Typst 0.15.0; .tex files are editable exports, not the source of these PDFs."
+  "renderer": "Pandoc 3.9 and Typst 0.15.0; .tex files are editable exports, not the source of these PDFs.",
+  "figures": [
+    {
+      "path": "papers/figures/board-1-en.png",
+      "sha256": "0449c4501c09048c1e173cb0c1efc12d1661212d00603632b8f619d1b3de7d6e"
+    },
+    {
+      "path": "papers/figures/board-1-zh.png",
+      "sha256": "6a07840de102709e7c6295b1362e990c5626dad5cf3d03efe92920bef117f052"
+    },
+    {
+      "path": "papers/figures/board-2-en.png",
+      "sha256": "74034ff4f26a06ee3d15b2dba7cbea191f6201a64fff3eec0310a914d5e3c0bc"
+    },
+    {
+      "path": "papers/figures/board-2-zh.png",
+      "sha256": "8ae352b63747e68b5c1b8bd5c758485f5b4c3b730a00fbe2aa41d8e3e671957c"
+    },
+    {
+      "path": "papers/figures/board-3-en.png",
+      "sha256": "e89ffec6becf96404e686aa78be5fb1f65069dde6bb410c9e0edbe870bf93433"
+    },
+    {
+      "path": "papers/figures/board-3-zh.png",
+      "sha256": "1039cf7c97b2a74b01c7ed04d3422c8e0f379b25c52fe0279f0149526888345f"
+    },
+    {
+      "path": "papers/figures/board-4-en.png",
+      "sha256": "8b77b008d3398ca2e68e74fe13ae8f2f0613200edc8dc000605b8251052e9ad6"
+    },
+    {
+      "path": "papers/figures/board-4-zh.png",
+      "sha256": "c742526b8b8c1da96d86990f0756d75514724ec476bd43a7b4c7b6eff8da661b"
+    }
+  ]
 }

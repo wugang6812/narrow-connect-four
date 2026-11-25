@@ -1,16 +1,16 @@
 # Narrow widths and genuinely infinite height
 
-The four mathematical source files preserve their accepted source bytes:
+The eight local modules use pinned Mathlib. The original draw proofs are in
+[finite narrow boards](experiments/NarrowBoards.lean) and
+[unbounded boards](experiments/InfiniteNarrowBoards.lean). In the unbounded
+model the player fixes one strategy before the horizon is chosen.
 
-- experiments/NarrowBoards.lean: widths one to three at all finite heights.
-- experiments/InfiniteNarrowBoards.lean: one fixed strategy protects every
-  finite prefix at widths one to four with no ceiling.
-- experiments/FourColumns.lean and Connect4Proof/Basic.lean: required model
-  definitions and proof dependencies.
+- [NarrowCost](Completion/NarrowCost.lean) proves the exact zero active budget for both players at finite widths one to three.
+- [InfiniteCost](Completion/InfiniteCost.lean) counts switches on histories of the fixed infinite-height strategies.
+- [InfiniteExact](Completion/InfiniteExact.lean) proves both optima, including the white zero-budget contradiction by a bottom-row four.
 
-NarrowAudit.lean imports these files and checks six selected theorem axiom
-closures. The retained source headers describe the time the sources were
-written; current compilation/replay acceptance is recorded in ../../audit/.
+[NarrowAudit](NarrowAudit.lean) imports the local closure and lists ten audited
+declarations. Acceptance records are in the repository's audit directory.
 
 Install the version in lean-toolchain and obtain the dependencies fixed by
 lake-manifest.json, including the corresponding Mathlib compiled cache.
